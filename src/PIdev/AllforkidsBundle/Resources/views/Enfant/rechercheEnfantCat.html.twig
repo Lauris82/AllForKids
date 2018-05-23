@@ -1,0 +1,89 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Recherche par categorie Enfant{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+<div class="canvas">
+
+    <div>  <h1 class="grand-hotel text-center" style="color: tomato"> Rechercher par catégorie de l'enfant </h1>
+    </div>
+    <section class="service-calc padding-v100">
+        <div class="container">
+            <div class="col-sm-12 padding-g0">
+                <div class="col-xs-12">
+
+
+                    <form method="post" class="form-wrap">
+
+
+    {#Catégorie :#}
+    {#<select name="categorie">#}
+        {#<option value="Nourrisson">Nourrisant</option>#}
+        {#<option value="Tout Petit">Tout Petit</option>#}
+        {#<option value="Préscolaire">Préscolaire</option>#}
+        {#<option value="Scolaire">Scolaire</option>#}
+    {#</select>#}
+<table align="center"> <tr> <td><div class="widget widget_archive text-center">
+                {#<h3 class="widget-title">Catégories</h3>#}
+                <div class="select-group">
+                    <select aria-required="true" id="month" name="categorie">
+                        <option value="" disabled selected>choisissez une catégorie</option>
+                        <option value="Nourrisson">Nourrisson</option>
+                        <option value="Tout Petit">Tout Petit</option>
+                        <option value="Préscolaire">Préscolaire</option>
+                        <option value="Préscolaire">Scolaire</option>
+                    </select>
+                    <i class="rt-icon2-chevron-thin-down"></i>
+                </div>
+            </div> </td>
+        <td> <button class="rt-icon2-zoom-outline" type="submit" name="submit" value="Recherche " width="100px" style="height: 60px;width: 50px"></button>
+    </td>
+    </tr>
+</table>
+<br> <br>
+
+
+                        <table class="courses-table table1">
+        <tr>
+
+            <th>Nom de l'Enfant</th>
+            <th>Prenom de l'Enfant</th>
+            <th>Date de naissance </th>
+            <th>Sexe </th>
+            <th> Photo </th>
+
+
+
+        </tr>
+
+        {% for Enfant in Enfant %}
+            <tr>
+                <td>{{ Enfant.nom }} </td>
+                <td>{{ Enfant.prenom}}</td>
+                <td>{{ Enfant.dateNaissance|date('d/m/Y')}}</td>
+                <td>{{ Enfant.sexe}}</td>
+                <td> image: <img src="{{ asset('images/') }}{{ Enfant.nomImage }}" style="width: 50px;height: 50px"></td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+</form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+
+
+{%  endblock main %}
+{% block footer %}
+{% endblock footer %}

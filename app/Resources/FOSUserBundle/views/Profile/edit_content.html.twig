@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block title %}Modifier Profil{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}
+    <h3>Modifier votre Profil</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('fos_user_profile_show') }}">Profil</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_user_profile_edit') }}">Modifier votre Profil</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_user_change_password') }}">Changer Mot de passe</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+
+<div class="single-item-body icon-body">
+
+    <h3 class="poppins">Modifier<span class="pink"> votre Profil</span></h3>
+
+    <div class="modal-body" align="center">
+        {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+            {{ form_widget(form) }}
+            <div>
+                <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+            </div>
+        {{ form_end(form) }}
+
+    </div>
+</div>
+
+{% endblock main %}
+
+
+{% block footer %}
+
+{% endblock footer %}

@@ -1,0 +1,158 @@
+{% extends '::Consulter.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block topline %}{% endblock topline %}
+
+
+
+
+{#{% block menu %}
+{% endblock menu %}
+#}
+{% block sousmenu %}
+
+
+    <section class="page_breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>Vous etes toujours le bienvenus</h3>
+                    <ol class="breadcrumb">
+                       {# <li>
+                            <a href="about.html">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="team.html">
+                                Team
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="team_member.html">
+                                Team Member
+                            </a>
+                        </li>#}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock sousmenu %}
+
+
+ {% block association %}
+
+
+     <div class="col-lg-5 col-sm-6">
+
+         {% for m in Ass %}
+
+             <div class="member-meta">
+                 <div>
+                     <link rel="script" href="{{ asset('jquery-3.2.1.min.js') }}">
+                     <link rel="script" href="{{ asset('gmaps/gmaps.js') }}">
+                     <link rel="stylesheet" type="text/css" href="{{ asset('examples.css') }}" />
+                     <input id="lat"  type="hidden" value={{ m.lat }}>
+                     <input id="lng" type="hidden" value={{ m.lng }}>
+                     <div class="span11" >
+                         <div id="map"></div>
+                         <script >
+                             var map;
+                             var markers = [];
+                             var latt = document.getElementById('lat').value ;
+                             var lngg= document.getElementById('lng').value;
+
+                             var marker;
+                             function initMap() {
+                                 var lat_lng = {lat: 35.08672, lng: 10};
+                                 var mardker = {lat: parseFloat(latt), lng: parseFloat(lngg)};
+                                 map = new google.maps.Map(document.getElementById('map'), {
+                                     zoom: 6,
+
+                                     center: lat_lng,
+                                     mapTypeId: google.maps.MapTypeId.TERRAIN
+                                 });
+
+                                 marker = new google.maps.Marker({
+                                     position: mardker,
+                                     map: map
+                                 });
+                                 markers.push(marker);
+
+                             }
+                         </script>
+                         <script async defer src="{{ asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyAuFusBAC3vYNl0ye8bXOk0nGhGUo109qE&callback=initMap') }}">
+                         </script>
+
+
+                     </div>
+
+
+
+
+
+                 </div>
+                 <span class="mbr-vocation">Association</span>
+                 <h2>{{ m.nom }}</h2>
+
+              {#   <div class="member-contacts">
+                     <div class="mbr-addres">
+                         <i class="rt-icon2-location-outline pink large-icon"></i>
+                         <span>1467 Walnut Street, Jackson, MS 39201</span>
+                     </div>
+                     <div class="mbr-phone">
+                         <i class="rt-icon2-mail2 blue large-icon"></i>
+                         <span>0(800) 642-65-35</span>
+                     </div>
+                     <div class="mbr-email">
+                         <i class="rt-icon2-phone-outline light-green large-icon"></i>
+                         <span>amanda@babytime.com</span>
+                     </div>
+                 </div>#}
+             </div>
+         {% endfor %}
+     </div>
+
+
+ {% endblock association %}
+
+
+{% block avantOnglet %}
+
+    {% for m in Ass %}
+
+        <h1 class="poppins">Contacter <span class="pink">Nous</span></h1>
+        <ul class="list2">
+            <li>{{ m.nom }}</li>
+            <li>{{ m.description }}</li>
+
+        </ul>
+
+
+        <div class="member-contacts">
+            <div class="mbr-addres">
+                <i class="rt-icon2-location-outline pink large-icon"></i>
+                <span>{{ m.gouvernorat }}</span>
+            </div>
+            {#<div class="mbr-phone">
+                <i class="rt-icon2-mail2 blue large-icon"></i>
+                <span>{{ m.numTel }} </span>
+            </div>#}
+            <div class="mbr-email">
+                <i class="rt-icon2-phone-outline light-green large-icon"></i>
+                <span>{{ m.numTel }} </span>
+            </div>
+        </div>
+
+
+    {% endfor %}
+
+{% endblock avantOnglet %}
+
+{% block ongletAss %}
+{% endblock ongletAss %}

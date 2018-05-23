@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+{% block title %}Discussion{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}
+    <h3>Messagerie</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('fos_message_inbox') }}">Boite de reception</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_message_sent') }}">Messages envoyés</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_message_deleted') }}">Messages supprimés</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+    {% block fos_message_content %}
+
+       <h3 align="center">Sujet:  <span class="grand-hotel" style="color: pink">{{ thread.subject }}</span></h3>
+
+        <div class="modal-dialog">
+            <div class="single-item-body icon-body">
+                {% for message in thread.messages %}
+                    <div class="messenger_thread_message">
+                        {% if app.user.id == message.sender.id %}
+                            <div class="searchform-respond" align="right">
+                                <span class="comment-body">{{ message.body }}</span>
+                                <img class="img-rounded" src="{{ asset('image_user/' ~ app.user.image) }}" style="width:50px; height:50px;">
+                            </div>
+                        {% else %}
+                            <div class="message-in" align="left">
+                                <img class="img-rounded" src="{{ asset('image_user/' ~ message.sender.image) }}" style="width:50px; height:50px;">
+                                <span class="comment-body">{{ message.body }}</span>
+                            </div><br><br>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                    <form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+                        {{ form_start(form) }}
+                            <div align="center">
+                                <span >{{ form_widget(form.body) }}</span>
+                                <span><input type="submit" value="Transmettre" class="glyphicon glyphicon-send"/></span>
+                            </div>
+                        {{ form_end(form) }}
+                    </form>
+
+            </div>
+        </div>
+
+    {% endblock %}
+{% endblock main %}
+
+{% block footer %}{% endblock footer %}

@@ -1,0 +1,134 @@
+{% extends '::teamConsulter.html.twig' %}
+
+
+{% block topline %}{% endblock topline %}
+
+{% block sousMenu %}
+
+<section class="page_breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>Associations</h3><br>
+
+
+                <form method="post">
+                    <tr>
+
+                        <td>  <label style="color: #d9dadc">Gouvernerat</label><span></span>
+                            <select name="gouv">
+                                <option disabled selected>choisir gouvernerat</option>
+                                <option value="Ariana" selected>Ariana</option>
+                                <option value="Béja">Béja</option>
+                                <option value="Ben Arous">Ben Arous</option>
+                                <option value="Bizerte">Bizerte</option>
+                                <option value="Gabès">Gabès</option>
+                                <option value="Gafsa">Gafsa</option>
+                                <option value="Jendouba">Jendouba</option>
+                                <option value="Kairouan">Kairouan</option>
+                                <option value="Kasserine">Kasserine</option>
+                                <option value="Kébili">Kébili</option>
+                                <option value="Le Kef">Le Kef</option>
+                                <option value="Mahdia">Mahdia</option>
+                                <option value="La Manouba">La Manouba</option>
+                                <option value="Médenine">Médenine</option>
+                                <option value="Monastir">Monastir</option>
+                                <option value="Nabeul">Nabeul</option>
+                                <option value="Sfax">Sfax</option>
+                                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                <option value="Siliana">Siliana</option>
+                                <option value="Sousse">Sousse</option>
+                                <option value="Zaghouan">Zaghouan</option>
+                                <option value="Tataouine">Tataouine</option>
+                                <option value="Tozeur">Tozeur</option>
+                                <option value="Tunis">Tunis</option>
+
+
+                            </select> <span></span><span></span>
+                            <input  type="submit"  name="chercher" value="Rechercher">
+                            <input type="text" name="no" >
+
+                        </td>
+
+
+
+                    </tr>
+
+
+                </form>
+
+
+
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock sousMenu %}
+
+
+
+{% block liste %}
+    <section class="team-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+
+                    {% for m in ASS %}
+
+
+                        <div class="team-person">
+                            <div class="about-person">
+                                <p class="grand-hotel">Association</p>
+                                <h3>{{ m.nom }}</h3>
+                                <div class="person-divider"></div>
+                                <p>
+                                    {{ m.description }}
+                                </p>
+                            </div>
+                            <div class="person-social">
+                                <p>
+                                    {{ m.numTel }}
+                                </p>
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon color-bg-icon rounded-icon soc-facebook"></a>
+                                    <a href="#" class="social-icon color-bg-icon rounded-icon soc-twitter"></a>
+                                    <a href="#" class="social-icon color-bg-icon rounded-icon soc-skype"></a>
+
+                                    <br><br>
+
+                                    <label><a href="{{ path("Modifier_Association",{'id':m.id_aasociation } ) }}">Modifier</a></label>
+                                    <label><a href="{{ path("Supprimer_Association",{'id':m.id_aasociation } ) }}">Supprimer</a></label>
+
+                                </div>
+                                {#    </div>
+
+                                    <div >#}
+
+                            </div>
+                        </div>
+
+
+
+                    {% endfor %}
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {# display navigation #}
+    <div class="pagerArea text-center"  >
+        <strong> {{ knp_pagination_render(ASS) }} </strong>
+    </div>
+{% endblock liste %}
+

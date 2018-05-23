@@ -1,0 +1,79 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Mes réservations{% endblock title %}
+
+{% block topline %}{% endblock topline %}
+
+{% block profile %}{% endblock profile %}
+
+{% block section %}
+    <h3>Transport</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('Ajouter_OffreTransport') }}">Ajouter une Offre</a>
+        </li>
+        <li>
+            <a href="{{ path('Rechercher_OffreTransport') }}">Voir les Offres</a>
+        </li>
+        <li>
+            <a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+<h3 align="center">Mes réservations</h3>
+
+<section class="small-post-section text-center">
+{% for reservation in reservation %}
+    {% if app.user.id == reservation.user.id %}
+
+        <div class="single-item blog-post-small">
+            <img src="{{ asset('image_user/' ~ reservation.offreTransport.user.image) }}" alt="">
+            <div class="single-item-body">
+                <h4>
+                    <span class="default-text">Date debut: {{ reservation.offreTransport.dateDebut | date('d-m-Y') }}</span><br><br>
+                    <span>Date de fin: {{ reservation.offreTransport.dateFin | date('d-m-Y') }}</span>
+                </h4><br>
+                    Destination: <span class="pink">{{ reservation.offreTransport.destination }}</span><br><br>
+                <p>
+                    Description: <span class="pink"> {{ reservation.offreTransport.description }}</span>
+                </p>
+                <p>
+                    Nombre de place total: <span class="pink"> {{ reservation.offreTransport.nombrePlace }}</span>
+                </p>
+                <p>
+                    Nombre de place restant: <span class="pink"> {{ reservation.offreTransport.placeRestant }}</span>
+                </p>
+                <p>
+                    Prix d'une place: <span class="pink"> {{ reservation.offreTransport.prix }}</span>
+                </p>
+                <div class="single-item top-post-item">
+                    <div class="single-item-footer">
+                        <span>
+                            <a href="{{ path('Afficher_Detail_Offre', {'id':reservation.offreTransport.id}) }}">
+                                <i class="glyphicon glyphicon-info-sign"></i><br><span>Detail</span>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="{{ path('Annuler_Reservation_OffreTransport', {'id':reservation.id}) }}">
+                                <i class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></i><br><span>Annuler réservation</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+{% endfor %}
+</section>
+
+
+
+{% endblock main %}
+
+
+{% block footer %}
+{% endblock footer %}

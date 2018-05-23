@@ -1,0 +1,21 @@
+{{ form_start (form) }}
+<table>
+    <tr>
+        <td> Nom </td>
+        <td> {{ form_widget (form.objetRec) }} </td>
+    </tr>
+    <tr>
+        <td> Prenom </td>
+        <td> {{ form_widget (form.TypeRec) }} </td>
+    </tr>
+    <tr>
+        <td> Téléphone </td>
+        <td> {{ form_widget (form.etatRec) }} </td>
+    </tr>
+    <tr>
+        <td> Email </td>
+        <td> {{ form_widget (form.contenuRec) }} </td>
+    </tr>
+
+</table>
+{{ form_end (form) }}

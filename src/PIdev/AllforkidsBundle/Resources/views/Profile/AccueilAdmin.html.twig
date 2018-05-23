@@ -1,0 +1,31 @@
+{% extends '::LayoutBack.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block setting %}
+<ul>
+    <li>
+        <div class="avatar">
+            <img src="{{ asset('BackOffice/images/avatar/01.png') }}" alt="">
+        </div>
+        <div class="profile">
+            <a href="#" title="">View Profile</a>
+        </div>
+        <div class="clearfix"></div>
+    </li>
+    <li>
+        <a href="#" class="waves-effect" title="">My Account</a>
+    </li>
+    <li>
+        <a href="{{ path('fos_user_change_password') }}"><p>Changer Password</p></a>
+    </li>
+    <li>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </li>
+</ul>
+{% endblock setting %}

@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}affiche Garderie{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+
+<h1>liste des Garderies</h1>
+
+
+    {% for Garderie in Garderie %}
+        <fieldset style="border: #ff4165 ">
+            <legend> Garderie num: </legend>
+            <p>Nom Garderie: {{ Garderie.nom }}</p>
+            <div> Emplacement :{{ Garderie.emplacement }}</div>
+            <div> Capacité: {{ Garderie.capacite}}</div>
+            <div> Num Téléphone :{{ Garderie.numTel}}</div>
+
+            <div> image: <img src="{{ asset('images/') }}{{ Garderie.nomImage }}" style="width: 50px;height: 50px"></div>
+            <div><a href={{path ('UpdateGarderie',{'id':Garderie.id_garderie})  }}>modifier</a> </div>
+            <div> <a href={{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}>Ajouter un enfant</a> </div>
+
+        </fieldset>
+
+
+    {% endfor %}
+
+
+
+{%  endblock main %}
+{% block footer %}
+{% endblock footer %}

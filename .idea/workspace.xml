@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e348ebf8-bc05-4956-a3c5-119d64681262" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/deleted.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/inbox.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/search.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/sent.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/LayoutBack2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/New.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/association.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/associationChercher.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/associationLister.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/consulter.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/teamConsulter.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/template.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/AimeController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/AssociationController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/CalendarController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ClubController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/CommentController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/CompteReduController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EnfantController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EvenementController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/GarderieController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/MailController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/NotificationController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/OffreTransportController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/PostController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReclamationController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReservationController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReservationTransportController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/signaleController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Aime.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Article.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Association.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/CalendarEvent.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Club.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Commentaire.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/CompteRPS.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/CompteRSC.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/CompteRTP.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/CompteRedu.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Enfant.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Evenement.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/ExperiencePersonnel.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Galery.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Garderie.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/ListeAtt.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Message.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/MessageMetadata.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Notification.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/OffreTransport.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Post.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Ratingg.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Reclamation.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Reservation.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/ReservationTransport.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Signaler.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Thread.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/ThreadMetadata.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/mail.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/EventListener/CalendarEventListener.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/EventListener/ImageUploadListenere.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/EventListener/ImageUploadListenerp.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/AssociationType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/ClubType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/CommentaireType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/CompteRPSType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/CompteRSCType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/CompteRTPType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/CompteReduType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/EnfantType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/EvenementType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/GarderieType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/ListeAttType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/OffreTransportType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/PostType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/RatinggType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/RechercheEvenementAjaxForm.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/RechercheOffreAjaxType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/RechercheOffreTransportType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/ReclamationType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/mailType.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Listener/LoadDataListener.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/AimeRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ArticleRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/AssociationRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ClubRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/CommentaireRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/CompteRPSRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/CompteRSCRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/CompteRTPRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/CompteReduRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/EnfantRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/EvenementRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ExperiencePersonnelRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/GaleryRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/GarderieRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ListeAttRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/NotificationRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/OffreTransportRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/PostRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/RatinggRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ReclamationRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ReservationRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ReservationTransportRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/SignalRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/ConsulterAss.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/Lister.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/Nbr.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/ajout.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/ajout2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/ajout3.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/lister2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/lister3.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/lister4.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/modifier.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/modifier2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/pageParent.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/pageResponsable.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/recherche2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/recherche3.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/rechercheAjax.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/rechercher.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/test.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/ConsulterClub.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/Lister.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/Lister2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/ajout.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/ajout1.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/ajout2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/modifier.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/pageResponsableClub.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/recherche2.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/rechercher.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/AfficheCRN.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/AfficheRPS.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/AfficheRSC.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/AfficheRTP.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/ajouterCompteRNourrisson.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/ajouterCompteRPresScolaire.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/ajouterCompteRScolaire.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/CompteRedu/ajouterCompteRToutPetit.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/AfficheEnfantsdeGardI.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/AjoutListeAttente.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/afficheListeAtt.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/affiche_enfant.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/affiche_enfant_admin.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/ajouterEnfant.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/rechercheEnfant.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/rechercheEnfantCat.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Enfant/updateEnfant.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/ajout.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/calender.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/detail.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/list.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/t.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/update.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/EvenementBack/Recherche.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/EvenementBack/list.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/Affiche.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/AfficheAdmin.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/ListeGard.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/ListeGarderie.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/ListeVoter.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/PresentationGard.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/ajouterGarderie.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/contactGard.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/galerieAjout.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/galerieaffiche.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/pageAccueil.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/rechercheEmplacement.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/updateGarderie.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/voter.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Mail/Mail.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Mail/email.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Notification/ListeNotification.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/AddOffreTransport.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/AdminOffreTransport.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/AdminRechercheOffreTransport.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/ListeOffreTransport.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/SearchAjax.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/SearchOffreTransport.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/ShowOffreDetail.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/UpdateOffreTransport.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/AdminHome.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/Lister.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/ListerReclamation.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/ajout.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/archiver.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/email.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/index1.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/rec.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/test.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reservation/membresEvenement.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/ReservationBack/membresEvenementBack.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/ReservationTransport/ListeReservation.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/commentaire/add.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/commentaire/affichagecomment.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/commentaire/t.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/commentaire/update.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/post/add.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/post/affichage.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/post/affichageid.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/post/affichagepost.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/post/recherche.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/post/update.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/postBack/affichagepostBack.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/DefaultController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Offre_TransportController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Reservation_Controller.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/UserController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/PIdevApiBundle.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/routing.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/services.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/views/Default/index.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/PIdevApiBundle/Controller/DefaultControllerTest.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/css/custom.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/font-awesome/fonts/fontawesome-webfontba72.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/font-awesome/fonts/fontawesome-webfontba72.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/font-awesome/fonts/fontawesome-webfontba72.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/font-awesome/fonts/fontawesome-webfontba72.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/font-awesome/fonts/fontawesome-webfontd41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/fonts/glyphicons-halflings-regulard41d.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/img/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/img/2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/img/3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/img/4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/img/find_user.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/custom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/dataTables/dataTables.bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/dataTables/dataTables.bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/dataTables/jquery.dataTables.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/jquery-1.10.2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/jquery.metisMenu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/morris/morris-0.4.3.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/morris/morris.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/BackOffice/js/morris/raphael-2.1.0.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/FrontOffice/css/main2.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/FrontOffice/images/enfant-handicap3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/Lauris/Align.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/Lauris/Align.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/Lauris/iphone.mp3" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/animations.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/fonts.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/main.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/rt-icons-2.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/rt-icons-2.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/rt-icons-2.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/rt-icons-2.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/socicon.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/socicon.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/socicon.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/socicon.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/fonts/socicon.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/gmaps.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/gmaps.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/gmaps.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/jquery.gmaps.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.controls.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.core.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.events.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.geofences.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.geometry.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.layers.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.map_types.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.markers.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.native_extensions.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.overlays.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.routes.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.static.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.streetview.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.styles.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/gmaps/lib/gmaps.utils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/0-8da8bf06c6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/1331649479_logo_DSC02407.JPG" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/16586944_756010244566634_4429370912585266832_o.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/176556-200.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/21552180_1491590354268650_982436677_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/21586126_1491590617601957_320874255_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/22528401_10203864552492030_3287844053423542195_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/26856096_1609215369172814_75483193_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/26857064_1609215412506143_1309819912_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/27783378_1631338833627134_1342287418_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/27783814_1631338773627140_16214272_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/27783868_961595720674751_916048432_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/27849169_10204268655914363_1137682710_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/27938880_1821993024478521_1242152986_n.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/47824.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/55733455-set-of-cute-baby-emoticons-adorable-baby-emotions-flat-modern-style-cartoon-baby-boy-faces-vector-il.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/676562-social-telecoms-enfance-famille-entreprise.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/800x600_111869-74gbser100002_garderie.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/Baby-Baby-Bottle-icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/CRECHES.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/IMG_2275.JPG" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/IMG_5247.JPG" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/TextEdit.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/animal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/aside-banner.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/author-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/author-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/author-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/baby-1295614_960_720.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/banner-slide.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blod-top-slide-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-image-post.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-01.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-02.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-03.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-04.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-05.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-06.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-07.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog-post-author.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/blog_video_post.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/button-next.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/button-prev.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/chat-post-img.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/club-310516-6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/comment-photo-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/comment-photo-2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/comment-photo-3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/comment-photo-4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/comment-photo-5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/courses-image.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/creche.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/creche_bruguieres.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/creche_jadins_denfants.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/delete_removewaste_departure_action_delet_10837.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/didou2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/file-20171001-8620-1qnwq8r.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/form-map.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-01.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-02.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-03.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-04.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-05.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-06.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-07.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-08.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-09.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/gallery-image-12.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/image-0.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/image-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/image-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/image-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/images (1).jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/jardin-denfant-rentrÃ©e-scolaire.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/kids-playroom-rug.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/kindergarten-classroom-class-room-kids-33901681.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/logo-footer.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/main-slide-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/main-slide-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/main-slide-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/maxresdefault.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/measurement.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/medimmo170810243720747454_1144272355705245_700281734_o.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/parallax/map.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/person-social-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/plan-01.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/plan-02.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/plan-03.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/post-carusel-01.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/quote-post-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/recent-post-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/recent-post-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/recent-post-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/skill-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/skill-2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/skill-3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/sleeping-baby-filled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/small-image-post-01.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/small-image-post-02.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/status-post-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/status-post.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-member-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-member-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-member-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-person-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-person-2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-person-3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-person-4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-slide-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-slide-2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/team-slide-3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/testimonials-bg.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/time-bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/top-post-img-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/top-post-img-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/top-post-img-3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/top-post-img-4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/tÃ©lÃ©chargÃ©.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/téléchargé.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/youtube-image.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/loading.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/preloader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_rounded/btnNext.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_rounded/btnPrevious.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_rounded/contentPattern.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_rounded/default_thumbnail.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_rounded/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_rounded/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_square/btnNext.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_square/btnPrevious.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_square/contentPattern.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_square/default_thumbnail.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_square/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/dark_square/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/default_thumb.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/sprite_next.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/sprite_prev.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/sprite_x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/default/sprite_y.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/btnNext.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/btnPrevious.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/contentPatternBottom.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/contentPatternLeft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/contentPatternRight.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/contentPatternTop.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/default_thumbnail.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/facebook/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_rounded/btnNext.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_rounded/btnPrevious.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_rounded/default_thumbnail.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_rounded/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_rounded/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_square/btnNext.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_square/btnPrevious.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_square/default_thumbnail.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_square/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/img/prettyPhoto/light_square/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/compressed.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery-2.2.4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery-ui.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/main.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/plugins.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/vendor/jquery-1.12.3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/vendor/jquery-2.2.3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/vendor/modernizr-2.8.3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/brochures/9b3c06c9467a018fb2f655890e33588d.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/brochures/bb067748962d4602a8799410291f7f48.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/brochures/d82d9980ac374beb4bbc875471684acc.jpeg" />
+      <change beforePath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/GroupeTransportController.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/groupeTransportType.php" afterPath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/GaleryType.php" />
+      <change beforePath="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/GroupeTransport/GroupeT.html.twig" afterPath="" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" executionDataType="PHAR" phpInterpreterId="d1011a8a-41ae-42e1-ae93-1f476bf03bbe" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <pharPath>$PROJECT_DIR$/composer.phar</pharPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2066">
+              <caret line="147" column="18" lean-forward="false" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReclamationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReclamationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="90" column="32" lean-forward="false" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+              <folding>
+                <element signature="e#2730#2765#1#PHP" expanded="true" />
+                <element signature="e#2809#2844#1#PHP" expanded="true" />
+                <element signature="e#2888#2951#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListerReclamation.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/ListerReclamation.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-698">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#12#34#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="twig file" />
+        <option value="Twig" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>textarea</find>
+      <find>block lo</find>
+      <find>Déconnexion</find>
+      <find>display: block;</find>
+      <find>Connecté</find>
+      <find>Regist</find>
+      <find>blog</find>
+      <find>Register</find>
+      <find>src</find>
+      <find>dropdown</find>
+      <find>calendar</find>
+      <find>vertical</find>
+      <find>block</find>
+      <find>dashboard</find>
+      <find>main</find>
+      <find>title</find>
+      <find>header_white</find>
+      <find>page_header_white</find>
+      <find>.header_white</find>
+      <find>offre</find>
+      <find>menu</find>
+      <find>header</find>
+      <find>sugg</find>
+    </findStrings>
+  </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:schema:update" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="c require " />
+      <command text="php -r &quot;eval('?&gt;'.file_get_contents('https://getcomposer.org/installer'));&quot;" />
+      <command text="php composer.phar update nomaya/social-bundle" />
+      <command text="php bin/console assets:install web" />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:create" />
+      <command text="s cache:clear" />
+      <command text="c clear-cache" />
+      <command text="c require " />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:create" />
+      <command text="c require " />
+      <command text="s assets:install " />
+      <command text="c require " />
+      <command text="s doctrine:schema:update --force " />
+      <command text="c require " />
+      <command text="s doctrine:schema:update --force " />
+      <command text="c clear-cache" />
+      <command text="s cache:clear" />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:create" />
+      <command text="s generate:bundle" />
+    </commandsHistory>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/commentaire/affichagecomment.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/LayoutBack.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/EvenementBack/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/EvenementBack/Recherche.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/ListeGard.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/GarderieRepository.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/AssociationRepository.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ClubRepository.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/EvenementRepository.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Association/pageResponsable.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/deleted.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/sent.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Garderie/rechercheEmplacement.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/OffreTransportRepository.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/SearchOffreTransport.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/OffreTransportController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/SearchAjax.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/AdminRechercheOffreTransport.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/AdminOffreTransport.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReservationTransportController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Notification/ListeNotification.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/OffreTransport/ShowOffreDetail.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Club/Lister2.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Profile/Home.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/association.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/associationChercher.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/associationLister.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/consulter.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/New.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/teamConsulter.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/EventListener/ImageUploadListener.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Offre_TransportController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Reservation_Controller.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Club.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Association.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EnfantController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/GarderieController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Garderie.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EvenementController.php" />
+        <option value="$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/config/routing.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
+      <path value="$PROJECT_DIR$/vendor/ancarebeca/full-calendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/blackknight467/star-rating-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="858" />
+    <option name="width" value="1070" />
+    <option name="height" value="1088" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PIdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PIdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AllforkidsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PIdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AllforkidsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PIdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AllforkidsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PIdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AllforkidsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AllForKids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AllForKids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PIdev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AllforkidsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Reclamation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Form" />
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Resources\views" />
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Repository" />
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Entity" />
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Resources\views\Notification" />
+      <recent name="C:\wamp64\www\PHP5\AllForKids\src\PIdev\AllforkidsBundle" />
+      <recent name="C:\wamp64\www\AllForKids\src\PIdev\AllforkidsBundle\Resources\views\Profile" />
+      <recent name="C:\wamp64\www\AllForKids\web\Lauris" />
+      <recent name="C:\wamp64\www\AllForKids\app\Resources\FOSUserBundle\views" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e348ebf8-bc05-4956-a3c5-119d64681262" name="Default" comment="" />
+      <created>1517859245918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1517859245918</updated>
+      <workItem from="1517859247156" duration="1522000" />
+      <workItem from="1517869841065" duration="5847000" />
+      <workItem from="1517910138441" duration="19398000" />
+      <workItem from="1517951374673" duration="17713000" />
+      <workItem from="1518010267299" duration="25802000" />
+      <workItem from="1518078442967" duration="5632000" />
+      <workItem from="1518099742893" duration="4786000" />
+      <workItem from="1518106455530" duration="1531000" />
+      <workItem from="1518169273678" duration="64000" />
+      <workItem from="1518263738796" duration="45627000" />
+      <workItem from="1518440857397" duration="1722000" />
+      <workItem from="1518458728129" duration="5294000" />
+      <workItem from="1518464407503" duration="460000" />
+      <workItem from="1518472092521" duration="14245000" />
+      <workItem from="1518515619625" duration="21216000" />
+      <workItem from="1518596099875" duration="34846000" />
+      <workItem from="1518683184334" duration="8022000" />
+      <workItem from="1518858389090" duration="25920000" />
+      <workItem from="1519033050618" duration="9569000" />
+      <workItem from="1519123121530" duration="34391000" />
+      <workItem from="1519212840050" duration="27681000" />
+      <workItem from="1519287782649" duration="4102000" />
+      <workItem from="1519323793967" duration="1955000" />
+      <workItem from="1519326138869" duration="5674000" />
+      <workItem from="1519388214690" duration="25674000" />
+      <workItem from="1519553508193" duration="25578000" />
+      <workItem from="1519634614864" duration="24051000" />
+      <workItem from="1519671646764" duration="2579000" />
+      <workItem from="1519725185960" duration="15506000" />
+      <workItem from="1519775592961" duration="7748000" />
+      <workItem from="1519819342198" duration="31673000" />
+      <workItem from="1519857732285" duration="16343000" />
+      <workItem from="1519891622334" duration="1895000" />
+      <workItem from="1520498357876" duration="14000" />
+      <workItem from="1520517058587" duration="86000" />
+      <workItem from="1520546206044" duration="318000" />
+      <workItem from="1520943612200" duration="12000" />
+      <workItem from="1520943902465" duration="6000" />
+      <workItem from="1524126276178" duration="622000" />
+      <workItem from="1524178990823" duration="3881000" />
+      <workItem from="1525081966428" duration="2441000" />
+      <workItem from="1525186457295" duration="1104000" />
+      <workItem from="1525272254510" duration="1798000" />
+      <workItem from="1525278520229" duration="2721000" />
+      <workItem from="1525308833815" duration="1125000" />
+      <workItem from="1527077054612" duration="1568000" />
+      <workItem from="1527089448741" duration="1990000" />
+      <workItem from="1527092795622" duration="118000" />
+      <workItem from="1527095093354" duration="1583000" />
+    </task>
+    <task id="LOCAL-00001" summary="Ok">
+      <created>1518515817332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518515817332</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="493453000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17864583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65445024" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ok" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11325">
+          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/GarderieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6675">
+          <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="31" selection-end-line="286" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Enfant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Garderie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5925">
+          <caret line="238" column="5" lean-forward="false" selection-start-line="238" selection-start-column="5" selection-end-line="238" selection-end-column="5" />
+          <folding>
+            <element signature="e#49#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11325">
+          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/GarderieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6675">
+          <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="31" selection-end-line="286" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Enfant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Garderie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5925">
+          <caret line="238" column="5" lean-forward="false" selection-start-line="238" selection-start-column="5" selection-end-line="238" selection-end-column="5" />
+          <folding>
+            <element signature="e#49#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Reservation_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Association.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Club.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7950">
+          <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4225">
+          <caret line="169" column="71" lean-forward="false" selection-start-line="169" selection-start-column="71" selection-end-line="169" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EvenementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5525">
+          <caret line="231" column="4" lean-forward="false" selection-start-line="231" selection-start-column="4" selection-end-line="231" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/EvenementRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Offre_TransportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReservationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Reservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Evenement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1650">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/EvenementRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/OffreTransport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Offre_TransportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/AssociationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4575">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Club.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Association.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Controller/Reservation_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="26" column="62" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Evenement/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="55" column="63" lean-forward="false" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/ApiBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EnfantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="217" column="0" lean-forward="true" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/GarderieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6675">
+          <caret line="286" column="31" lean-forward="false" selection-start-line="286" selection-start-column="31" selection-end-line="286" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Enfant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/EvenementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="129" column="11" lean-forward="false" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/Garderie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="238" column="5" lean-forward="false" selection-start-line="238" selection-start-column="5" selection-end-line="238" selection-end-column="5" />
+          <folding>
+            <element signature="e#49#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/MailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#135#192#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Entity/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Repository/ReclamationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="344" column="4" lean-forward="false" selection-start-line="344" selection-start-column="4" selection-end-line="344" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/rec.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Mail/Mail.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Form/mailType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2066">
+          <caret line="147" column="18" lean-forward="false" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Controller/ReclamationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="90" column="32" lean-forward="false" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+          <folding>
+            <element signature="e#2730#2765#1#PHP" expanded="true" />
+            <element signature="e#2809#2844#1#PHP" expanded="true" />
+            <element signature="e#2888#2951#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PIdev/AllforkidsBundle/Resources/views/Reclamation/ListerReclamation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-698">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#34#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

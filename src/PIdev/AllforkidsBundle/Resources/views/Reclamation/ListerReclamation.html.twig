@@ -1,0 +1,89 @@
+{% extends '::LayoutBack.html.twig' %}
+
+
+{% block row1 %}
+{% endblock row1 %}
+
+{% block row2 %}
+{% endblock row2 %}
+
+{% block row3 %}
+{% endblock row3 %}
+
+
+     {% block row4 %}
+
+     <div class="col-md-3 col-sm-12 col-xs-12">
+         <div class="panel panel-primary text-center no-boder bg-color-green">
+             <div class="panel-body">
+                 <i class="fa fa-comments-o fa-5x"></i>
+                 <h4>{% for m in m %}
+                         {{   m.nb}}
+                     {% endfor %} </h4>
+                 <h4>
+                     Reclamations
+                 </h4>
+             </div>
+             <div class="panel-footer back-footer-green">
+                 <i class="fa fa-rocket fa-5x"></i>
+                 <h4>{% for m in a %}
+                         {{   m.nb}}
+                     {% endfor %} </h4>
+                 <h4>
+                     Reclamations Archivées
+                 </h4>
+             </div>
+         </div>
+     </div>
+
+     <div class="col-md-9 col-sm-12 col-xs-12">
+
+         <div class="panel panel-default">
+             <div class="panel-heading">
+                liste des reclamations
+             </div>
+             <div class="panel-body">
+                 <div class="table-responsive">
+                     <table class="table table-striped table-bordered table-hover">
+                         <thead>
+                         <tr>
+                             <th>#</th>
+                             <th>Objet reclamation</th>
+                             <th> membre conserné par la reclamation </th>
+                             <th> etatRec </th>
+                             <th>contenuRec</th>
+                             <th>Emetteur de reclamation </th>
+                             <th>Nom membre</th>
+                             <th>Archiver reclamation</th>
+
+                         </tr>
+                         </thead>
+                         <tbody>
+                         {% for m in R %}
+                             <tr>
+                                 <td>  {{ m.idRec}} </td>
+                                 <td>  {{ m.objetRec}} </td>
+                                 <td>  {{ m.typeRec}} </td>
+                                 <td>  {{ m.etatRec}} </td>
+                                 <td>  {{ m.contenuRec}} </td>
+                                 <td>  {{ m. user}} </td>
+                                 <td>  {{ m. membreRec}} </td>
+
+                                 <td><a href="{{path("Archiver_Reclamation",{'id':m.idRec,'x':m.mail } ) }}">Archiver</a></td>
+
+
+                             </tr>
+                         {% endfor %}
+
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+
+         {% endblock row4 %}
+
+{% block row5 %}
+{% endblock row5 %}

@@ -1,0 +1,555 @@
+p_idev_allforkids_homepage:
+    path:     /
+    defaults: { _controller: PIdevAllforkidsBundle:Default:index }
+
+Home_Page:
+    path:     /home
+    defaults: { _controller: PIdevAllforkidsBundle:Default:home }
+
+Accueil_Page:
+    path:     /login
+    defaults: { _controller: PIdevAllforkidsBundle:Default:home }
+
+Profile_User:
+    path:     /profile
+    defaults: { _controller: PIdevAllforkidsBundle:Default:profile }
+
+Admin_Home_Page:
+    path:     /admin/homeA
+    defaults: { _controller: PIdevAllforkidsBundle:Default:homeAdmin }
+
+Page_Medecin:
+    path:     /medecin/
+    defaults: { _controller: PIdevAllforkidsBundle:Default:medecin }
+
+Page_Responsable:
+    path:     /responsable
+    defaults: { _controller: PIdevAllforkidsBundle:Default:responsable }
+
+Actualite:
+    path:     /actualite
+    defaults: { _controller: PIdevAllforkidsBundle:Default:actualite }
+
+
+
+
+Ajouter_OffreTransport:
+    path:     /addoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:addoffre }
+
+Afficher_OffreTransport:
+    path:     /showoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:showoffre }
+
+Afficher_Detail_Offre:
+    path:     /showdetailoffre/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:showdetailoffre }
+
+Supprimer_OffreTransport:
+    path:     /deleteoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:deleteoffre }
+
+Mise_a_Jour_OffreTransport:
+    path:     /updateoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:updateoffre }
+
+Rechercher_OffreTransport:
+    path:     /searchoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:searchoffre }
+
+Rechercher_Ajax_OffreTransport:
+    path:     /searchoffreTransportAjax
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:searchAjax }
+
+Admin_Liste_OffreTransport:
+    path:     /admin/adminoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:adminshowoffre }
+
+Admin_Supprimer_OffreTransport:
+    path:     /admin/admindeleteoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:admindeleteoffre }
+
+Admin_Rechercher_OffreTransport:
+    path:     /admin/adminsearchoffreTransport
+    defaults: { _controller: PIdevAllforkidsBundle:OffreTransport:adminsearchoffre }
+
+Reserver_OffreTransport:
+    path:     /reserverTransport
+    defaults: { _controller: PIdevAllforkidsBundle:ReservationTransport:reserveroffre }
+
+Annuler_Reservation_OffreTransport:
+    path:     /annulerreservationTransport
+    defaults: { _controller: PIdevAllforkidsBundle:ReservationTransport:dereserveroffre }
+
+Liste_Reservation_OffreTransport:
+    path:     /listereservationTransport
+    defaults: { _controller: PIdevAllforkidsBundle:ReservationTransport:listereservation }
+
+Liste_Notification:
+    path:     /notification
+    defaults: { _controller: PIdevAllforkidsBundle:Notification:listeNotification }
+
+
+
+
+
+
+
+
+creer_evenement:
+    path: /creerEvenement
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:ajoutevenement}
+
+list_evenement:
+    path: /listEvenement
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:affichevenement}
+list_evenement_back:
+    path: /listEvenementBack
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:afficheBack}
+supprimer_evenement:
+    path: /supprimerEvenement
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:supprimerevenement}
+supprimer_evenement_back:
+    path: /supprimerEvenementBack
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:supprimerevenementBack}
+
+recherche_evenement_back:
+    path: /rechercheEvenementBack
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:rechercheevenementBack}
+
+
+modifier_evenement:
+    path: /modifierEvenement
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:modifierevenement}
+
+detail_evenement:
+    path: /detailEvenement/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:detailvenement}
+
+
+
+reserver_evenement:
+    path: /reserver
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:reserverevenement}
+
+membre_evenement:
+    path: /membresEvenement/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:listreservation}
+
+
+membre_evenement_back:
+    path: /membresEvenementBack/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:listreservationBack}
+dereservMembre :
+    path: /annulerReserv
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:annulerReserv}
+
+dereserver_evenement:
+    path: /dereserver
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:dereserver}
+list_evenement_json:
+    path: /loadevent
+    defaults: { _controller: PIdevAllforkidsBundle:Calendar:DataEvent}
+    options:
+            expose: true
+calendrier_evenement:
+    path: /cal
+    defaults: { _controller: PIdevAllforkidsBundle:Calendar:load}
+    options:
+        expose: true
+
+ancarebeca_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yml"
+
+creer_evenement_mobile:
+    path: /creerEvenementMobile
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:ajoutevenementMobile}
+
+afficher_evenement_mobile:
+    path: /listEvenementMobile
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:affichevenementMobile}
+    options:
+        expose: true
+
+supprimer_evenement_mobile:
+    path: /supprimerEvenementMobile
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:supprimerevenementMobile}
+
+estReserver_evenement_mobile:
+    path: /estReserver
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:estReserverMobile}
+
+Reserver_evenement_mobile:
+    path: /ReserverEvenementM
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:reserverevenementMobile}
+
+dereserver_evenement_mobile:
+    path: /deeserverEvenementM
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:dereserverMobile}
+
+membres_evenement_mobile:
+    path: /membresEvenementM
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:membreEvenementMobile}
+
+modifier_evenement_mobile:
+    path: /modifierEvenementMobile
+    defaults: { _controller: PIdevAllforkidsBundle:Evenement:modifierenementMobile}
+
+nbr_reservation_mobile:
+    path: /nbrReservationM
+    defaults: { _controller: PIdevAllforkidsBundle:Reservation:compteNbrReservationMobile}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Test:
+    path:     /testTeam
+    defaults: { _controller: PIdevAllforkidsBundle:Association:test }
+
+
+Page_Responsable_Association:
+    path:     /responsable_association
+    defaults: { _controller: PIdevAllforkidsBundle:Association:homeRA }
+
+
+Page_Parent_Association:
+    path:     /parent_association
+    defaults: { _controller: PIdevAllforkidsBundle:Association:homeParent }
+
+
+Page_Responsable_Club:
+    path:     /responsable_club
+    defaults: { _controller: PIdevAllforkidsBundle:Club:homeRC }
+
+
+
+
+Lister_Associations:
+    path:     /lister_associations
+    defaults: { _controller: PIdevAllforkidsBundle:Association:lister }
+
+Ajouter_Association:
+    path:     /ajouter_association
+    defaults: { _controller: PIdevAllforkidsBundle:Association:ajouter }
+
+Modifier_Association:
+    path:     /modifier_association/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Association:modifier }
+
+Supprimer_Association:
+    path:     /supprimer_association/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Association:supprimer }
+
+
+Rechercher_Association:
+    path:     /rechercher_association
+    defaults: { _controller: PIdevAllforkidsBundle:Association:rechercher2 }
+
+Consulter_Association:
+    path:     /consulter_association/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Association:consulter }
+
+nombre:
+    path:    /Nbr
+    defaults: { _controller: PIdevAllforkidsBundle:Association:NombreA }
+
+
+
+Lister_Club:
+    path:     /lister_club
+    defaults: { _controller: PIdevAllforkidsBundle:Club:lister }
+
+
+Consulter_Club:
+    path:     /consulter_club/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Club:consulter }
+
+
+Ajouter_Club:
+    path:     /ajouter_club
+    defaults: { _controller: PIdevAllforkidsBundle:Club:ajouter }
+
+Modifier_Club:
+    path:     /modifier_club/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Club:modifier }
+
+Supprimer_Club:
+    path:     /supprimer_club/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Club:supprimer }
+
+Rechercher_Club:
+    path:     /rechercher_club
+    defaults: { _controller: PIdevAllforkidsBundle:Club:rechercher }
+
+
+
+Lister_Reclamations:
+    path:    /lister_reclamation
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:ListerReclamation }
+
+Envoyer_Reclamations:
+    path:    /Envoyer_reclamation
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:EnvoyerRec }
+
+Archiver_Reclamation:
+    path:     /archiver_reclamation/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:ArchiverReclamation }
+
+
+
+my_app_mail_accuse:
+    path:  /success
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:success }
+home:
+    path:     /t
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:test }
+
+Admin_Home:
+    path:     /Admin_Home
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:AdminHome }
+
+Web_Service_club_lister:
+    path:     /Web_S_Lister_Club
+    defaults: { _controller: PIdevAllforkidsBundle:Club:all }
+
+Web_Service_club_ajout:
+    path:     /Web_S_ajout
+    defaults: { _controller: PIdevAllforkidsBundle:Club:new }
+
+Web_Service_club_modif:
+    path:     /Web_S_modif
+    defaults: { _controller: PIdevAllforkidsBundle:Club:modif }
+
+Web_Service_Ass_lister:
+    path:     /Web_S_Lister_Ass
+    defaults: { _controller: PIdevAllforkidsBundle:Association:all }
+
+Web_Service_Ass_modif:
+    path:     /Web_S_modifA
+    defaults: { _controller: PIdevAllforkidsBundle:Association:modif }
+
+Web_Service_Ass_ajout:
+    path:     /Web_S_ajoutA
+    defaults: { _controller: PIdevAllforkidsBundle:Association:new }
+
+Web_Service_Rec_envoi:
+    path:     /Web_S_EnvoiR
+    defaults: { _controller: PIdevAllforkidsBundle:Reclamation:envoyer }
+
+
+
+
+
+
+
+
+
+
+
+
+
+aff:
+    path:     /aff
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:Affiche }
+affiche_admin:
+    path:     /AfficheAdmin
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:AfficheAdmin }
+SupprimerGarderie:
+    path:     /SupprimerGarderie
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:SupprimerGarderie }
+SupprimerGarderieA:
+    path:     /SupprimerGarderie
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:SupprimerGarderieA }
+AjouterGarderie:
+    path:     /AjouterGarderie
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:AjouterGarderie }
+UpdateGarderie:
+    path:     /UpdateGarderie
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:UpdateGarderie }
+RechercheGarderieEmp:
+    path:     /RechercheGarderieEmp
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:RechercheGarderieEmp }
+affiche_enfant:
+    path:     /affiche_enfant
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:affiche_enfant }
+affiche_enfant_admin:
+    path:     /affiche_enfant_admin
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:affiche_enfantAdmin }
+
+UpdateEnfant:
+    path:     /UpdateEnfant
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:UpdateEnfant }
+DelateEnfant:
+    path:     /DelateEnfant
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:SupprimerEnfant }
+DelateEnfantA:
+    path:     /DelateEnfant
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:SupprimerEnfantA }
+AjouterEnfant:
+    path:     /AjouterEnfant
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:AjouterEnfant }
+RechercheEnfant:
+    path:     /RechercheEnfant
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:RechercheEnfant }
+RechercheEnfantCat:
+    path:     /RechercheEnfantCat
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:RechercheEnfantCat }
+affAcueil:
+    path:     /affAcueil
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:affAcueil }
+ListeGarderie:
+    path:     /ListeGarderie
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:ListeGarderie }
+ListeGard:
+    path:     /ListeGard
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:ListeGard }
+PresentationGard:
+    path:     /PresentationGard
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:PresentationGard }
+AjoutCPNourisson:
+    path:     /AjoutCPNourisson
+    defaults: { _controller: PIdevAllforkidsBundle:CompteRedu:AjoutCPNourisson }
+AjoutListeAttente:
+    path:     /AjoutListeAttente
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:AjoutListeAttente }
+AfficheListeAttente:
+    path:     /AfficheListeAttente
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:AfficheListeAttente }
+AfficheEnfantsdeGardI:
+    path:     /AfficheEnfantsdeGardI
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:AfficheEnfantsdeGardI }
+RafrechirListe:
+    path:     /RafrechirListe
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:RafrechirListe }
+SupprimerDeListe:
+    path:     /SupprimerDeListe
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:SupprimerDeListe }
+AfficheCRN:
+    path:     /AfficheCRN
+    defaults: { _controller: PIdevAllforkidsBundle:CompteRedu:AfficheCRN }
+Voter:
+    path:     /Voter
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:Voter}
+ListeVoter:
+    path:     /ListeVoter
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:ListeVoter}
+search:
+    path:     /search
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:search}
+galerieAjout:
+    path:     /galerieAjout
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:galerieAjout}
+galerieaffiche:
+    path:     /galerieaffiche
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:galerieaffiche}
+ContactG:
+    path:     /ContactG
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:ContactG}
+
+aff2:
+    path:     /aff2
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:AfficheMobile}
+aff3:
+    path:     /aff3/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:DetailGardMobile}
+suppGarderieMobile:
+    path:     /suppGarderieMobile/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:SupprimerGarderieMOBIL}
+modifGarderieMobile:
+    path:     /modifGarderieMobile
+    defaults: { _controller: PIdevAllforkidsBundle:Garderie:UpdateGarderieMOBILE}
+AjouterEnfantMobile:
+    path:     /AjouterEnfantMobile
+    defaults: { _controller: PIdevAllforkidsBundle:Enfant:AjouterEnfantMOBILE }
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page_post_ajout:
+    path:     /ajout
+    defaults: { _controller: PIdevAllforkidsBundle:Post:add }
+Page_post_affiche:
+    path:     /accueil
+    defaults: { _controller: PIdevAllforkidsBundle:Post:list }
+Page_post_affiche_back:
+    path:     /accueilBack
+    defaults: { _controller: PIdevAllforkidsBundle:Post:listBack }
+
+Page_post_affiche_id:
+    path:     /accueil/{id}/show
+    defaults: { _controller: PIdevAllforkidsBundle:Post:listid }
+Page_post_update:
+    path:     /update{id}/edit
+    defaults: { _controller: PIdevAllforkidsBundle:Post:update }
+Page_post_delete:
+    path:     /delete{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Post:delete}
+Page_post_delete_back:
+    path:     /deleteBack/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Post:deleteBack}
+
+Page_comment_ajout:
+    path:     /ajoutcomment/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Comment:add}
+Page_comment_affiche:
+    path:     /listcomment{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Comment:listcomment}
+Page_post_recherche:
+    path:     /recherche
+    defaults: { _controller: PIdevAllforkidsBundle:Post:recherche}
+Page_comment_delete:
+    path:     /deletee/{id_commentaire}
+    defaults: { _controller: PIdevAllforkidsBundle:Comment:deletecomment}
+
+Post_Search:
+    path:     /searched
+    defaults: { _controller: PIdevAllforkidsBundle:Post:liveSearch}
+
+
+Post_Signal:
+    path:     /Signal/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:signale:addsignal}
+
+Post_Liked:
+    path:     /likedPost
+    defaults: { _controller: PIdevAllforkidsBundle:Aime:Like}
+Page_comment_redirect:
+    path:     /listcomment{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Comment:ajout}
+Page_stat:
+    path:     /stat
+    defaults: { _controller: PIdevAllforkidsBundle:Aime:aimepost}
+Page_comment_update:
+    path:     /update/{id}
+    defaults: { _controller: PIdevAllforkidsBundle:Comment:updatecomment }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<h3>Rcherche Poste  </h3>
+<form  method="POST">
+    Rechercher  par Titre: <input type="text" name="titre">
+    <input type="submit" name="submit" value="rechercher">
+
+</form>
+
+<table class="table table-responsive">
+    <th>Id</th>
+    <th>Title</th>
+    <th>Contenu</th>
+    <th>date</th>
+    <th>Actions</th>
+
+    {% for postt in Posts %}
+
+
+
+        <tr>
+            <td>{{ postt.idPost }}</td>
+            <td>{{  postt.titre }}</td>
+            <td>{{  postt.contenu }}</td>
+            <td>{{ postt.createdAt|date('d-m-Y H:i:s') }}</td>
+            <td><ul><li><a href="{{ path("Page_post_affiche_id",{'id':postt.idPost})  }}">show </a></li><li><a href=""> edit </a></li></ul></td>
+            <td><a href="{{ path('Page_comment_ajout',{'id':postt.idPost}) }}">Create a new entry </a></td>
+
+        </tr>
+
+    {% endfor %}
+

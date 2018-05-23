@@ -1,0 +1,86 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}Ma Galerie {% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block main %}
+    <section class="page_breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>{{ Garderie.nom }}</h3>
+                    <ol class="breadcrumb">
+                        <li >
+                            <a href="{{path ('ListeGard',{'id':Garderie.id_garderie})  }}">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{path ('PresentationGard',{'id':Garderie.id_garderie})  }}">
+                                Présentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{path ('Voter',{'id':Garderie.id_garderie})  }}">Evaluation de Garderie</a>
+                        </li>
+                        <li>
+
+                            <a href="{{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}" >Inscription</a>
+                        </li>
+                        <li class="active">
+                            <a href="{{path ('galerieaffiche',{'id':Garderie.id_garderie})  }}" >Galerie</a>
+
+                        </li>
+                        <li >
+                            <a href="{{path ('galerieAjout',{'id':Garderie.id_garderie})  }}" >Ajout photo </a>
+
+                        </li>
+
+                        <li >
+                            <a href="{{path ('ListeVoter',{'id':Garderie.id_garderie})  }}" >Avis Parent</a>
+                        </li>
+                        <li >
+                            <a href="{{path ('ContactG',{'id':Garderie.id_garderie})  }}" >Contacter Nous </a>
+                        </li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+{#<div>                            <a href="{{path ('galerieaffiche',{'id':Garderie.id_garderie})  }}" >Ajouter une photo </a>#}
+    {#<div >#}
+        <div class="isotope_container isotope row masonry-layout" data-filters=".isotope_filters">
+            {% for Galery in Galery %}
+                <div class="isotope-item col-lg-3 col-md-4 col-sm-6 education">
+                    <div class="vertical-item gallery-title-item content-absolute">
+                        <div class="item-media">
+                            <img src="{{ asset('images/') }}{{ Galery.nomImage }}" style="width:428.4px;height: 285.6px;top: 74.25px">
+                            <div class="media-links">
+                                <div class="links-wrap">
+                                    <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('images/') }}{{ Garderie.nomImage }}"></a>
+                                    {#<a class="p-link" title="" href="{{path ('ListeGard',{'id':Garderie.id_garderie})  }}"></a>#}
+                                    <h4>{{ Galery.theme }}</h4>
+                                    {#<a href="{{path ('PresentationGard',{'id':Garderie.id_garderie})  }}" class="read-about">Read about us</a>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-title text-center">
+                        <h2>
+
+                            {#<a href={{path ('ListeGard',{'id':Garderie.id_garderie})  }}>{{ Garderie.nom }}</a>#}
+                        </h2>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+{% endblock main %}
+{% block footer %}{% endblock footer %}

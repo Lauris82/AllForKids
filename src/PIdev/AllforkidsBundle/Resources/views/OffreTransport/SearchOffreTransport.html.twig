@@ -1,0 +1,115 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Liste des offres de Transport{% endblock title %}
+{% block topline %}{% endblock topline %}
+{% block profile %}{% endblock profile %}
+
+{% block section %}
+    <h3>Transport</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('Ajouter_OffreTransport') }}">Ajouter une Offre</a>
+        </li>
+        <li>
+            <a href="{{ path('Rechercher_OffreTransport') }}">Voir les Offres</a>
+        </li>
+        <li>
+            <a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a>
+        </li>
+    </ol>
+
+    <div class="widget widget_search">
+            {{ form_start(Form) }}
+                {{ form_widget(Form.Destination) }}
+            {{ form_end(Form) }}
+        <a href="{{ path('Rechercher_OffreTransport') }}" class="rt-icon2-zoom-outline" style="color: pink"></a>
+    </div>
+{% endblock section %}
+
+{% block main %}
+    <h3 align="center">Liste des offres</h3>
+
+    <section class="small-post-section text-center">
+        {% for offre in offre %}
+            <div class="single-item blog-post-small">
+                <div class="single-item-body">
+                    <table align="center" >
+                        <tr>
+                            <td>Date debut: </td>
+                            <td><span class="pink" >{{ offre.dateDebut | date('d-m-Y') }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                        </tr>
+                        <tr>
+                            <td>Date de fin: </td>
+                            <td><span class="pink">{{ offre.dateFin | date('d-m-Y') }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                        </tr>
+                        <tr>
+                            <td>Destination: </td>
+                            <td><span class="pink">{{ offre.destination }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                        </tr>
+                        <tr>
+                            <td>Description: </td>
+                            <td><span class="pink"> {{ offre.description }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                        </tr>
+                        <tr>
+                            <td>Place restant: </td>
+                            <td><span class="pink"> {{ offre.placeRestant }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                        </tr>
+                        <tr>
+                            <td>Prix d'une place: &nbsp;</td>
+                            <td><span class="pink"> {{ offre.prix }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><br></td>
+                        </tr>
+                    </table>
+                    <div class="single-item top-post-item">
+                        <div class="single-item-footer">
+                            <span>
+                                <a href="{{ path('Afficher_Detail_Offre', {'id':offre.id}) }}">
+                                    <i class="glyphicon glyphicon-info-sign"></i><br><span>Detail</span>
+                                </a>
+                            </span>
+                            {% if offre.user.id != app.user.id and offre.placeRestant > 0 %}
+                                <span>
+                                    <a href="{{ path('Reserver_OffreTransport', {'id':offre.id}) }}">
+                                        <i class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></i><br><span>Réserver</span>
+                                    </a>
+                                </span>
+                            {% endif %}
+                            {% if offre.placeRestant == 0 %}
+                                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-muted">Plus de place disponible</span>
+                            {% endif %}
+                            {% if app.user.id != offre.user.id %}
+                                <span>
+                                    <a href="{{ path('fos_message_thread_new') }}">
+                                        <i class="glyphicon glyphicon-send"></i><br><span>Contacter {{ offre.user.username }}</span>
+                                    </a>
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    <br><br>
+{% endblock main %}
+
+
+{% block footer %}{% endblock footer %}

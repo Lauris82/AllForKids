@@ -1,0 +1,32 @@
+p_idev_api_homepage:
+    path:     /
+    defaults: { _controller: PIdevApiBundle:Default:index }
+
+all_users:
+    path:     /users/all
+    defaults: { _controller: PIdevApiBundle:User:allUser }
+
+find_user:
+    path:     /users/findUser/{id}
+    defaults: { _controller: PIdevApiBundle:User:findUser }
+
+add_user:
+    path:     /users/addUser
+    defaults: { _controller: PIdevApiBundle:User:addUser }
+
+all_Offers:
+    path:     /offers/all
+    defaults: { _controller: PIdevApiBundle:Offre_Transport:allOffers }
+
+add_reservation:
+    path:     /reservation/addResv/{user}/{date_reservation}/{offreTransport}
+    defaults: { _controller: PIdevApiBundle:Reservation_:addReservation }
+
+all_Reservaion:
+    path:     /reservation/all
+    defaults: { _controller: PIdevApiBundle:Reservation_:allReservation }
+
+
+
+
+

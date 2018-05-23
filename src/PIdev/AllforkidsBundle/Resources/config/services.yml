@@ -1,0 +1,4 @@
+services:
+#    p_idev_allforkids.example:
+#        class: PIdev\AllforkidsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

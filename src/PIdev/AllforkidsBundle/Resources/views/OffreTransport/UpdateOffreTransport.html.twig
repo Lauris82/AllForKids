@@ -1,0 +1,92 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Modifier Offre{% endblock title %}
+{% block topline %}{% endblock topline %}
+{% block profile %}{% endblock profile %}
+
+{% block section %}
+    <h3>Transport</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('Ajouter_OffreTransport') }}">Ajouter une Offre</a>
+        </li>
+        <li>
+            <a href="{{ path('Rechercher_OffreTransport') }}">Voir les Offres</a>
+        </li>
+        <li>
+            <a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+
+<div class="modal-dialog">
+    <div class="single-item-body icon-body">
+            <div class="modal-body">
+                <p align="center" class="grand-hotel" style="color: grey">Modification de l'offre</p><br>
+                {{ form_start(offre) }}
+                <table align="center">
+                    <tr>
+                        <td>Description: </td>
+                        <td>{{ form_widget(offre.description) }}</td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>Destination: </td>
+                        <td>{{ form_widget(offre.destination) }}</td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>Date Debut: </td>
+                        <td>{{ form_widget(offre.dateDebut) }}</td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>Date Fin: </td>
+                        <td>{{ form_widget(offre.dateFin) }}</td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de Place: </td>
+                        <td>{{ form_widget(offre.nombrePlace) }}</td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>Prix: </td>
+                        <td>{{ form_widget(offre.prix) }}</td>
+                    </tr>
+                    <tr>
+                        <td><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit" class="btn btn-success" href="{{ path('Mise_a_Jour_OffreTransport') }}" style="width: 100px" >
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-inverse" onclick='' data-dismiss="modal" href="{{ path('Afficher_OffreTransport') }}">cancel</button>
+                        </td>
+                    </tr>
+                </table>
+                {{ form_end(offre) }}
+            </div>
+    </div>
+</div>
+
+{% endblock main%}
+
+
+
+{% block footer %}
+{% endblock footer %}

@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block title %}Nouveau Message{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}
+    <h3>Messagerie</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('fos_message_inbox') }}">Boite de reception</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_message_sent') }}">Messages envoyés</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_message_deleted') }}">Messages supprimés</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+
+    {% block fos_message_content %}
+
+        <div class="single-item-body icon-body">
+            <h2>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+
+            <form action="{{ url('fos_message_thread_new') }}" method="post">
+
+                {{ form_start(form) }}
+                    <table align="center" >
+                        <tr>
+                            <td>Destinataire: </td>
+                            <td>{{ form_widget(form.recipient) }}</td>
+                        </tr>
+                        <tr>
+                            <td>Sujet: </td>
+                            <td>{{ form_widget(form.subject) }}</td>
+                        </tr>
+                        <tr>
+                            <td>Corps du Message: </td>
+                            <td>{{ form_widget(form.body) }}</td>
+                        </tr>
+                    </table>
+
+                    <input type="submit" class="btn-type1"/>
+                {{ form_end(form) }}
+            </form>
+        </div>
+    {% endblock %}
+
+{% endblock main %}
+
+{% block footer %}{% endblock footer %}

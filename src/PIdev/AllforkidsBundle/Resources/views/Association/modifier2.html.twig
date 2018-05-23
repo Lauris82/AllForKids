@@ -1,0 +1,137 @@
+{% extends '::association.html.twig' %}
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block topline %}{% endblock topline %}
+
+
+ {% block sousMenu %}
+     <section class="page_breadcrumbs">
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-12 text-center">
+                     <h3>Associations</h3>
+                     <ol class="breadcrumb">
+                        <li>
+                             <a> Modificaton de l'association <span></span> " {{ A.nom }} " </a>
+                         </li>
+
+                         {#
+                         <li>
+                             <a href="{{ path('Lister_Associations') }}"> Lister </a>
+                         </li>
+                         <li  class="active">
+                             <a href="{{ path('Ajouter_Association') }}"> Ajouter </a>
+                         </li>
+                         <li>
+                             <a href="{{ path('Rechercher_Association') }}"> chercher </a>
+                         </li>
+                         #}
+
+                     </ol>
+                 </div>
+             </div>
+         </div>
+     </section>
+ {% endblock sousMenu %}
+
+
+
+
+{% block ass %}
+
+{#
+<div class="row" >
+
+    <div class="col-sm-push-6">
+        <div class="panel-group" id="accordion1">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1" width=20px>
+                            <i class="rt-icon2-bubble highlight"></i>
+                            Ajouter association
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+
+#}
+
+
+
+
+                    {{ form_start(form) }} {# form methode= action =#}
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td>{{ form_widget (form.nom, { 'attr': {'class': "form-control",'placeholder': 'nom'|trans} }) }}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ form_widget(form.description, { 'attr': {'class': "form-control",'placeholder': 'description'|trans} }) }}</td>
+        </tr>
+
+        <tr>
+            <td>Num tel</td>
+            <td>{{ form_widget  (form.numTel, { 'attr': {'class': "form-control",'placeholder': 'numTel'|trans} })  }}</td>
+        </tr>
+
+     {#   <tr>
+            <td>user</td>
+            <td>{{ form_widget  (form.user, { 'attr': {'class': "form-control"} }) }}</td>
+        </tr>#}
+
+
+        <tr>
+            <td>Gouvernerat</td>
+            <td>{{ form_widget(form.gouvernorat, { 'attr': {'class': "form-control"} }) }}</td>
+        </tr>
+
+
+        <tr>
+            <td>Municipalite</td>
+            <td>{{ form_widget (form.municipalite, { 'attr': {'class': "form-control",'placeholder': 'municipalite'|trans} })  }}</td>
+        </tr>
+
+
+
+        <tr>
+            <td>nom rue</td>
+            <td>{{ form_widget (form.nomrue, { 'attr': {'class': "form-control",'placeholder': 'nomrue'|trans} }) }}</td>
+        </tr>
+
+
+
+        <tr>
+            <td>code rue</td>
+            <td>{{ form_widget(form.coderue, { 'attr': {'class': "form-control",'placeholder': 'coderue'|trans} })  }}</td>
+        </tr>
+    </table>
+
+    {{ form_end(form) }}
+
+
+
+
+    {#                </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+#}
+
+{% endblock ass %}

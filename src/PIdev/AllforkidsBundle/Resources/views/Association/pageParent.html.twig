@@ -1,0 +1,220 @@
+{% extends '::New.html.twig' %}
+
+{% block menu %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <!-- main nav start -->
+
+                <nav class="mainmenu_wrapper">
+                    <ul class="mainmenu sf-menu">
+                        <li  class="active">
+                            <a href="{{ path('Page_Responsable_Association') }}">Home</a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">Pages</a>
+                            <ul>
+                                <li>
+                                    <a href="calendar.html">Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="404.html">404</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="terms.html">Terms</a>
+                                </li>
+                                <li>
+                                    <a href="calculator.html">Service Calculator</a>
+                                </li>
+                                <li>
+                                    <a href="courses.html">Courses</a>
+                                </li>
+                                <li>
+                                    <a href="elements.html">Elements</a>
+                                </li>
+                                <li>
+                                    <a href="typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="widgets.html">Widgets</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="active">
+
+                            <a>Association</a>
+                            {#<a href="{{ path('Page_Responsable_Association') }}">Association</a>#}
+                            <ul>
+                               {# <li  >
+                                    <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+                                </li>#}
+                                <li  >
+                                    <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+                                </li>
+                                <li >
+                                    <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="services.html">Services</a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <!-- eof main nav -->
+                <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+                    <span class="toggle_menu"><span></span></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock menu %}
+
+
+
+{% block slides %}
+
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="grand-hotel">Hello Parent!</p>
+                    <h3 class="poppins">
+                        Welcome to <span class="pink">Our Website</span>
+                    </h3>
+                    <p class="about-site">
+
+                        petit mot au parent
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock slides %}
+
+
+{% block ChildLaguageHelp %}
+{% endblock ChildLaguageHelp %}
+
+{% block welcomeParent %}
+
+    <section class="intro_section page_mainslider ds">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="{{ asset('FrontOffice/images/main-slide-1.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Pour que chaque enfant puisse avoir la chance de bien grandir
+                                        </p>
+                                        <h3 class="poppins">
+                                            les associations, <br><span class="pink">presente leur aides</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/main-slide-2.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Votre enfant souffre des difficultés scolaires
+                                        </p>
+                                        <h3 class="poppins">
+                                            nous vous trouvrons <br><span class="pink">les solutions!</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Testimonials</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/main-slide-3.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Garder la jois dans les yeux de votre enfants
+                                        </p>
+                                        <h3 class="poppins">
+                                            c'est notre <br><span class="pink">Objectif!</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Search Nanny</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/enfant-handicap3.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Trouver l'aide pour surmente
+                                        </p>
+                                        <h3 class="poppins">
+                                            les problemes <br><span class="pink">de santé</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+
+
+            </ul>
+        </div> <!-- eof flexslider -->
+    </section>
+
+
+{% endblock welcomeParent %}
+
+{% block sliderLister %}
+{% endblock sliderLister %}
+
+
+{% block gallery %}
+{% endblock gallery %}
+
+{% block  lastPart %}
+{% endblock lastPart %}

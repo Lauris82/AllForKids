@@ -1,0 +1,130 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block page %}
+    <nav class="mainmenu_wrapper">
+        <ul class="mainmenu sf-menu">
+            <li  class="active">
+                <a href="{{ path('Home_Page') }}">Home</a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                <ul>
+                    <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                    <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                    <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- eof main nav -->
+    <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+        <span class="toggle_menu"><span></span></span>
+    </div>
+{% endblock page %}
+{% block title %}
+{% endblock title %}
+{% block topline %}
+
+{% endblock topline %}
+
+{% block main %}
+    <link href="{{ asset('bootstrap.min.css') }}">
+    <br>
+    <br>
+    <h1 class="text-center margin-b45"> <span class="blue">Dètail</span> <span class="pink">de l'èvenement</span></h1>
+
+    <div align="center">
+{% for e in evenement %}
+
+
+
+
+
+                <article class="blog-post single-item video-post" style="width: 50%">
+                    <div class="entry-thumbnail" >
+                        <div class="video-container embed-responsive"  >
+
+                                <img src="{{ asset('image_evenement/' ~ e.image) }}" >
+
+                        </div>
+                        <!-- <iframe width="1000" height="460" src="https://www.youtube.com/embed/mcixldqDIEQ" allowfullscreen></iframe> -->
+                    </div>
+                    <div class="single-item-body icon-body">
+
+                        <h3>
+                     <strong>     <p class="post-category" align="center" style="color: hotpink">    {{ e.nom }}</p></strong>
+                        </h3>
+                        <p class="post-date"> <span class="pink"> Du :     </span>{{ e.dateDebut| date('Y/m/d')  }} <span class="pink"> Jusqu'a le :     </span>{{ e.dateFin| date('Y/m/d')  }} </p><br><br>
+
+                        <p class="post-descr" align="center" ><p align="center"> <strong style="color: hotpink"  >Description : </strong><br>{{ e.description }}</p></p>
+                        <br>
+                        <br>
+                        <br>
+                        {% if e.user.id == app.user.id  %}
+                            <div align="center">
+                                <form action=" {{ path('membre_evenement',{'id':e.id_evenement }) }}  " method="post" >
+
+                                    <p align="center">   <button type="submit" class="btn btn-warning btn-lg "><span class="glyphicon glyphicon-zoom-in"></span>Voir membres</button></p><br><br>
+                                </form>
+                            <form action=" {{ path('modifier_evenement',{'id':e.id_evenement }) }}  " method="post" >
+
+                                <p align="center">   <button type="submit" class="btn btn-info btn-lg" ><span class="glyphicon glyphicon-pencil"></span>modifier</button></p><br><br>
+                            </form>
+                            <form action=" {{ path('supprimer_evenement',{'id':e.id_evenement }) }}  " method="post" >
+
+                                <p align="center">   <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>annuler </button></p><br><br>
+                            </form>
+
+
+                            <p align="center">{{ facebookButton() }} {{ twitterButton() }} </p>
+                            </form>
+                            </form>
+                                </form>
+                            </div>
+                        {% elseif reserv %}
+                            <form action=" {{ path('dereserver_evenement',{'id':e.id_evenement }) }}  " method="post" >
+
+                                <p align="center">   <button type="submit" class="btn btn-warning btn-lg ">annuler participation</button></p><br><br>
+                            </form>
+                            <p align="right" >{{ facebookButton() }} {{ twitterButton() }}</p>
+
+
+
+                        {% else  %}
+
+                            <form action=" {{ path('reserver_evenement',{'id':e.id_evenement }) }}  " method="post" >
+
+                                <p align="center">  <button type="submit" id="contact_form_submit" name="contact_submit" class="btn btn-info btn-lg" >Participer</button></p>
+                            </form><br><br>
+                            <p align="right" >{{ facebookButton() }} {{ twitterButton() }}</p>
+
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </article>
+
+
+
+</div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock main %}
+    {% block footer %}
+
+{% endblock footer %}

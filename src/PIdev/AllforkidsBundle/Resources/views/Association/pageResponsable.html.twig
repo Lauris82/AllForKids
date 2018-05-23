@@ -1,0 +1,270 @@
+{% extends '::New.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block topline %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </div>
+
+{% endblock topline %}
+
+ {% block menu %}
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-sm-12 text-center">
+                 <!-- main nav start -->
+
+                 <nav class="mainmenu_wrapper">
+                     {% block liens %}
+                         <ul class="mainmenu sf-menu">
+                             <li  class="active">
+                                 <a href="{{ path('Home_Page') }}">Accueil</a>
+                             </li>
+                             <li  class="active">
+                                 <a href="{{ path('ListeGarderie') }}">Garderie</a>
+                                 <ul >
+                                     {% if is_granted('ROLE_RESPONSABLE_GARDERIE') %}
+                                         <li ><a href="{{ path('AjouterGarderie') }}"> Ajouter Garderie</a> </li>
+                                     {% endif %}
+                                     <li ><a href="{{ path('ListeGarderie') }}"> Afficher Garderie</a> </li>
+                                     <li ><a href="{{ path('RechercheGarderieEmp') }}"> Chercher Garderie par emplacement</a> </li>
+                                     {#<li ><a href="{{ path('affiche_admin') }}"> Afficher coté admin Garderie</a> </li>#}
+                                 </ul>
+                             </li>
+
+                             <li class="active">
+                                 <a>Association</a>
+                                 <ul>
+                                     {% if is_granted('ROLE_RESPONSABLE_ASSOCIATION') %}
+                                         <li  >
+                                             <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+                                         </li>
+                                     {% endif %}
+                                     <li  >
+                                         <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+                                     </li>
+                                     <li >
+                                         <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+                                     </li>
+                                 </ul>
+                             </li>
+
+                             <li class="active">
+
+                                 <a>Club</a>
+                                 <ul>
+                                     {% if is_granted('ROLE_RESPONSABLE_CLUB') %}
+                                         <li  >
+                                             <a href="{{ path('Ajouter_Club') }}"> Ajouter mon club</a>
+                                         </li>
+                                     {% endif %}
+
+                                     <li  >
+                                         <a href="{{ path('Lister_Club') }}"> Listes des club </a>
+                                     </li>
+                                     <li >
+                                         <a href="{{ path('Rechercher_Club') }}"> Chercher club </a>
+                                     </li>
+                                 </ul>
+
+                             </li>
+
+                             <li  class="active">
+                                 <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                                 <ul>
+                                     <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                                     <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                                     <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                                 </ul>
+                             </li>
+
+                             <li class="active">
+                                 <a href="#">Offre de Transport</a>
+                                 <ul>
+                                     <li><a href="{{ path('Ajouter_OffreTransport') }}">Créer une Offre de Transport</a></li>
+                                     <li><a href="{{ path('Rechercher_OffreTransport') }}">Liste des Offres de Transport</a></li>
+                                     <li><a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a></li>
+                                 </ul>
+                             </li>
+
+                             <li class="active">
+                                 <a >Blog & Forum</a>
+                                 <ul>
+                                     <li>
+                                         <a href="{{ path('Page_post_affiche') }}">Posts</a>
+                                     </li>
+
+                                 </ul>
+                             </li>
+
+                             <li class="active">
+                                 <a >Reclamation</a>
+                                 <ul>
+                                     <li>
+                                         <a href="{{ path('Envoyer_Reclamations') }}">Envoyer Reclamation</a>
+                                     </li>
+
+                                 </ul>
+                             </li>
+                         </ul>
+                     {% endblock liens %}
+                 </nav>
+
+                 <!-- eof main nav -->
+                 <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+                     <span class="toggle_menu"><span></span></span>
+                 </div>
+             </div>
+
+         </div>
+     </div>
+
+ {% endblock menu %}
+
+
+{% block slides %}
+
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="grand-hotel">Hello !</p>
+                    <h3 class="poppins">
+                        Welcome to <span class="pink">Our Website</span>
+                    </h3>
+                    <p class="about-site">
+
+                        petit mot au responsable association
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock slides %}
+
+
+{% block ChildLaguageHelp %}
+{% endblock ChildLaguageHelp %}
+
+{% block welcomeParent %}
+
+    <section class="intro_section page_mainslider ds">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="{{ asset('FrontOffice/images/main-slide-1.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Pour que chaque enfant puisse avoir la chance de bien grandir
+                                        </p>
+                                        <h3 class="poppins">
+                                            les associations, <br><span class="pink">presente leur aides</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/main-slide-2.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Votre enfant souffre des difficultés scolaires
+                                        </p>
+                                        <h3 class="poppins">
+                                            nous vous trouvrons <br><span class="pink">les solutions!</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Testimonials</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/main-slide-3.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Garder la jois dans les yeux de votre enfants
+                                        </p>
+                                        <h3 class="poppins">
+                                            c'est notre <br><span class="pink">Objectif!</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Search Nanny</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/enfant-handicap3.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Trouver l'aide pour surmente
+                                        </p>
+                                        <h3 class="poppins">
+                                            les problemes <br><span class="pink">de santé</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+
+
+            </ul>
+        </div> <!-- eof flexslider -->
+    </section>
+
+
+{% endblock welcomeParent %}
+
+{% block sliderLister %}
+{% endblock sliderLister %}
+
+
+{% block gallery %}
+{% endblock gallery %}
+
+{% block  lastPart %}
+{% endblock lastPart %}

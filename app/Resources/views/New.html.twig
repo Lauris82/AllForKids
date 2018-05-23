@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>{% block title %}Title{% endblock title %}</title>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/main.css') }}" id="color-switcher-link">
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/fonts.css') }}">
+
+    <script src="{{ asset('FrontOffice/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.min.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <!--Fonts for Babysitter-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:900,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader_image"></div>
+</div>
+<!--[if lt IE 9]>
+<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+<!-- search modal -->
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+    <div class="widget widget_search">
+        <form method="get" class="searchform form-inline" action="/">
+            <div class="form-group">
+                <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+            </div>
+            <button type="submit" class="theme_button">Search</button>
+        </form>
+    </div>
+</div>
+
+<!-- wrappers for visual page editor and boxed version of template -->
+<div id="canvas">
+    <div id="box_wrapper">
+
+        {% block topline %}
+        <div class="page_topline">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 ">
+                        <div class="login-controls">
+                            <div class="dropdown">
+                                <a class="login-btn dropdown-toggle" data-toggle="dropdown">
+                                    <i class="rt-icon2-lock-open-outline"></i>Login
+                                </a>
+                                <div class="login-form-wrap">
+                                    <form class="form-horizontal dropdown-menu" method="post" action="/">
+                                        <input type="text" class="form-control" id="login" placeholder="Login">
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                        <a href="#" class="forg-pass">Forgot Password?</a>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="checkbox"><label for="checkbox"> Remember</label>
+                                        </div>
+                                        <button type="submit" id="login_form_submit" name="login_submit" class="btn-default btn-type1">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <a href="#" class="register-btn dropdown-toggle" data-toggle="dropdown">
+                                <i class="rt-icon2-user-outline"></i>Register
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-center second-column">
+                        <div class="widget widget_search">
+                            <form method="get" class="searchform form-inline" action="/">
+                                <div class="form-group">
+                                    <label class="screen-reader-text" for="page_search">Search for:</label>
+                                    <input id="page_search" type="text" value="" name="search" class="form-control" placeholder="Type Search Keyword here">
+                                </div>
+                                <button type="submit" class="rt-icon2-zoom-outline">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-right third-column">
+                        <div class="address">
+                            <i class="rt-icon2-location-outline"></i> 23 Harper St. Owensboro
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock topline %}
+
+
+
+
+        <header class="page_header header_white">
+            <div class="header-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <a href="{{ path('Home_Page') }}">
+                                <img src="{{ asset('FrontOffice/images/logo1.png') }}" alt="Babysitter logo" class="top-logo">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <div class="social-icons">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-right ">
+                            <div class="contact-info">
+                                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                    <div class="contact-number">
+                                        <a href="{{ path('Profile_User') }}"><img src="{{ asset('image_user/' ~ app.user.image) }}" style="width:50px; height:50px;"></a>
+                                        <a href="{{ path('fos_message_inbox') }}" class="rt-icon2-mail2 turquoise large-icon" ></a>
+                                        {% if app.user.notification == null %}
+                                            <a href="{{ path('Liste_Notification') }}" class="fa fa-bell-o"></a>
+                                        {% endif %}
+                                        {% if app.user.notification != null %}
+                                            <a href="{{ path('Liste_Notification') }}" class="fa fa-bell-o" style="color: red;" ><span class="badge" >{{ app.user.notification }}</span></a>
+                                            <audio id="audio" autoplay src="{{ asset('Lauris/iphone.mp3') }}"></audio>
+                                        {% endif %}
+                                        <a href="{{ path('fos_user_security_logout') }}" class="rt-icon2-lock-open-outline"></a>
+                                    </div>
+                                    <div class="work-hours">
+                                        Connecté en tant que: {{ app.user.username }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% block menu %}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <!-- main nav start -->
+
+                        <nav class="mainmenu_wrapper">
+                            {% block liens %}
+                                <ul class="mainmenu sf-menu">
+                                    <li  class="active">
+                                        <a href="{{ path('Home_Page') }}">Accueil</a>
+                                    </li>
+                                    <li  class="active">
+                                        <a href="{{ path('ListeGarderie') }}">Garderie</a>
+                                        <ul >
+                                            {% if is_granted('ROLE_RESPONSABLE_GARDERIE') %}
+                                                <li ><a href="{{ path('AjouterGarderie') }}"> Ajouter Garderie</a> </li>
+                                            {% endif %}
+                                            <li ><a href="{{ path('ListeGarderie') }}"> Afficher Garderie</a> </li>
+                                            <li ><a href="{{ path('RechercheGarderieEmp') }}"> Chercher Garderie par emplacement</a> </li>
+                                            {#<li ><a href="{{ path('affiche_admin') }}"> Afficher coté admin Garderie</a> </li>#}
+                                        </ul>
+                                    </li>
+
+                                    <li class="active">
+                                        <a>Association</a>
+                                        <ul>
+                                            {% if is_granted('ROLE_RESPONSABLE_ASSOCIATION') %}
+                                                <li  >
+                                                    <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+                                                </li>
+                                            {% endif %}
+                                            <li  >
+                                                <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+                                            </li>
+                                            <li >
+                                                <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="active">
+
+                                        <a>Club</a>
+                                        <ul>
+                                            {% if is_granted('ROLE_RESPONSABLE_CLUB') %}
+                                                <li  >
+                                                    <a href="{{ path('Ajouter_Club') }}"> Ajouter mon club</a>
+                                                </li>
+                                            {% endif %}
+
+                                            <li  >
+                                                <a href="{{ path('Lister_Club') }}"> Listes des club </a>
+                                            </li>
+                                            <li >
+                                                <a href="{{ path('Rechercher_Club') }}"> Chercher club </a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li  class="active">
+                                        <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                                        <ul>
+                                            <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                                            <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                                            <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="active">
+                                        <a href="#">Offre de Transport</a>
+                                        <ul>
+                                            {% if app.user.roles != ('ROLE_USER') %}
+                                                <li><a href="{{ path('Ajouter_OffreTransport') }}">Créer une Offre de Transport</a></li>
+                                            {% endif %}
+                                            <li><a href="{{ path('Rechercher_OffreTransport') }}">Liste des Offres de Transport</a></li>
+                                            <li><a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="active">
+                                        <a >Blog & Forum</a>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('Page_post_affiche') }}">Posts</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="active">
+                                        <a >Reclamation</a>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('Envoyer_Reclamations') }}">Envoyer Reclamation</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            {% endblock liens %}
+                        </nav>
+
+                        <!-- eof main nav -->
+                        <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+                            <span class="toggle_menu"><span></span></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {% endblock menu %}
+        </header>
+
+        {% block slides %}
+        <section class="intro_section page_mainslider ds">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img src="{{ asset('FrontOffice/images/main-slide-1.jpg')}}" alt="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Pour que chaque enfant puisse avoir la chance de bien grandir
+                                            </p>
+                                            <h3 class="poppins">
+                                                les associations, <br><span class="pink">presente leur aides</span>
+                                            </h3>
+                                            {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+
+                    <li>
+                        <img src="{{ asset('FrontOffice/images/main-slide-2.jpg')}}" alt="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Votre enfant souffre des difficultés scolaires
+                                            </p>
+                                            <h3 class="poppins">
+                                                nous vous trouvrons <br><span class="pink">les solutions!</span>
+                                            </h3>
+                                            {#<a href="#" class="btn-type1">Testimonials</a>#}
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+
+                    <li>
+                        <img src="{{ asset('FrontOffice/images/main-slide-3.jpg')}}" alt="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Garder la jois dans les yeux de votre enfants
+                                            </p>
+                                            <h3 class="poppins">
+                                                c'est notre <br><span class="pink">Objectif!</span>
+                                            </h3>
+                                            {#<a href="#" class="btn-type1">Search Nanny</a>#}
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+
+
+                    <li>
+                        <img src="{{ asset('FrontOffice/images/enfant-handicap3.jpg')}}" alt="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Trouver l'aide pour surmente
+                                            </p>
+                                            <h3 class="poppins">
+                                                les problemes <br><span class="pink">de santé</span>
+                                            </h3>
+                                            {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+
+
+
+                </ul>
+            </div> <!-- eof flexslider -->
+        </section>
+        {% endblock slides %}
+
+        <main class="page-content">
+            {% block ChildLaguageHelp %}
+            <section class="skills-cont">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="skill skill-1">
+                                <div class="skill-head">25 Years<br>
+                                    <strong>Child Care</strong>
+                                </div>
+                                <div class="skill-info">
+                                    <ul>
+                                        <li>Toddlers (1 - 3 years)</li>
+                                        <li>Preschoolers (3 - 5 years)</li>
+                                        <li>Grade school (6 - 11 years)</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="skill-detail">More details</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill skill-2">
+                                <div class="skill-head">Spoken<br>
+                                    <strong>Languages</strong>
+                                </div>
+                                <div class="skill-info">
+                                    <ul>
+                                        <li>English language</li>
+                                        <li>Spanish language</li>
+                                        <li>French language</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="skill-detail">More details</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill skill-3">
+                                <div class="skill-head">Homework<br>
+                                    <strong>Help</strong>
+                                </div>
+                                <div class="skill-info">
+                                    <ul>
+                                        <li>Finishing homework</li>
+                                        <li>Checking answers</li>
+                                        <li>Proofreading</li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="skill-detail">More details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endblock ChildLaguageHelp %}
+
+            {% block welcomeParent %}
+            <section class="welcome">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p class="grand-hotel">Hello, Parents!</p>
+                            <h3 class="poppins">
+                                Welcome to <span class="pink">Our Website</span>
+                            </h3>
+                            <p class="about-site">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam erat,
+                                sed diam voluptua.
+                                At vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren.
+                            </p>
+                            <a href="#" class="btn-type1">Search Nanny</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endblock welcomeParent %}
+
+
+
+            {% block sliderLister %}
+            <section class="team">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="slide-container test-container">
+                                <img src="{{ asset('FrontOffice/images/team-slide-1.png')}}" alt="Ruthie Wolf">
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="slide_description_wrapper">
+                                            <div class="slide_description">
+                                                <p class="grand-hotel">
+                                                    Ruthie Wolf
+                                                </p>
+                                                <h3 class="poppins">
+                                                    25 years old Nanny with experience
+                                                </h3>
+                                                <p class="nanny-descr">Out labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et accusam et justo duo dolores et ea rebum.
+                                                    Stet clita kasd no sea takimata sanctus est Lorem ipsum dolor.</p>
+                                                <a href="#" class="btn-type1">Check Profile</a>
+                                            </div> <!-- eof .slide_description -->
+                                        </div> <!-- eof .slide_description_wrapper -->
+                                    </div> <!-- eof .col-* -->
+                                </div><!-- eof .row -->
+                            </div><!-- eof .container -->
+                        </li>
+                        <li>
+                            <div class="slide-container test-container">
+                                <img src="{{ asset('FrontOffice/images/team-slide-2.png')}}" alt="Ruthie Wolf">
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="slide_description_wrapper">
+                                            <div class="slide_description">
+                                                <p class="grand-hotel">
+                                                    Connie Gilliam
+                                                </p>
+                                                <h3 class="poppins">
+                                                    Screened, Qualif ied & Responsible Nanny
+                                                </h3>
+                                                <p class="nanny-descr">At ea rebum stet clita kasd gubergren,
+                                                    no sea takimata sanctus estorem ipsum dolor sit amet.
+                                                    Lorem ipsum dolor sitmet consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+                                                <a href="#" class="btn-type1">Check Profile</a>
+                                            </div> <!-- eof .slide_description -->
+                                        </div> <!-- eof .slide_description_wrapper -->
+                                    </div> <!-- eof .col-* -->
+                                </div><!-- eof .row -->
+                            </div><!-- eof .container -->
+                        </li>
+                        <li>
+                            <div class="slide-container test-container">
+                                <img src="{{ asset('FrontOffice/images/team-slide-3.png')}}" alt="Ruthie Wolf">
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="slide_description_wrapper">
+                                            <div class="slide_description">
+                                                <p class="grand-hotel">
+                                                    Amanda Durham
+                                                </p>
+                                                <h3 class="poppins">
+                                                    She’ll Do best to take care of Your Kids
+                                                </h3>
+                                                <p class="nanny-descr">Ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                    At vero eos et accusam et justo duo dolores et ea rebum.
+                                                    Stclita kasd gubergre sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                                <a href="#" class="btn-type1">Check Profile</a>
+                                            </div> <!-- eof .slide_description -->
+                                        </div> <!-- eof .slide_description_wrapper -->
+                                    </div> <!-- eof .col-* -->
+                                </div><!-- eof .row -->
+                            </div><!-- eof .container -->
+                        </li>
+
+                    </ul>
+                </div> <!-- eof flexslider -->
+            </section>
+            {% endblock sliderLister %}
+
+
+            {% block information %}
+            <section class="info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 for-nannies">
+                            <p class="grand-hotel">Information</p>
+                            <h3 class="poppins">For <span class="pink">Babysitters</span></h3>
+                            <ul>
+                                <li>
+                                    <div class="step-icon">
+                                        <i class="rt-icon2-edit"></i>
+                                    </div>
+                                    <div class="step-descr">
+                                        <h4>Register on our Website</h4>
+                                        <p>Sit amet, consetetur sadipscing elitrd diamnonumy eirmod tempor invidunt.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="step-icon">
+                                        <i class="rt-icon2-lightbulb3"></i>
+                                    </div>
+                                    <div class="step-descr">
+                                        <h4>Create Profile & Portfolio</h4>
+                                        <p>Ut labore et dolore magna aliquyam erat, sed diam voluptua vero eos et accusam et justo duo dolores.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="step-icon">
+                                        <i class="rt-icon2-watch"></i>
+                                    </div>
+                                    <div class="step-descr">
+                                        <h4>Wait for Employers</h4>
+                                        <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 for-parents">
+                            <p class="grand-hotel">Information</p>
+                            <h3 class="poppins">For <span>Parents</span></h3>
+                            <ul>
+                                <li>
+                                    <div class="step-icon">
+                                        <i class="rt-icon2-group-outline"></i>
+                                    </div>
+                                    <div class="step-descr">
+                                        <h4>Choose Babysitter or Nanny</h4>
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="step-icon">
+                                        <i class="rt-icon2-eye-outline"></i>
+                                    </div>
+                                    <div class="step-descr">
+                                        <h4>Pre-Screen Nanny</h4>
+                                        <p>Magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="step-icon">
+                                        <i class="rt-icon2-message"></i>
+                                    </div>
+                                    <div class="step-descr">
+                                        <h4>Contact & Hire</h4>
+                                        <p>Rebum stet clita kasd gubergren sea takimata sanctus lorem ipsum dolor sit amet ipsum dolor.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endblock information %}
+
+            {% block gallery %}
+            <section class="gallery">
+                <div class="container">
+                    <h3 class="poppins"><span class="pink">g</span>a<span class="light-green">l</span><span class="turquoise">l</span><span class="pink">e</span>r<span class="light-green">i</span><span class="turquoise">e</span><span class="pink">s</span></h3>
+                    <div class="row gallery-nav">
+                        <div class="col-md-6">
+                            <a href="#" class="active">All Photos</a>
+                            <a href="#">Children</a>
+                            <a href="#">Games</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#">Babysitters</a>
+                            <a href="#">Teachers</a>
+                            <a href="#">Kids</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <div class="owl-carousel"
+                                 data-margin="0"
+                                 data-nav="false"
+                                 data-items="3"
+                                 data-themeclass="hover-scale"
+                                 data-loop="false"
+                                 data-dots="true"
+                                 data-center="false"
+                                 data-autoplay="false"
+                                 data-responsive-xs="1"
+                                 data-responsive-sm="2"
+                                 data-responsive-md="3"
+                                 data-responsive-lg="4"
+                            >
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-0.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-0.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-1.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-1.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-2.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-2.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-3.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-3.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-0.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-0.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-1.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-1.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-2.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-2.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-3.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-3.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-0.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-0.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-1.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-1.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-2.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-2.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-item">
+                                    <div class="item-media">
+                                        <img src="{{ asset('FrontOffice/images/image-3.jpg')}}" alt="">
+                                        <div class="media-links">
+                                            <div class="links-wrap">
+                                                <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ asset('FrontOffice/images/image-3.jpg')}}"></a>
+                                                <a class="p-link" title="" href="#"></a>
+                                                <h4>Diam noumy eirmod </h4>
+                                                <a href="#" class="read-about">Read about us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endblock gallery %}
+
+            {% block lastPart %}
+            <section class="pricing">
+                <div class="container">
+                    <p class="grand-hotel text-center">Hello, Parents!</p>
+                    <h3 class="poppins text-center">Welcome to <span class="pink">Our Website</span></h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="price-1 text-center">
+                                <div class="head">One<br><strong>Child</strong></div>
+                                <div class="price"><span class="poppins">$10</span>/hour</div>
+                                <div class="about-price">
+                                    <p>
+                                        Justo duo dolores et ea rebum stet clita kasd gubergren, no sea takimata.
+                                    </p>
+                                </div>
+                                <a href="#" class="purchase">Purchase</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="price-2 text-center">
+                                <div class="head">Two<br><strong>Children</strong></div>
+                                <div class="price"><span class="poppins">$15</span>/hour</div>
+                                <div class="about-price">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consetetur sadipscing nonumy eirmod tempor.
+                                    </p>
+                                </div>
+                                <a href="#" class="purchase">Purchase</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="price-3 text-center">
+                                <div class="head">Three<br><strong>Children</strong></div>
+                                <div class="price"><span class="poppins">$20</span>/hour</div>
+                                <div class="about-price">
+                                    <p>
+                                        Labore dolore magna aliquyam erat, sed diam voluptua tvero eos et accusam.
+                                    </p>
+                                </div>
+                                <a href="#" class="purchase">Purchase</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonials parallax">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <i class="rt-icon2-quotes-left"></i>
+                            <div id="carousel-media" class="carousel slide testimonials-carousel" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-media" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-media" data-slide-to="1"></li>
+                                    <li data-target="#carousel-media" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                            sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam.
+                                        </p>
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <h4><a href="#">Shirry K. Lykins</a></h4>
+                                                <p>
+                                                    Parent
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <p>
+                                            Ullamco laboris nialiquid exea commodi consat.
+                                            Ut enim minim veniam norud exotation.
+                                        </p>
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <h4><a href="#">Shirry K. Lykins</a></h4>
+                                                <p>
+                                                    Parent
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                            sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam.
+                                        </p>
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <h4><a href="#">Shirry K. Lykins</a></h4>
+                                                <p>
+                                                    Parent
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endblock lastPart %}
+
+            {% block contact %}
+            <section class="contacts">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <span class="rt-icon2-location-outline pink"></span>
+                            <p>1467 Walnut Street, Jackson, MS 39201</p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="rt-icon2-mail2 blue"></span>
+                            <a href="#">babytime@support.com</a>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="rt-icon2-phone-outline light-green"></span>
+                            <p>(800) 624-75-54, (800) 863-14-56</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid parallax">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-wrap">
+                                <form class="contact-form" method="post" action="/">
+                                    <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Full Name">
+                                    <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email Adress">
+                                    <input type="text" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                                    <div class="form-control-group">
+                                        <input type="text" aria-required="true" class="form-control" value="" name="date" id="datepicker" placeholder="Date">
+                                    </div>
+                                    <select aria-required="true" id="time" name="time">
+                                        <option value="" disabled selected>Time</option>
+                                        <option value="12:00 AM">12:00 AM</option>
+                                        <option value="12:30 AM">12:30 AM</option>
+                                        <option value="1:00 AM">1:00 AM</option>
+                                        <option value="1:30 AM">1:30 AM</option>
+                                        <option value="2:00 AM">2:00 AM</option>
+                                        <option value="2:30 AM">2:30 AM</option>
+                                        <option value="3:00 AM">3:00 AM</option>
+                                        <option value="3:30 AM">3:30 AM</option>
+                                        <option value="4:00 AM">4:00 AM</option>
+                                        <option value="4:30 AM">4:30 AM</option>
+                                        <option value="5:00 AM">5:00 AM</option>
+                                        <option value="5:30 AM">5:30 AM</option>
+                                        <option value="6:00 AM">6:00 AM</option>
+                                        <option value="6:30 AM">6:30 AM</option>
+                                        <option value="7:00 AM">7:00 AM</option>
+                                        <option value="7:30 AM">7:30 AM</option>
+                                        <option value="8:00 AM">8:00 AM</option>
+                                        <option value="8:30 AM">8:30 AM</option>
+                                        <option value="9:00 AM">9:00 AM</option>
+                                        <option value="9:30 AM">9:30 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="10:30 AM">10:30 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                        <option value="11:30 AM">11:30 AM</option>
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="12:30 PM">12:30 PM</option>
+                                        <option value="1:00 PM">1:00 PM</option>
+                                        <option value="1:30 PM">1:30 PM</option>
+                                        <option value="2:00 PM">2:00 PM</option>
+                                        <option value="2:30 PM">2:30 PM</option>
+                                        <option value="3:00 PM">3:00 PM</option>
+                                        <option value="3:30 PM">3:30 PM</option>
+                                        <option value="4:00 PM">4:00 PM</option>
+                                        <option value="4:30 PM">4:30 PM</option>
+                                        <option value="5:00 PM">5:00 PM</option>
+                                        <option value="5:30 PM">5:30 PM</option>
+                                        <option value="6:00 PM">6:00 PM</option>
+                                        <option value="6:30 PM">6:30 PM</option>
+                                        <option value="7:00 PM">7:00 PM</option>
+                                        <option value="7:30 PM">7:30 PM</option>
+                                        <option value="8:00 PM">8:00 PM</option>
+                                        <option value="8:30 PM">8:30 PM</option>
+                                        <option value="9:00 PM">9:00 PM</option>
+                                        <option value="9:30 PM">9:30 PM</option>
+                                        <option value="10:00 PM">10:00 PM</option>
+                                        <option value="10:30 PM">10:30 PM</option>
+                                        <option value="11:00 PM">11:00 PM</option>
+                                        <option value="11:30 PM">11:30 PM</option>
+                                    </select>
+                                    <textarea rows="6" cols="45" name="message" id="message" placeholder="Additional Info"></textarea>
+                                    <button type="submit" id="contact_form_submit" name="contact_submit" class="btn-type1">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endblock contact %}
+
+        </main>
+
+        <footer class="page_footer">
+            {% block footer %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="banner-wrap bottom-banner">
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/banner-slide.jpg')}}" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/banner-slide.jpg')}}" alt="">
+                                    </li>
+                                </ul>
+                            </div> <!-- eof flexslider -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="open-hours">
+                            <h3>Open <span>Hours</span></h3>
+                            <div>Monday - Friday <span>9:00 - 17:00</span></div>
+                            <div>Saturday <span>11:00 - 15:00</span></div>
+                            <div>Sunday <span>Closed</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="widget widget_flickr">
+                            <h3 class="widget-title">Flickr</h3>
+                            <ul id="flickr"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="widget widget_mailchimp">
+                            <h3 class="widget-title">Mailchimp</h3>
+                            <form class="signup form-inline" action="/" method="get">
+                                <div class="form-group">
+                                    <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                                </div>
+                                <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                                <div class="response"></div>
+                            </form>
+                            <p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="{{ asset('FrontOffice/images/logo-footer.png')}}" alt="Babysitter logo" class="logo-footer">
+            {% endblock footer %}
+        </footer>
+
+        <section class="page_copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p>&copy; Copyright 2016 by <a href="#">MW Templates</a>. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- eof #box_wrapper -->
+</div><!-- eof #canvas -->
+
+
+<script src="{{ asset('FrontOffice/js/compressed.js') }}"></script>
+<script src="{{ asset('FrontOffice/js/main.js') }}"></script>
+<script src="{{ asset('FrontOffice/js/jquery-ui.js') }}"></script>
+
+</body>
+</html>

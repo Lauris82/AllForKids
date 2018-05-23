@@ -1,0 +1,119 @@
+
+
+{% extends '::base.html.twig' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/main2.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontOffice/css/fonts.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:900,700' rel='stylesheet' type='text/css'>
+
+{% endblock %}
+{% block page %}
+    <nav class="mainmenu_wrapper">
+        <ul class="mainmenu sf-menu">
+            <li  class="active">
+                <a href="{{ path('Home_Page') }}">Home</a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                <ul>
+                    <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                    <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                    <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- eof main nav -->
+    <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+        <span class="toggle_menu"><span></span></span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock page %}
+{% block title %}crèer une èvenement{% endblock title %}
+{% block topline %}
+
+{% endblock topline %}
+
+{% block main %}
+
+    <h1 class="text-center margin-b45"> <span class="blue">Calendrier</span> <span class="pink">des èvenements</span></h1>
+
+
+<div id="calendar-holder"></div>
+{% endblock main %}
+
+{% block footer %}
+
+{% endblock footer %}
+{% block js %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+
+
+    <script type="text/javascript" >
+
+
+        $(function () {
+
+
+
+            $('#calendar-holder').fullCalendar({
+                header: {
+                    left: 'prev, next',
+                    center: 'title',
+                    right: 'month, basicWeek, basicDay,'
+                },
+                lazyFetching: true,
+                timeFormat: {
+                    agenda: 'h:mmt',
+                    '': 'h:mmt'
+                },  eventSources:[
+
+                    // your event source
+                    {
+                        url: '/AllForKids/web/app_dev.php/loadevent', // use the `url` property
+                        color: '#ff8746',    // an option!
+                        textColor: '#1423ff'  // an option!
+                    }
+
+                    // any other sources...
+
+                ],
+                eventClick:function (event) {
+                    if (event.url) {
+                        window.open(event.url);
+                        return false;
+                    }
+
+                }
+
+
+
+
+
+
+            });
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+{% endblock %}

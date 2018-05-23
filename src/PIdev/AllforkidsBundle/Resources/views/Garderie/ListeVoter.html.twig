@@ -1,0 +1,131 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}Avis Parent{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+<section class="page_breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>{{ Garderie.nom }}</h3>
+                <ol class="breadcrumb">
+                    <li >
+                        <a href="{{path ('ListeGard',{'id':Garderie.id_garderie})  }}">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{path ('PresentationGard',{'id':Garderie.id_garderie})  }}">
+                            Présentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{path ('Voter',{'id':Garderie.id_garderie})  }}">Evaluation de Garderie</a>
+                    </li>
+                    <li>
+
+                        <a href="{{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}" >Inscription</a>
+                    </li>
+                    <li>
+                        <a href="{{path ('galerieaffiche',{'id':Garderie.id_garderie})  }}" >Galerie</a>
+
+                    </li>
+                    <li >
+                        <a href="{{path ('galerieAjout',{'id':Garderie.id_garderie})  }}" >Ajout photo </a>
+
+                    </li>
+                    <li class="active">
+                        <a href="{{path ('ListeVoter',{'id':Garderie.id_garderie})  }}" >Avis Parent</a>
+                    </li>
+                    <li >
+                        <a href="{{path ('ContactG',{'id':Garderie.id_garderie})  }}" >Contacter Nous </a>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="blog-top-slider">
+        <div class="container">
+            <div class="flexslider">
+
+                        <img src="{{ asset('images/') }}{{ Garderie.nomImage }}" style="width: 1140px;height: 600px">
+                        <div class="slide_description_wrapper">
+                            <div class="slide_description">
+                                <h1 style="color:#f5abcb">
+                                    {{ Garderie.nom }}
+                                </h1>
+
+                            </div> <!-- eof .slide_description -->
+                        </div> <!-- eof .slide_description_wrapper -->
+
+            </div> <!-- eof flexslider -->
+        </div>
+    </section>
+    <section class="testimonials">
+    <div class="container">
+        <div class="row margin-b100">
+            <div class="col-sm-12">
+                <h1 class="grand-hotel" align="center" style="color: deeppink"  >Avis Parents </h1>
+            <br> <br>
+                {% for Rates in Rates %}
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-check-circle"></i> <strong>{{ Rates.remarques }} </strong>   {{  Rates.vote|rating }}
+                </div>
+<br> <br>
+            {% endfor %}
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+
+
+
+
+
+
+{%  endblock main %}
+
+{% block footer %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="open-hours">
+                    <h3>Open <span>Hours</span></h3>
+                    <div>Monday - Friday <span>9:00 - 17:00</span></div>
+                    <div>Saturday <span>11:00 - 15:00</span></div>
+                    <div>Sunday <span>Closed</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_flickr">
+                    <h3 class="widget-title"></h3>
+                    <ul id="flickr"></ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_mailchimp">
+                    <h3 class="widget-title">Mailchimp</h3>
+                    <form class="signup form-inline" action="/" method="get">
+                        <div class="form-group">
+                            <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                        </div>
+                        <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                        <div class="response"></div>
+                    </form>
+                    <p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock footer %}

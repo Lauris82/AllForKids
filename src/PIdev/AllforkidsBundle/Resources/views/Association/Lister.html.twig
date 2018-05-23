@@ -1,0 +1,90 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Home{% endblock title %}
+{% block topline %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </div>
+
+{% endblock topline %}
+{#{% block page %}
+
+    <nav class="mainmenu_wrapper">
+        <ul class="mainmenu sf-menu">
+            <li  class="active">
+                <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- eof main nav -->
+    <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+        <span class="toggle_menu"><span></span></span>
+    </div>
+
+
+{% endblock page %}#}
+{% block main %}
+<h2>la liste des associations </h2>
+<table border="1" col>
+
+    <tr>
+
+        <td bgcolor="#7fff00">nom</td>
+        <td bgcolor="#7fff00">description</td>
+        <td bgcolor="#7fff00">numTel</td>
+        <td bgcolor="#7fff00">user</td>
+
+        <td bgcolor="#7fff00">gouvernorat</td>
+        <td bgcolor="#7fff00">municipalite</td>
+        <td bgcolor="#7fff00">nom_rue</td>
+        <td bgcolor="#7fff00">code_rue</td>
+
+        <td bgcolor="#dcdcdc">Modification</td>
+        <td bgcolor="#dcdcdc">Suppression</td>
+
+
+    </tr>
+
+
+    {% for m in ASS %}
+        <tr>
+
+            <td>  {{ m.nom }} </td>
+            <td> {{ m.description }} </td>
+            <td> {{ m.numTel }} </td>
+            <td> {{ m.user }} </td>
+            <td> {{ m.gouvernorat }} </td>
+            <td> {{ m.municipalite }} </td>
+            <td> {{ m.nomrue}} </td>
+            <td> {{ m.coderue }} </td>
+
+
+         <td><a href="{{ path("Modifier_Association",{'id':m.id_aasociation } ) }}">Modifier</a></td>
+            <td><a href="{{ path("Supprimer_Association",{'id':m.id_aasociation } ) }}">Supprimer</a></td>
+
+
+        </tr>
+
+    {% endfor %}
+
+
+
+</table>
+
+{% endblock main %}
+{% block footer %}
+{% endblock footer %}

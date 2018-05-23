@@ -1,0 +1,94 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Créer un compte{% endblock title %}
+
+{% block topline %}{% endblock topline %}
+{% block liens %}{% endblock %}
+{% block section %}{% endblock section %}
+
+{% block main %}
+
+    <div class="single-item-body icon-body">
+
+        <h3 class="poppins">Créer <span class="pink">votre Compte</span></h3>
+
+        <div class="modal-body" align="center">
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+            <table align="center" >
+                <tr>
+                    <td>Adresse @Mail: </td>
+                    <td>{{ form_widget(form.email) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Nom Utilisateur: </td>
+                    <td>{{ form_widget(form.username) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Types: </td>
+                    <td>{{ form_widget(form.roles) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Nom: </td>
+                    <td>{{ form_widget(form.nom) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Prénom: </td>
+                    <td>{{ form_widget(form.prenom) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Date Naissance: </td>
+                    <td>{{ form_widget(form.date_naissance) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Adresse: </td>
+                    <td>{{ form_widget(form.adresse) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Photo: </td>
+                    <td align="center">{{ form_widget(form.image) }}</td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>{{ form_widget(form.plainPassword) }}</td>
+                </tr>
+            </table>
+            <div>
+                <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn-type1" />
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock main %}
+
+
+{% block footer %}
+{% endblock footer %}
+
+

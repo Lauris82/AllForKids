@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Profil{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}
+    <h3>Profil</h3>
+    <ol class="breadcrumb">
+    <li>
+        <a href="{{ path('fos_user_profile_show') }}">Profil</a>
+    </li>
+    <li>
+        <a href="{{ path('fos_user_profile_edit') }}">Modifier votre Profil</a>
+    </li>
+    <li>
+        <a href="{{ path('fos_user_change_password') }}">Changer Mot de passe</a>
+    </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+
+<div class="single-item-body icon-body">
+
+    <h3 class="poppins">Profil de <span class="pink">{{ user.username }}</span></h3>
+
+    <div class="modal-body" align="center">
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        <p>Nom : {{ user.nom}}</p>
+    </div>
+
+</div>
+
+{% endblock main %}
+
+{% block footer %}
+
+{% endblock footer %}

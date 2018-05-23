@@ -1,0 +1,85 @@
+{% extends '::LayoutBack.html.twig' %}
+{% block title %}
+    Liste des postes
+{% endblock title %}
+
+{% block body %}
+
+    <h1 align="center "style="color: red" > <strong>tous les postes</strong> </h1>
+
+        <div id="page-wrapper" >
+            <div class="row" >
+                <div class="col-md-4 col-sm-4">
+                    <div align="center">
+                {% for p in Posts %}
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                                <p align="left">  <img src="{{ asset('image_user/' ~ p.user.image) }}" style="   border: 1px black solid;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background:  200px;">   {{ p.user.nom }} {{ p.user.prenom }}</p>
+
+                            </div>
+                            <div class="panel-body">
+                                <img src="{{ asset('image_post/' ~ p.image) }}" alt=""  width="100%" height="200px">
+                                <p align="center" style="color: red"><strong >{{ p.titre }}</strong></p>
+                                <div align="center"><p style="color: #00abef" >en </p>{{  p.createdAt| date('d-m-y') }}
+                                <p><p style="color: #00abef" >description :</p>  {{ p.contenu }}</p>
+                            </div>
+                            <div class="panel-footer">
+                                <div align="center">
+
+
+
+                                    <a  style="color: gray;font: inherit" href="{{ path("Page_post_delete_back",{'id':p.idPost})  }}"><p class="form-submit">
+                                            <button type="submit" id="submit" name="submit" class="btn btn-danger">Supprimer</button>
+                                        </p> </a>
+
+
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

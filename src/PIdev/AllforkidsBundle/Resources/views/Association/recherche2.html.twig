@@ -1,0 +1,106 @@
+
+
+{% extends '::associationChercher.html.twig' %}
+
+
+{% block ass %}
+
+
+<form method="post">
+    <tr>
+        <td>Gouvernerat</td>
+
+        <td>
+            <select name="gouv">
+                <option disabled selected>choisir gouvernerat</option>
+                <option value="Ariana" selected>Ariana</option>
+                <option value="Béja">Béja</option>
+                <option value="Ben Arous">Ben Arous</option>
+                <option value="Bizerte">Bizerte</option>
+                <option value="Gabès">Gabès</option>
+                <option value="Gafsa">Gafsa</option>
+                <option value="Jendouba">Jendouba</option>
+                <option value="Kairouan">Kairouan</option>
+                <option value="Kasserine">Kasserine</option>
+                <option value="Kébili">Kébili</option>
+                <option value="Le Kef">Le Kef</option>
+                <option value="Mahdia">Mahdia</option>
+                <option value="La Manouba">La Manouba</option>
+                <option value="Médenine">Médenine</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Nabeul">Nabeul</option>
+                <option value="Sfax">Sfax</option>
+                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                <option value="Siliana">Siliana</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Zaghouan">Zaghouan</option>
+                <option value="Tataouine">Tataouine</option>
+                <option value="Tozeur">Tozeur</option>
+                <option value="Tunis">Tunis</option>
+                <option value="autre">Autre</option>
+
+            </select> </br></br>
+        </td>
+    </tr>
+
+    <tr><input type="submit" text="chercher" name="chercher" value="Rechercher"></tr>
+</form>
+
+
+{% for m in ASS %}
+    <div>
+        {#<p bgcolor="#7fff00">nom</p>#}
+
+        <label>nom </label>
+        {{ m.nom }}
+
+    </div>
+    <div>
+        <label>description</label>
+        {{ m.description }}
+    </div>
+    <div>
+        <label bgcolor="#7fff00">numTel</label>
+        {{ m.numTel }}
+    </div>
+
+    <div>
+        <label bgcolor="#7fff00">user</label>
+        {{ m.user }}
+    </div>
+
+    <div>
+        <label bgcolor="#7fff00">gouvernorat</label>
+        {{ m.gouvernorat }}
+    </div>
+
+    <div>
+        <label bgcolor="#7fff00">municipalite</label>
+        {{ m.municipalite }}
+    </div>
+
+    <div>
+        <label bgcolor="#7fff00">nom_rue</label>
+        {{ m.nomrue}}
+    </div>
+
+
+    <label><a href="{{ path("Modifier_Association",{'id':m.id_aasociation } ) }}">Modifier</a></label>
+
+    {#<input type="button" onclick="{{ path("Modifier_Association",{'id':m.id_aasociation } ) }}" value="Modifier">#}
+
+    <span></span><span></span>
+    <label><a href="{{ path("Supprimer_Association",{'id':m.id_aasociation } ) }}">Supprimer</a></label>
+
+
+    </div>
+
+{% endfor %}
+
+
+
+{% endblock ass %}
+ {# display navigation #}
+<div class="pagerArea text-center"  >
+    <strong> {{ knp_pagination_render(C) }} </strong>
+</div>

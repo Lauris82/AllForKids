@@ -1,0 +1,51 @@
+{% extends '::LayoutBack.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Page de gestion des offres de transport{% endblock title %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('Lauris/Align.css') }}">
+
+    <div align="center" style="color: red">
+        {{ form(Form) }}
+    </div>
+
+    <div id="page-wrapper" >
+        <div class="row" >
+            <h1 align="center" style="color: red" > <strong>Toutes les offres de transport</strong> </h1>
+
+            {% for offre in offre %}
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p align="left">  <img src="{{ asset('image_user/' ~ offre.user.image) }}" style="   border: 1px black solid;
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        background:  200px;">   {{ offre.user.username }}</p>
+                        </div>
+                        <div class="panel-body" align="center">
+                            Destination :<i style="color: #00abef" >{{ offre.destination }}</i><br><br>
+                            Description :<i style="color: #00abef" >{{ offre.description }}</i><br><br>
+                            <div align="center">
+                                Du  <i style="color: #00abef" >{{ offre.dateDebut |date('d-m-y') }} </i><br><br>
+                                Jusqu'au <i style="color: #00abef" >{{ offre.dateFin|date('d-m-y') }}</i>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            {% if offre.placeRestant > 0 %}
+                                <span>
+                                    <a href="{{ path('Admin_Supprimer_OffreTransport', {'id':offre.id}) }}">
+                                        <i class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"><span>Supprimer</span></i><br>
+                                    </a>
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock body %}

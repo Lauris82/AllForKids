@@ -1,0 +1,119 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Home{% endblock title %}
+{% block topline %}{% endblock topline %}
+{#{% block page %}
+
+    <nav class="mainmenu_wrapper">
+        <ul class="mainmenu sf-menu">
+            <li  class="active">
+                <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- eof main nav -->
+    <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+        <span class="toggle_menu"><span></span></span>
+    </div>
+
+
+{% endblock page %}#}
+{% block main %}
+{#<h2>Rechercher association </h2>#}
+
+<form method="post">
+    <tr>
+        <td>Gouvernerat</td>
+
+        <td>
+            <select name="gouv">
+                <option disabled selected>choisir gouvernerat</option>
+                <option value="Ariana" selected>Ariana</option>
+                <option value="Béja">Béja</option>
+                <option value="Ben Arous">Ben Arous</option>
+                <option value="Bizerte">Bizerte</option>
+                <option value="Gabès">Gabès</option>
+                <option value="Gafsa">Gafsa</option>
+                <option value="Jendouba">Jendouba</option>
+                <option value="Kairouan">Kairouan</option>
+                <option value="Kasserine">Kasserine</option>
+                <option value="Kébili">Kébili</option>
+                <option value="Le Kef">Le Kef</option>
+                <option value="Mahdia">Mahdia</option>
+                <option value="La Manouba">La Manouba</option>
+                <option value="Médenine">Médenine</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Nabeul">Nabeul</option>
+                <option value="Sfax">Sfax</option>
+                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                <option value="Siliana">Siliana</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Zaghouan">Zaghouan</option>
+                <option value="Tataouine">Tataouine</option>
+                <option value="Tozeur">Tozeur</option>
+                <option value="Tunis">Tunis</option>
+                          <option value="autre">Autre</option>
+
+           </select> </br></br>
+        </td>
+    </tr>
+
+    <tr><input type="submit" text="chercher" name="chercher" value="Rechercher"></tr>
+</form>
+
+
+<table border="1">
+
+    <tr>
+
+        <td bgcolor="#7fff00">nom</td>
+        <td bgcolor="#7fff00">description</td>
+        <td bgcolor="#7fff00">numTel</td>
+        <td bgcolor="#7fff00">user</td>
+
+        <td bgcolor="#7fff00">gouvernorat</td>
+        <td bgcolor="#7fff00">municipalite</td>
+        <td bgcolor="#7fff00">nom_rue</td>
+        <td bgcolor="#7fff00">code_rue</td>
+
+        <td bgcolor="#dcdcdc">Modification</td>
+        <td bgcolor="#dcdcdc">Suppression</td>
+
+    </tr>
+
+    {% for m in ASS %}
+        <tr>
+
+            <td >  {{ m.nom }} </td>
+            <td > {{ m.description }} </td>
+            <td > {{ m.numTel }} </td>
+            <td > {{ m.user }} </td>
+            <td > {{ m.gouvernorat }} </td>
+            <td > {{ m.municipalite }} </td>
+            <td > {{ m.nomrue}} </td>
+            <td > {{ m.coderue }} </td>
+
+
+
+
+            <td><a href="{{ path("Modifier_Association",{'id':m.id_aasociation } ) }}">Modifier</a></td>
+            <td><a href="{{ path("Supprimer_Association",{'id':m.id_aasociation } ) }}">Supprimer</a></td>
+
+
+        </tr>
+
+    {% endfor %}
+
+
+
+</table>
+{% endblock main %}
+{% block footer %}
+{% endblock footer %}

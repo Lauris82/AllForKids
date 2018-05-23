@@ -1,0 +1,178 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}affiche Garderie{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+
+    <section class="page_breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>{{ Garderie.nom }}</h3>
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <a href="{{path ('ListeGard',{'id':Garderie.id_garderie})  }}">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{path ('PresentationGard',{'id':Garderie.id_garderie})  }}">
+                                Présentation
+                            </a>
+                        </li>
+                        <li>
+                            {% if is_granted('ROLE_USER') %}
+                                <a href="{{path ('Voter',{'id':Garderie.id_garderie})  }}">Evaluation de Garderie</a>
+                            {% endif %}
+                        </li>
+                        <li>
+
+                            <a href="{{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}" >Inscription</a>
+                        </li>
+                        <li>
+                            <a href="{{path ('galerieaffiche',{'id':Garderie.id_garderie})  }}" >Galerie</a>
+
+                        </li>
+                        <li >
+                            <a href="{{path ('galerieAjout',{'id':Garderie.id_garderie})  }}" >Ajout photo </a>
+
+                        </li>
+                        <li >
+                            <a href="{{path ('ListeVoter',{'id':Garderie.id_garderie})  }}" >Avis Parent</a>
+                        </li>
+                        <li >
+                            <a href="{{path ('ContactG',{'id':Garderie.id_garderie})  }}" >Contacter Nous </a>
+                        </li>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div align="Right">
+        {% if is_granted('ROLE_RESPONSABLE_GARDERIE') %}
+            <a href="{{path ('SupprimerGarderie',{'id':Garderie.id_garderie})  }}"> <img src="{{ asset('images/delete_removewaste_departure_action_delet_10837.png') }} " style="width: 20px;width: 20px"></a>
+            <a href="{{path ('UpdateGarderie',{'id':Garderie.id_garderie})  }}" ><img src="{{ asset('images/TextEdit.png') }} " style="width: 30px;width: 30px"></a>
+        {% endif %}
+    </div>
+    <div class="courses padding-v100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-7">
+
+                    <img src="{{ asset('images/') }}{{ Garderie.nomImage }}" alt="" class="margin-b60" style="height: 500px;width: 1000px">
+                    <p>
+                        La garderie "{{ Garderie.nom }}" accueille votre enfant dans un espace agréable et chaleureux adapté à ses goûts et ses besoins.</p><p> Nous avons les ressources, l’expérience, l’espace et l’énergie nécessaires pour donner à chaque enfant toute l'attention dont il a besoin pour être heureux.</p>
+
+                    <p> Nous avons élaboré un programme éducatif complet reconnu par le ministère de la famille et des aînés combinant activités ludiques et apprentissages afin d’amener votre enfant vers son plein potentiel. <p> Plus qu’un environnement éducatif, c’est un lieu d’épanouissement et d’éveil.</p>
+
+                      <p>  Notre capacité d’accueil s’élève à  {{ Garderie.capacite}}  enfants  dans un grand espace.
+                      Les enfants sont organisés en 4 groupes Nourrisson (de 0 à 12 mois),Tout Petit (de 1 ans à 3 ans),Préscolaire (de 3 à 5 ans)
+                          et Scolaire.
+                      </p>
+                    <a href="{{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}" class="btn-type1">Ajouter mon Enfant</a>
+
+                    {% if is_granted('ROLE_RESPONSABLE_GARDERIE') %}
+                    <h2>Coté Résponsable Garderie: {{ Garderie.nom }} </h2>
+                    <table class="courses-table table1">
+                       <tr></tr>
+
+
+
+
+
+      <td>
+          <a href="{{path ('AfficheEnfantsdeGardI',{'id':Garderie.id_garderie})  }}">Afficher les enfant de cette Garderie</a>
+                            </td>
+
+
+                        <tr>
+                            <td><a href="{{path ('AfficheListeAttente',{'id':Garderie.id_garderie})  }}" >Afficher les enfant de la liste d'attente de cette Garderie</a>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td><a href="{{path ('RafrechirListe',{'id':Garderie.id_garderie})  }}">Raffrechir la liste d'attente de cette Garderie</a>
+                            </td>
+                        </tr></table>
+                    {% endif %}
+
+   <div class="grand-hotel">
+       <i class="rt-icon2-globe-outline xlarge-icon blue" style="size: 30px"> </i>
+       Chercher Les enfants de cette garderies par :</div>
+
+                    <ul><li> <a href="{{path ('RechercheEnfant',{'id':Garderie.id_garderie})  }}" class="grand-hotel">Nom et Prénom </a></li>
+                          <li> <a href="{{path ('RechercheEnfantCat',{'id':Garderie.id_garderie})  }}" class="grand-hotel"> Catégorie</a>
+
+                        </li></ul>
+
+
+
+                </div>
+
+
+                <aside class="col-md-4 col-sm-5">
+                    <h2 class="grand-hotel" style="color: #b3d4fc" >Notre Garderie</h2>
+                    <ul class="list2">
+                        <li><div class="blue">Nom Garderie: {{ Garderie.nom }}</div></li>
+                        <li><div class="blue">Emplacement :{{ Garderie.emplacement }}</div></li>
+                        <li><div class="blue">Capacité: {{ Garderie.capacite}}</div></li>
+                        <li><div class="blue">Description: {{ Garderie.description}}</div></li>
+                    </ul>
+                   {#<div >{{  Garderie.rating|rating }}</div>#}
+                    <h4 style="color: #b3d4fc" class="grand-hotel"> Avis de nos chère parents </h4>
+
+                    <div class="alert alert-danger" role="alert">
+
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        {%  for Rates in Rates %}
+
+                            <div> {{ Rates.vote|rating }}</div>
+                        {% endfor %}
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{%  endblock main %}
+
+{% block footer %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="open-hours">
+                    <h3>Open <span>Hours</span></h3>
+                    <div>Monday - Friday <span>9:00 - 17:00</span></div>
+                    <div>Saturday <span>11:00 - 15:00</span></div>
+                    <div>Sunday <span>Closed</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_flickr">
+                    <h3 class="widget-title"></h3>
+                    <ul id="flickr"></ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_mailchimp">
+                    <h3 class="widget-title">Mailchimp</h3>
+                    <form class="signup form-inline" action="/" method="get">
+                        <div class="form-group">
+                            <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                        </div>
+                        <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                        <div class="response"></div>
+                    </form>
+                    <p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock footer %}

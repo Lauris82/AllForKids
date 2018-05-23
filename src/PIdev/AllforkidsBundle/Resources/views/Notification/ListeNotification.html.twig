@@ -1,0 +1,59 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Notifications{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}{% endblock section %}
+
+{% block main %}
+
+<section class="faq-section padding-v0 margin-b100" style="align-content: center">
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="margin-b45">Vos Notifications</h2>
+            </div>
+        </div>
+
+        <div class="row" align="center">
+            <div class="col-sm-6">
+                {% for notif in notif %}
+                    {% if notif.destinataire.id == app.user.id %}
+                        <div class="panel-group" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#{{ notif.id }}" class="collapsed">
+                                            <i class="rt-icon2-bubble highlight"></i>
+                                            Notification de: {{ notif.emetteur.username }}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="{{ notif.id }}" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>
+                                            Date : <span class="pink"> {{ notif.dateNotification | date('d-m-Y H:i:s')  }}</span>
+                                        </p>
+                                        <p>
+                                            <span class="pink"> {{ notif.sujet }}</span><br><br>
+                                            <span>
+                                                <a href="{{ path('fos_message_thread_new') }}">
+                                                    <i class="glyphicon glyphicon-send"><span>Contacter {{ notif.emetteur.username }}</span></i><br>
+                                                </a>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}
+
+{% block footer %}
+{% endblock footer %}

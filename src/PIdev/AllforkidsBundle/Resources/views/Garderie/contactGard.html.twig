@@ -1,0 +1,148 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}Contact{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+<section class="page_breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>{{ Garderie.nom }}</h3>
+                <ol class="breadcrumb">
+                    <li >
+                        <a href="{{path ('ListeGard',{'id':Garderie.id_garderie})  }}">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{path ('PresentationGard',{'id':Garderie.id_garderie})  }}">
+                            Présentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{path ('Voter',{'id':Garderie.id_garderie})  }}">Evaluation de Garderie</a>
+                    </li>
+                    <li>
+
+                        <a href="{{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}" >Inscription</a>
+                    </li>
+                    <li>
+                        <a href="{{path ('galerieaffiche',{'id':Garderie.id_garderie})  }}" >Galerie</a>
+
+                    </li>
+                    <li >
+                        <a href="{{path ('galerieAjout',{'id':Garderie.id_garderie})  }}" >Ajout photo </a>
+
+                    </li>
+                    <li >
+                        <a href="{{path ('ListeVoter',{'id':Garderie.id_garderie})  }}" >Avis Parent</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{path ('ContactG',{'id':Garderie.id_garderie})  }}" >Contacter Nous </a>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <section id="map"></section>
+    <section class="contacts">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="rt-icon2-location-outline pink"></span>
+                    <p>{{ Garderie.emplacement }}</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="rt-icon2-mail2 blue"></span>
+                    <a href="#">{{ Garderie.nom }}@gmail.com</a>
+                </div>
+                <div class="col-md-4">
+                    <span class="rt-icon2-phone-outline light-green"></span>
+                    <p>{{ Garderie.numTel }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <form class="contact-form" method="post" action="/">
+                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="nom et prenom">
+                            <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email ">
+                            <input type="text" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control" placeholder="Numéro téléphonne">
+                            <div class="form-control-group">
+                                <input type="text" aria-required="true" class="form-control hasDatepicker" value="" name="date" id="datepicker" placeholder="Date"><button type="button" class="ui-datepicker-trigger">...</button>
+                            </div>
+                            <select aria-required="true" id="time" name="time">
+                                <option value="" disabled="" selected="">Temps</option>
+                                <option value="12:00 AM">12:00 AM</option>
+                                <option value="12:30 AM">12:30 AM</option>
+                                <option value="1:00 AM">1:00 AM</option>
+                                <option value="1:30 AM">1:30 AM</option>
+                                <option value="2:00 AM">2:00 AM</option>
+                                <option value="2:30 AM">2:30 AM</option>
+                                <option value="3:00 AM">3:00 AM</option>
+                                <option value="3:30 AM">3:30 AM</option>
+                                <option value="4:00 AM">4:00 AM</option>
+                                <option value="4:30 AM">4:30 AM</option>
+                                <option value="5:00 AM">5:00 AM</option>
+                                <option value="5:30 AM">5:30 AM</option>
+                                <option value="6:00 AM">6:00 AM</option>
+                                <option value="6:30 AM">6:30 AM</option>
+                                <option value="7:00 AM">7:00 AM</option>
+                                <option value="7:30 AM">7:30 AM</option>
+                                <option value="8:00 AM">8:00 AM</option>
+                                <option value="8:30 AM">8:30 AM</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="9:30 AM">9:30 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="10:30 AM">10:30 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="12:30 PM">12:30 PM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="1:30 PM">1:30 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="2:30 PM">2:30 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="3:30 PM">3:30 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                                <option value="4:30 PM">4:30 PM</option>
+                                <option value="5:00 PM">5:00 PM</option>
+                                <option value="5:30 PM">5:30 PM</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="6:30 PM">6:30 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="7:30 PM">7:30 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="8:30 PM">8:30 PM</option>
+                                <option value="9:00 PM">9:00 PM</option>
+                                <option value="9:30 PM">9:30 PM</option>
+                                <option value="10:00 PM">10:00 PM</option>
+                                <option value="10:30 PM">10:30 PM</option>
+                                <option value="11:00 PM">11:00 PM</option>
+                                <option value="11:30 PM">11:30 PM</option>
+                            </select>
+                            <textarea rows="6" cols="45" name="message" id="message" placeholder="message"></textarea>
+                            <button type="submit" id="contact_form_submit" name="contact_submit" class="btn-type1">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{%  endblock main %}
+
+{% block footer %}
+{% endblock footer %}
+

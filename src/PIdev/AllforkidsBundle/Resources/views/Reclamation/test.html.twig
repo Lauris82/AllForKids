@@ -1,0 +1,175 @@
+{% extends '::association.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block topline %}{% endblock topline %}
+
+
+  {% block sousMenu %}
+      <section class="page_breadcrumbs">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12 text-center">
+                      <h3>Reclamation</h3>
+                      <ol class="breadcrumb">
+
+                       {#   <li>
+                              <a > Lister </a>
+                          </li>
+                          <li  class="active">
+                              <a href="{{ path('Envoyer_Reclamations') }}"> Envoyer </a>
+                          </li>#}
+
+
+                      </ol>
+                  </div>
+              </div>
+          </div>
+      </section>
+  {% endblock sousMenu %}
+
+
+
+{% block ass %}
+
+<div class="row" >
+
+    <div class="col-sm-push-6">
+        <div class="panel-group" id="accordion1">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2"  style="text-align: center">
+                            {#<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">  class="collapsed"  #}
+                            <i class="rt-icon2-bubble highlight"></i>
+                            Envoyer reclamation
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function getOption() {
+            var obj = document.getElementById("mySelect");
+            var m = obj.options[obj.selectedIndex].text;
+
+
+            switch(m) {
+
+
+                case "Association":
+                    document.getElementById("Ass").style.visibility='visible';
+                    document.getElementById("Cl").style.visibility='hidden';
+
+                    break;
+                case "Club":
+                    document.getElementById("Ass").style.visibility='hidden';
+                    document.getElementById("Cl").style.visibility='visible';
+                    break;
+                case "Garderie":
+                    text = "garderie ";
+                    break;
+                default:
+                    text = "Unknown ";
+            }
+
+//           document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</head>
+<body>
+
+<form>
+    Sujet de reclamation:
+    <select id="mySelect">
+        <option disabled selected>choisir Type</option>
+        <option value="Association">Association</option>
+        <option value="Club">Club</option>
+        <option value="Garderie">Garderie</option>
+        <option value="Parent">Parent</option>
+
+    </select>
+
+
+    <br><br>
+    <input type="button" onclick="getOption()" value="Lister">
+</form>
+
+<form method="post">
+    Nom du membre sur lequelle vous voulez reclamer
+<select id="Ass" name="AName" style="visibility: hidden">
+{% for m in A %}
+
+        <option>  {{ m.nom }} </option>
+
+{% endfor %}
+</select>
+
+
+<select id="Cl" name="CName" style="visibility: hidden">
+    {% for m in C %}
+
+        <option>  {{ m.nom }} </option>
+
+    {% endfor %}
+</select>
+
+
+
+
+{{ form_start(f) }}
+<table>
+    <tr>
+        <td>objet</td>
+        <td>{{ form_widget (f.objetRec, { 'attr': {'class': "form-control",'placeholder': 'nom'|trans} }) }}</td>
+    </tr>
+    <tr>
+        <td>Contenu reclamation</td>
+        <td>{{ form_widget (f.contenuRec, { 'attr': {'class': "form-control",'placeholder': 'description'|trans} }) }}</td>
+    </tr>
+    <tr>
+        <td>votre mail</td>
+        <td>{{ form_widget (f.mail, { 'attr': {'class': "form-control",'placeholder': 'mail'|trans} }) }}</td>
+    </tr>
+
+</table>
+
+{{ form_end(f) }}
+
+
+
+</form>
+</body>
+</html>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock ass %}
+
+{% block foot %}
+    {% endblock foot %}

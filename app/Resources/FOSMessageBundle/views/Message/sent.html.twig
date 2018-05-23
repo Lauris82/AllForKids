@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Messages envoyés{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}
+    <h3>Messagerie</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('fos_message_inbox') }}">Boite de reception</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_message_sent') }}">Messages envoyés</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_message_deleted') }}">Messages supprimés</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+
+{% block main %}
+
+    <div class="single-item-body icon-body">
+        <h3 >Messages envoyés</h3>
+    </div>
+
+    {% block fos_message_content %}
+
+        <h2>{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</h2>
+
+        {% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
+
+    {% endblock %}
+
+{% endblock main %}
+
+
+{% block footer %}{% endblock footer %}

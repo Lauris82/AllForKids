@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}affiche Enfant{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+
+    <div class="row margin-b45">
+        <div class="col-sm-12">
+            <p class="grand-hotel text-center">Ditez Bonjour </p>
+            <h1 class="text-center margin-b30">
+                <span class="blue">à</span> <span class="pink">Nos</span><span class="turquoise"> Enfants</span>
+            </h1>
+        </div>
+    </div>
+
+<div class="row margin-b100">
+
+
+    {% for Enfant in Enfant %}
+        <div class="col-sm-4 text-center">
+            <div class="member-card">
+                <img src="{{ asset('images/') }}{{ Enfant.nomImage }}" style="width: 219.99px;height: 219.99px">
+                <div class="single-item-body">
+                    <h2><span class="default-text">{{ Enfant.prenom}}</span> <br>{{ Enfant.nom }}</h2>
+                    <span class="pink">{{ Enfant.sexe}}</span>
+
+                    <p>
+                        {{ Enfant.nom }}  {{ Enfant.prenom}} née le {{ Enfant.dateNaissance|date('d/m/Y')}}</p>
+                       <p> il/elle apparient au groupe de {{ Enfant.categorie }}
+                    </p>
+                </div>
+                <div class="author-social text-center">
+                    <a href="{{path ('UpdateEnfant',{'id':Enfant.id_enfant})  }}" class="theme_button rt-icon2-pen2">Modifier</a>
+                    <a href="{{path ('DelateEnfant',{'id':Enfant.id_enfant})  }}" class="rt-icon2-times-outline pink">Supprimer</a>
+                   <a href="{{path ('AjoutCPNourisson',{'id':Enfant.id_enfant})  }}" class="rt-icon2-eye-outline">suivi</a>
+                </div>
+            </div>
+        </div>
+
+
+    {% endfor %}
+
+</div>
+
+{%  endblock main %}
+{% block footer %}
+{% endblock footer %}
+
+

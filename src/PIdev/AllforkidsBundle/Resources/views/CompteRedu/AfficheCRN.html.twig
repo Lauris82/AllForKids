@@ -1,0 +1,143 @@
+{#{% extends '::raoudha.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}affiche Compte Rendu{% endblock title %}
+{% block topline %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </div>
+
+{% endblock topline %}
+{%  block main %}#}
+    <div class="canvas">
+
+        <h1 class="poppins" style="text-align: center"><span class="pink">Ma  </span><span class="light-green">  Fiche</span><span class="turquoise">  de </span><span class="pink">  Suivie</span></h1>
+
+<h2 align="Center">
+    <div class="grand-hotel" style="color: papayawhip" >{{ Enfant.nom }}    {{ Enfant.prenom }} </div></h2>
+        <section class="service-calc padding-v100">
+
+            <div class="container">
+                <div class="col-sm-12 padding-g0">
+                    <div class="col-xs-12">
+                        {% for Compte in Compte %}
+                        <div >
+
+                            <h4 style="color: #00bcd5"> Le : {{ Compte.dateCompteRendu|date('d/m/y')  }}</h4>
+
+                            <div >
+
+
+
+                                <table>
+
+                                    <tr>
+                                        <div >
+                                            <td class="grand-hotel"style="color: #f5abcb">Mes Humeurs  :</td>
+                                            {#<td>{{ Compte.humeur }}</td>#}
+
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: #a94442"> Mon etat de sante :</td>
+                                        <td>{{ Compte.etatS }}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: tomato">Nombre de Biberons :</td>
+                                        <td>{{Compte.nbrBib }}</td>
+                                        <td>   <img src="C:\wamp\www\AllForKids\web\images\Baby-Baby-Bottle-icon.png" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: turquoise"> Nombre de Couche Changee :</td>
+                                        <td> {{ Compte.nbrCouche }}</td>
+                                        <td>   <img src="C:\wamp\www\AllForKids\web\images\baby-1295614_960_720.png" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: yellowgreen"> Mes Selles </td>
+                                        <td> {{ Compte.selles }}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: violet"> Temperature </td>
+                                        <td> {{ Compte.temperature}}</td>
+                                        <td><img src="C:\wamp\www\AllForKids\web\images\measurement.png" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: powderblue"> Medicaments Pris :</td>
+                                        <td> {{ Compte.medicament }}</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="grand-hotel" style="color: coral">Sieste : de </td>
+                                        <td> {{ Compte.dateDS|date('d/m/y') }}</td>
+
+
+                                        <td class="grand-hotel" style="color: coral"> à </td>
+                                        <td>{{ Compte.dateFS|date('d/m/y')  }}</td>
+                                        <td><img src="C:\wamp\www\AllForKids\web\images\sleeping-baby-filled.png" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: springgreen"> Separation :</td>
+                                        <td> {{Compte.separation }}</td>
+                                        <td> <img src="C:\wamp\www\AllForKids\web\images\47824.png" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr><td class="grand-hotel" style="color: purple">S'il vous plait apporter avec vous :</td>
+                                        <td>{{ Compte.apporter}}
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: sandybrown"> a noter : </td>
+                                        <td> {{ Compte.note}}</td>
+                                        <td> <img src="C:\wamp\www\AllForKids\web\images\animal.png" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: olivedrab"> Activitee d'aujourd'hui :</td>
+                                        <td> {{Compte.activite }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: gold"> je suis ici de :</td>
+                                        <td> {{ Compte.HeureD|date('d/m/y') }}</td>
+
+                                        <td class="grand-hotel" style="color: gold"> à  </td>
+                                        <td> {{Compte.HeureF|date('d/m/y') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: darkturquoise"> Observation et  Remarque de la journee </td>
+                                        <td>
+                                            {{ Compte.description }}
+                                        </td>
+                                        <td> <img src="C:\wamp\www\AllForKids\web\images\176556-200.png" style="width: 60px;height: 60px"></td>
+
+                                    </tr>
+
+
+
+
+                                </table>
+        {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </div>
+{#
+{%  endblock main %}
+{% block footer %}
+{% endblock footer %}#}

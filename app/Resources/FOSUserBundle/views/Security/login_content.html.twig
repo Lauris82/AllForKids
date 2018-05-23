@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Allforkids{% endblock title %}
+
+{% block login %}
+
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+<form class="form-horizontal dropdown-menu" action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    <label for="username">{{ 'security.login.username'|trans }}</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+
+    <label for="password">{{ 'security.login.password'|trans }}</label>
+    <input type="password" id="password" name="_password" required="required" />
+
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+</form>
+{% endblock login %}
+
+{% block liens %}{% endblock %}
+{% block header %}{% endblock header %}
+
+
+{% block main %}
+
+
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="grand-hotel">Bonjour !</p>
+                    <h3 class="poppins">
+                        Bienvenue <span class="pink">sur notre site</span>
+                    </h3>
+                    <p class="about-site">
+
+                        Quand la vie et les droits<br>
+                        d'un enfant sont en jeu, <br>
+                        nous n'avons pas le droit de rester SILENCIEUX
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="intro_section page_mainslider ds">
+        <div class="flexslider">
+            <ul class="slides">
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/gallery-image-06.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Votre enfant souffre des difficultés scolaires
+                                        </p>
+                                        <h3 class="poppins">
+                                            nous vous trouvrons <br><span class="pink">les solutions!</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Testimonials</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+                <li>
+                    <img src="{{ asset('FrontOffice/images/enfant-handicap3.jpg')}}" alt="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slide_description_wrapper">
+                                    <div class="slide_description">
+                                        <p class="grand-hotel">
+                                            Trouver l'aide pour surmente
+                                        </p>
+                                        <h3 class="poppins">
+                                            les problemes <br><span class="pink">de santé</span>
+                                        </h3>
+                                        {#<a href="#" class="btn-type1">Book a sitter</a>#}
+                                    </div> <!-- eof .slide_description -->
+                                </div> <!-- eof .slide_description_wrapper -->
+                            </div> <!-- eof .col-* -->
+                        </div><!-- eof .row -->
+                    </div><!-- eof .container -->
+                </li>
+
+
+
+            </ul>
+        </div> <!-- eof flexslider -->
+    </section>
+
+
+
+
+
+
+
+{% endblock main %}
+
+{% block footer %}
+{% endblock footer %}

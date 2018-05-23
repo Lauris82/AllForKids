@@ -1,0 +1,372 @@
+
+
+{% extends '::base.html.twig' %}
+{% block page %}
+{% endblock page %}
+{% block title %}
+{% endblock title %}
+{% block topline %}
+{% endblock topline %}
+{% block main %}
+
+    <form  method="POST" action="{{ path('Post_Search') }}">
+
+        <section class="page_breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h3>Blog & Forum</h3>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="{{ path('Page_post_ajout') }}">Ajouter Post</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('Page_post_affiche') }}">Les Posts</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h3 class="poppins"><span class="pink">T</span>O<span class="light-green">P</span><span class="turquoise">B</span><span class="pink">L</span>O<span class="light-green">G</span><span class="pink">S</span></h3>
+                <div class="row gallery-nav">
+                    <div class="col-md-6">
+                        <a href="#" class="active">All Photos</a>
+                        <a href="#">Children</a>
+                        <a href="#">Games</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#">Babysitters</a>
+                        <a href="#">Teachers</a>
+                        <a href="#">Kids</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="owl-carousel"
+                             data-margin="0"
+                             data-nav="false"
+                             data-items="3"
+                             data-themeclass="hover-scale"
+                             data-loop="false"
+                             data-dots="true"
+                             data-center="false"
+                             data-autoplay="false"
+                             data-responsive-xs="1"
+                             data-responsive-sm="2"
+                             data-responsive-md="3"
+                             data-responsive-lg="4"
+                        >
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-0.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-0.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-1.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-1.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-2.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-2.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-3.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-3.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-0.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-0.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-1.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-1.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-2.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-2.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-3.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-3.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-0.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-0.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-1.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-1.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-2.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-2.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vertical-item">
+                                <div class="item-media">
+                                    <img src="{{ asset('images/image-3.jpg') }}" alt="">
+                                    <div class="media-links">
+                                        <div class="links-wrap">
+                                            <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/image-3.jpg"></a>
+                                            <a class="p-link" title="" href="#"></a>
+                                            <h4>Diam noumy eirmod </h4>
+                                            <a href="#" class="read-about">Read about us</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="246">
+            <span class="toggle_menu"><span></span></span>
+        </div>
+        <input type="text" name="search" id="sugg">
+
+
+        </div>
+    </form>
+    <section class="small-post-section text-center">
+        <section class="top-posts">
+            <div class="container">
+                <h3>Top Posts</h3>
+            </div>
+        </section>
+
+        <div id="myList">
+
+        {% for postt in Posts %}
+            <div class="single-item blog-post-small">
+                <img src="{{ asset('image_post/' ~postt.image) }}" height="150px" width="250px">
+                <div class="single-item-body">
+                    <p class="post-date">{{ postt.createdAt|date('d-m-Y H:i:s') }}</p>
+                    <h3>
+                        {{  postt.titre }}
+                    </h3>
+                    <p class="post-category">Contenu :</p>
+                    <p class="post-descr">{{  postt.contenu }}</p>
+                </div>
+                <div class="single-item top-post-item" align="center">
+                    <div class="single-item-footer">
+
+                   <!--  <span><a href="{{ path('Post_Liked',{'id':postt.idPost}) }}"><i class="rt-icon2-heart-outline" ></i></a><br></span> -->
+
+
+                     <form action="{{ path('Post_Liked')}}" method="post">
+                         <input type="hidden" value="{{ postt.idPost }}" name="id">
+                         <input type="submit" value="like">
+                     </form>
+
+
+                        <a href="{{ path('Post_Signal',{'id':postt.idPost}) }}"><i class="rt-icon2-message"></i>Signal</a><br>
+
+
+                        <span><i class="rt-icon2-heart-outline"></i><br><span>36</span></span>
+                        <span><a href="{{ path('Page_comment_ajout',{'id':postt.idPost}) }}"><i class="rt-icon2-message"></i></a><br></span>
+                       {%  if app.user == postt.user %}
+                        <span><a href="{{ path("Page_post_affiche_id",{'id':postt.idPost})  }}"><i class="rt-icon2-eye-outline"></i></a><br></span>
+                          {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+    <script src="{{ asset('js/jquery-2.2.4.min.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#sugg').on('keyup', function(){
+             // alert();
+                var url = '{{ path('Post_Search') }}';
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: 'q=' + $('#sugg').val(),
+                    success: function (data) {
+                        if (data !== '') {
+                            $('#myList').html('');
+                            console.log(data);
+                            $.each((data), function (key, element) {
+
+                               var img="{{ asset('image_post/' ~ 'image') }}"
+                                img = img.replace('image',element.image);
+
+                               var post="{{ path('Post_Liked')}}"
+                                var postId="{{ path('Post_Liked',{'id':'id'}) }}"
+                                    postId=postId.replace('id',element.idPost)
+                                var postSignal="{{ path('Post_Signal',{'id':'id'}) }}"
+                                    postSignal=postSignal.replace('id',element.idPost)
+                                var pageComment="{{ path('Page_comment_ajout',{'id':'id'}) }}"
+                                    pageComment=pageComment.replace('id',element.idPost)
+                                var pagePost="{{ path("Page_post_affiche_id",{'id':'id'})  }}"
+                                    pagePost=pagePost.replace('id',element.idPost)
+
+
+
+                               $('#myList').append( ' <div class="single-item blog-post-small">\n' +
+                                    '                <img src=http://localhost/AllForKids/web/image_post/'+element.image+' height="150px" width="250px">\n' +
+                                '                <div class="single-item-body">\n' +
+                                '                    <p class="post-date"></p>\n' +
+                                '                    <h3>\n' +
+                                '                         '+ element.titre +'\n' +
+                                '                    </h3>\n' +
+                                '                    <p class="post-category">Contenu :</p>\n' +
+                                '                    <p class="post-descr">'+ element.contenu +'</p>\n' +
+                                '                </div>\n' +
+                                '                <div class="single-item top-post-item" align="center">\n' +
+                                '                    <div class="single-item-footer">\n' +
+                                '\n' +
+                                '                   <!--  <span><a href='+postId+'><i class="rt-icon2-heart-outline" ></i></a><br></span> -->\n' +
+                                '\n' +
+                                '\n' +
+                                '                     <form action="'+post+' method="post">\n' +
+                                '                         <input type="hidden" value="'+ element.idPost +'" name="id">\n' +
+                                '                         <input type="submit" value="like">\n' +
+                                '                     </form>\n' +
+                                '\n' +
+                                '\n' +
+                                '                        <a href='+postSignal+'><i class="rt-icon2-message"></i>Signal</a><br>\n' +
+                                '\n' +
+                                '\n' +
+                                '                        <span><i class="rt-icon2-heart-outline"></i><br><span>36</span></span>\n' +
+                                '                        <span><a href='+pageComment+'><i class="rt-icon2-message"></i></a><br></span>\n' +
+                                '                      \n' +
+                                '                        <span><a href='+pagePost+'><i class="rt-icon2-eye-outline"></i></a><br></span>\n' +
+                                '                         \n' +
+                                '\n' +
+                                '                    </div>\n' +
+                                '                </div>\n' +
+                                '            </div>');
+                            });
+                        }
+                        else {
+
+                        }
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            });
+        });
+    </script>
+{% endblock main %}
+

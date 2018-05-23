@@ -1,0 +1,228 @@
+{% extends '::teamConsulter.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block topline %}{% endblock topline %}
+
+
+{% block menu %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <!-- main nav start -->
+                <nav class="mainmenu_wrapper">
+                    {% block liens %}
+                        <ul class="mainmenu sf-menu">
+                            <li  class="active">
+                                <a href="{{ path('Home_Page') }}">Accueil</a>
+                            </li>
+                            <li  class="active">
+                                <a href="{{ path('ListeGarderie') }}">Garderie</a>
+                                <ul >
+                                    {% if is_granted('ROLE_RESPONSABLE_GARDERIE') %}
+                                        <li ><a href="{{ path('AjouterGarderie') }}"> Ajouter Garderie</a> </li>
+                                    {% endif %}
+                                    <li ><a href="{{ path('ListeGarderie') }}"> Afficher Garderie</a> </li>
+                                    <li ><a href="{{ path('RechercheGarderieEmp') }}"> Chercher Garderie par emplacement</a> </li>
+                                    {#<li ><a href="{{ path('affiche_admin') }}"> Afficher coté admin Garderie</a> </li>#}
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a>Association</a>
+                                <ul>
+                                    {% if is_granted('ROLE_RESPONSABLE_ASSOCIATION') %}
+                                        <li  >
+                                            <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+                                        </li>
+                                    {% endif %}
+                                    <li  >
+                                        <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+                                    </li>
+                                    <li >
+                                        <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+
+                                <a>Club</a>
+                                <ul>
+                                    {% if is_granted('ROLE_RESPONSABLE_CLUB') %}
+                                        <li  >
+                                            <a href="{{ path('Ajouter_Club') }}"> Ajouter mon club</a>
+                                        </li>
+                                    {% endif %}
+
+                                    <li  >
+                                        <a href="{{ path('Lister_Club') }}"> Listes des club </a>
+                                    </li>
+                                    <li >
+                                        <a href="{{ path('Rechercher_Club') }}"> Chercher club </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li  class="active">
+                                <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                                <ul>
+                                    <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                                    <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                                    <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a href="#">Offre de Transport</a>
+                                <ul>
+                                    {% if app.user.roles != ('ROLE_USER') %}
+                                        <li><a href="{{ path('Ajouter_OffreTransport') }}">Créer une Offre de Transport</a></li>
+                                    {% endif %}
+                                    <li><a href="{{ path('Rechercher_OffreTransport') }}">Liste des Offres de Transport</a></li>
+                                    <li><a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a >Blog & Forum</a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('Page_post_affiche') }}">Posts</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a >Reclamation</a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('Envoyer_Reclamations') }}">Envoyer Reclamation</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    {% endblock liens %}
+                </nav>
+                <!-- eof main nav -->
+                <div class="toggle_menu-wrap affix-top" data-spy="affix" data-offset-top="246">
+                    <span class="toggle_menu"><span></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock menu %}
+
+
+{% block sousMenu %}
+    <section class="page_breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>Club</h3>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="calendar.html">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('Lister_Club') }}"> Lister </a>
+                        </li>
+                        {% if is_granted('ROLE_RESPONSABLE_CLUB') %}
+                            <li  >
+                                <a href="{{ path('Ajouter_Club') }}"> Ajouter</a>
+                            </li>
+                        {% endif %}
+                        <li>
+                            <a href="{{ path('Rechercher_Club') }}"> chercher </a>
+                        </li>
+
+
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock sousMenu %}
+
+
+{% block liste %}
+    <section class="team-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+
+                    {% for m in C %}
+
+
+                        <div class="team-person">
+                            <div class="about-person">
+                                <p class="grand-hotel">Club</p>
+                                <h3>{{ m.nom }}</h3>
+                                <div class="person-divider"></div>
+                                <p>
+                                    {{ m.description }}
+                                </p>
+                            </div>
+                            <div class="person-social" >
+                                <p>
+                                    {{ m.numTel }}
+                                </p>
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon color-bg-icon rounded-icon soc-facebook"></a>
+                                    <a href="#" class="social-icon color-bg-icon rounded-icon soc-twitter"></a>
+                                    <a href="#" class="social-icon color-bg-icon rounded-icon soc-skype"></a>
+
+                                    <br><br>
+
+                                    {#<label><a href="{{ path("Modifier_Association",{'id':m.id_aasociation } ) }}">Modifier</a></label>#}
+
+                                    {% if is_granted('ROLE_RESPONSABLE_CLUB') %}
+                                    <label><a href="{{ path("Modifier_Club",{'id':m.idclub } ) }}">Modifier</a></label>
+
+                                    <label><a href="{{ path("Supprimer_Club",{'id':m.idclub } ) }}">Supprimer</a></label>
+                                    {% endif %}
+
+                                    <label><a href="{{ path("Consulter_Club",{'id':m.idclub } ) }}">Consulter</a></label>
+
+
+
+                                    <br><br>
+                                    {#<label><a href="{{ path("Rechercher_Club",{'id':m.idclub } ) }}">Consulter</a></label>#}
+
+
+                                </div>
+                                {#    </div>
+
+                                    <div >#}
+
+                            </div>
+                        </div>
+
+
+
+                    {% endfor %}
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+    {# display navigation #}
+    <div class="pagerArea text-center"  >
+        <strong> {{ knp_pagination_render(C) }} </strong>
+    </div>
+{% endblock liste %}
+

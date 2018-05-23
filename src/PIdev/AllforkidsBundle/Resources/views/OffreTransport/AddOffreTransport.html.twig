@@ -1,0 +1,174 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Offre de Transport{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{% block section %}
+    <h3>Transport</h3>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('Ajouter_OffreTransport') }}">Ajouter une Offre</a>
+        </li>
+        <li>
+            <a href="{{ path('Rechercher_OffreTransport') }}">Voir les Offres</a>
+        </li>
+        <li>
+            <a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a>
+        </li>
+    </ol>
+{% endblock section %}
+
+{% block main %}
+
+<div class="single-item-body icon-body">
+    <span><a href="#" class="btn-type1" data-toggle="modal" data-target="#add_project">Créer votre Offre</a></span>
+</div>
+
+<section class="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 for-nannies">
+                <p class="grand-hotel">Information</p>
+                <h3 class="poppins">Pour <span class="pink">Parents</span></h3>
+                <ul>
+                    <li>
+                        <div class="step-icon">
+                            <i class="rt-icon2-edit"></i>
+                        </div>
+                        <div class="step-descr">
+                            <h4>Créer une offre transport</h4>
+                            <p>Vous pouvez créer votre propre offre et permettre à d'autres parents de reserver des places et entrer en contact avec eux.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-icon">
+                            <i class="rt-icon2-eye"></i>
+                        </div>
+                        <div class="step-descr">
+                            <h4>Modifier une offre</h4>
+                            <p> Vous pouvez à tout moment modifier ou supprimer votre offre.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-icon">
+                            <i class="rt-icon2-book2"></i>
+                        </div>
+                        <div class="step-descr">
+                            <h4>Réserver une place</h4>
+                            <p>Si une offre vous convient, vous pouvez reserver une place et entrer en contact avec celui qui propose le service.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 for-parents">
+                <p class="grand-hotel">Information</p>
+                <h3 class="poppins">Pour  <span>Responsables<h4>(Garderie, Club, etc...)</h4></span></h3>
+                <ul>
+                    <li>
+                        <div class="step-icon">
+                            <i class="rt-icon2-group-outline"></i>
+                        </div>
+                        <div class="step-descr">
+                            <h4>Créer une offre transport</h4>
+                            <p>Vous pouvez créer votre propre offre et permettre aux parents de reserver des places.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-icon">
+                            <i class="rt-icon2-eye-outline"></i>
+                        </div>
+                        <div class="step-descr">
+                            <h4>Modifier une offre</h4>
+                            <p> Vous pouvez à tout moment modifier ou supprimer votre offre.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-icon">
+                            <i class="rt-icon2-message"></i>
+                        </div>
+                        <div class="step-descr">
+                            <h4>Contact</h4>
+                            <p>En cas de changement entrer en contact avec les parents</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="add_project" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="single-item-body icon-body">
+            <form id="addform" name="addform" action="{{ path('Ajouter_OffreTransport') }}" method="post">
+                <div class="modal-body">
+                    <p align="center" class="grand-hotel" style="color: grey">Créer votre Offre</p><br>
+                    {{ form_start(offre) }}
+                        <table align="center">
+                            <tr>
+                                <td>Description: </td>
+                                <td>{{ form_widget(offre.description) }}</td>
+                            </tr>
+                            <tr>
+                                <td><br></td>
+                            </tr>
+                            <tr>
+                                <td>Destination: </td>
+                                <td>{{ form_widget(offre.destination) }}</td>
+                            </tr>
+                            <tr>
+                                <td><br></td>
+                            </tr>
+                            <tr>
+                                <td>Date Debut: </td>
+                                <td>{{ form_widget(offre.dateDebut) }}</td>
+                            </tr>
+                            <tr>
+                                <td><br></td>
+                            </tr>
+                            <tr>
+                                <td>Date Fin: </td>
+                                <td>{{ form_widget(offre.dateFin) }}</td>
+                            </tr>
+                            <tr>
+                                <td><br></td>
+                            </tr>
+                            <tr>
+                                <td>Nombre de Place: </td>
+                                <td>{{ form_widget(offre.nombrePlace) }}</td>
+                            </tr>
+                            <tr>
+                                <td><br></td>
+                            </tr>
+                            <tr>
+                                <td>Prix: </td>
+                                <td>{{ form_widget(offre.prix) }}</td>
+                            </tr>
+                            <tr>
+                                <td><br><br></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" name="submit" class="btn btn-success" href="{{ path('Ajouter_OffreTransport') }}" style="width: 100px" >
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-inverse" onclick='' data-dismiss="modal" href="{{ path('Afficher_OffreTransport') }}">cancel</button>
+                                </td>
+                            </tr>
+                        </table>
+                    {{ form_end(offre) }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main%}
+
+
+
+{% block footer %}
+{% endblock footer %}

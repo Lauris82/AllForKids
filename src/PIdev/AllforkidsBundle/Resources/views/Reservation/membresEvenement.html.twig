@@ -1,0 +1,70 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block page %}
+    <nav class="mainmenu_wrapper">
+        <ul class="mainmenu sf-menu">
+            <li  class="active">
+                <a href="{{ path('Home_Page') }}">Home</a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                <ul>
+                    <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                    <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                    <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- eof main nav -->
+    <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+        <span class="toggle_menu"><span></span></span>
+    </div>
+{% endblock page %}
+
+{% block topline %}
+{% endblock topline %}
+
+{% block main %}
+
+<div class="row margin-b100">
+
+    <div class="col-sm-12">
+        <br>
+        <br>
+        <h1 class="text-center margin-b45"> <span class="blue">Membres</span> <span class="pink">èvenement</span></h1>
+        <div class="table-responsive">
+            <table class="table1">
+                <tr>
+                    <th>image</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Date Reservation</th>
+                    <th>Annuler Reservation</th>
+                </tr>
+                {% for m in membres %}
+                <tr>
+                    <td><img src="{{ asset('image_user/' ~ m.user.image) }}"  style="   border: 1px black solid;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background:  200px;"> </td>
+
+
+                    <td><a href="#">{{ m.user.nom }}</a> </td>
+                    <td>{{ m.user.prenom }}</td>
+                    <td>{{ m.dateReservation| date('Y/m/d') }}</td>
+                    <td><a href="{{path('dereservMembre',{'id':m.id_reservation }) }}" >annuler reservation</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock main %}
+
+{% block footer %}
+
+{% endblock footer %}

@@ -1,0 +1,148 @@
+
+
+{% extends '::base.html.twig' %}
+{% block page %}
+{% endblock page %}
+{% block title %}
+{% endblock title %}
+{% block topline %}
+{% endblock topline %}
+{% block main %}
+<div class="light-bg padding-60">
+    <article class="blog-post single-item full-post">
+        <div class="entry-thumbnail full-width">
+            <img src={{ asset('image_post/' ~ post.image) }} alt="">
+        </div>
+        <header class="single-item-body icon-body">
+            <center class=""><b style="color: firebrick">{{ post.titre }}</b></center>
+
+            <b class="post-date" style="float: right">{{ post.createdAt|date('d-m-y H:i') }}</b>
+            <div class="post-adds">
+                <a href="#" class="theme_button">
+                    <i class="rt-icon2-arrow-forward-outline"></i>
+                </a>
+                <a href="#" class="theme_button inverse">
+                    <i class="rt-icon2-heart-outline"></i>
+                </a>
+                <span class="item-likes">
+                                76 likes
+                                </span>
+            </div>
+        </header>
+
+        <div class="entry-content">
+            <b>
+                {{  post.contenu }}            </b>
+            <p>
+            </p>
+
+            <div id="blog-more" class="blog-more collapse">
+
+                <blockquote>
+                    Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src={{asset('images/author-1.jpg')  }} alt="">
+                            </a>
+                        </div>
+                        <div class="media-body media-middle">
+                            <strong class="highlight">Shirry K. Lykins</strong> <br>Parent
+                        </div>
+                    </div>
+                </blockquote>
+
+                <p>
+                    Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem libero malesuada feugiat. Donec sollicitudin molestie malesuada. porttitor accumsan tincidunt. Donec sollicitudin molestie malesuada. Donec sollicitudiestie malesuada
+                    Nulla porttitor accumsan tincidunt.
+                </p>
+                <ul class="list2">
+                    <li><p class="default-color">Sed porttitor lectus nibh.</p></li>
+                    <li><p class="default-color">Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p></li>
+                    <li><p class="default-color">Donec rutrum congue leo eget malesuada.</p></li>
+                </ul>
+                <p>
+                    <img class="alignleft autowidth" alt="" src= {{ asset('images/blog-post-07.jpg') }}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit ametdui vestibulum ac diam sit amet quam vehicula elementum sed sit.
+                </p>
+                <p>
+                    Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                </p>
+                <p>
+                    Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt.
+                </p>
+            </div> <!-- eof blog-more -->
+
+            <div class="darklinks text-center">
+                <a class="blog-more-toggle collapsed" data-toggle="collapse" href="#blog-more" aria-expanded="false" aria-controls="blog-more">
+                    <span class="blog-more-hidden">More</span>
+                    <span class="blog-more-visible">Hide</span>
+                </a>
+            </div>
+        </div>
+        <!-- .entry-content -->
+    </article>
+    <form class="comment-form" id="commentform" method="post"  onsubmit="" action="">
+        <div class="row">
+
+            <div class="col-md-12">
+                <p class="comment-form-chat">
+                    <label for="comment">Comment</label>
+                    <!-- <i class="rt-icon2-pencil3"></i> -->
+                    <textarea aria-required="true" rows="8" cols="45" name="comment" value="" id="comment" class="form-control" placeholder="Message..."></textarea>
+                </p>
+            </div>
+        </div>
+        <p class="form-submit">
+            <button type="submit" id="submit" name="submit"  class="btn-type1 colore-blue">Send Comment</button>
+        </p>
+    </form>
+
+{% for comment in Comment %}
+    <div class="comments-area" id="comments">
+        <ol class="comment-list">
+            <li class="comment even thread-even depth-1 parent">
+                <article class="comment-body media">
+                    <div class="media-left">
+                        <img class="media-object" alt="" src={{ asset('image_user/' ~comment.user.image) }}>
+                    </div>
+                    <div class="media-body with_border">
+                                    <span class="reply">
+                                        <a href="#respond">
+                                            <i class="rt-icon2-arrow-back-outline"></i>
+                                        </a>
+                                    </span>
+                        <div class="comment-meta darklinks">
+                            <a class="author_url" rel="external nofollow" href="#">{{comment.user.username}}</a>
+                            <span class="comment-date">
+                                            <span class="entry-date">{{ comment.createdAt|date('d-m-y H:i') }}</span>
+                                        </span>
+                        </div>
+                        <p>{{ comment.contenu }}</p>
+
+                        {%  if app.user == comment.user %}
+                            <a href="{{ path("Page_comment_update",{'id':comment.id})  }}">Modifier </a>
+                            <a href="{{ path("Page_comment_delete",{'id_commentaire':comment.id})  }}">Supprimer </a>
+                        {% endif %}
+                    </div>
+
+                </article>
+                <!-- .comment-body -->
+
+                            <!-- #comment-## -->
+
+                        <!-- .children -->
+                    </li>
+                    <!-- #comment-## -->
+                </ol>
+                <!-- .children -->
+            </li>
+            <!-- #comment-## -->
+
+            <!-- #comment-## -->
+        </ol>
+        <!-- .comment-list -->
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

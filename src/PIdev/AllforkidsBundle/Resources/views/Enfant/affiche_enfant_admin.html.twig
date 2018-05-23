@@ -1,0 +1,93 @@
+{% extends '::LayoutBack.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}affiche Garerie cote admin{% endblock title %}
+{% block setting %}
+    <ul>
+        <li>
+            <div class="avatar">
+                <img src="{{ asset('BackOffice/images/avatar/01.png') }}" alt="">
+            </div>
+            <div class="profile">
+                <a href="#" title="">View Profile</a>
+            </div>
+            <div class="clearfix"></div>
+        </li>
+        <li>
+            <a href="#" class="waves-effect" title="">My Account</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_user_change_password') }}"><p>Changer Password</p></a>
+        </li>
+        <li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </li>
+    </ul>
+{% endblock setting %}
+
+{% block body %}
+
+    <div id="page-wrapper" >
+        <div id="page-inner">
+
+
+
+
+<h3 style="color: darkgoldenrod">Nos Enfants  </h3>
+
+    {% for Enfant in Enfant %}
+{#<fieldset style="border: #ff4165 ">#}
+    {#<legend> Enfant num: </legend>#}
+        {#<div>Nom: {{ Enfant.nom }}</div>#}
+        {#<div> Prenom:{{ Enfant.prenom}}</div>#}
+    {#<div> Date naissance:{{ Enfant.dateNaissance|date('Y/m/d')}}</div>#}
+        {#<div> Sexe :{{ Enfant.sexe}}</div>#}
+    {#<div> image: <img src="{{ asset('images/') }}{{ Enfant.nomImage }}" style="width: 50px;height: 50px"></div>#}
+        {#<div> Categorie:{{ Enfant.categorie }}</div>#}
+
+
+{#</fieldset>#}
+            {#<div class="row">#}
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                   {{ Enfant.nom }} {{ Enfant.prenom}}
+                </div>
+                <div class="panel-body">
+                    <div>{{ Enfant.nom }}</div>
+                    <div> {{ Enfant.prenom}}</div>
+                    <div> Née le :{{ Enfant.dateNaissance|date('d/m/Y')}}</div>
+                    <div>{{ Enfant.sexe}}</div>
+                    <div>{{ Enfant.categorie }}</div>
+                </div>
+
+
+
+                <div class="panel-body">
+
+                    <div> image: <img src="{{ asset('images/') }}{{ Enfant.nomImage }}" style="width: 50px;height: 50px"></div>
+
+                </div>
+                <div class="panel-footer">
+
+                    <a href={{path ('DelateEnfantA',{'id':Enfant.id_enfant})  }}>Supprimer</a>
+                </div>
+
+            </div>
+        </div>
+            {#</div>#}
+            {% endfor %}
+        </div></div>
+
+
+{%  endblock body %}
+
+
+
+

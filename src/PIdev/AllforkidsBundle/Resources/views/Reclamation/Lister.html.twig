@@ -1,0 +1,78 @@
+
+
+<h2>la liste des reclamations </h2>
+<table border="1">
+
+    <tr>
+
+        <td>Objet reclamation</td>
+        <td>  typeRec </td>
+        <td>  etatRec </td>
+        <td>  contenuRec </td>
+        <td>  Emetteur de reclamation </td>
+        <td>  membre conserné par la reclamation </td>
+
+
+
+    </tr>
+
+
+    {% for m in R %}
+        <tr>
+
+            <td>  {{ m.objetRec}} </td>
+            <td>  {{ m.typeRec}} </td>
+            <td>  {{ m.etatRec}} </td>
+            <td>  {{ m.contenuRec}} </td>
+            <td>  {{ m. user}} </td>
+            <td>  {{ m. membreRec}} </td>
+
+
+
+          {#      <td><a href="{{ path("Modifier_Club",{'id':m.idclub } ) }}">Modifier</a></td>
+            <td><a href="{{ path("Supprimer_Club",{'id':m.idclub } ) }}">Supprimer</a></td>
+#}
+
+        </tr>
+
+    {% endfor %}
+
+
+
+</table>
+
+
+
+
+{#
+<div class="row margin-b100">
+    <div class="col-sm-12">
+        <h2 class="margin-b45">Table</h2>
+        <div class="table-responsive">
+            <table class="table1">
+                <tr>
+                    <th>Heading</th>
+                    <th>Heading</th>
+                    <th>Heading</th>
+                </tr>
+                <tr>
+                    <td>Default</td>
+                    <td>Default</td>
+                    <td>Default</td>
+                </tr>
+                <tr>
+                    <td>Default</td>
+                    <td>Default</td>
+                    <td>Default</td>
+                </tr>
+                <tr>
+                    <td>Default</td>
+                    <td>Default</td>
+                    <td>Default</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+#}
+

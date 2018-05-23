@@ -1,0 +1,257 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}affiche Garderie{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+
+
+<section class="page_breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>{{ Garderie.nom }}</h3>
+                <ol class="breadcrumb">
+                    <li >
+                        <a href="{{path ('ListeGard',{'id':Garderie.id_garderie})  }}">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="{{path ('PresentationGard',{'id':Garderie.id_garderie})  }}">
+                            Présentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{path ('Voter',{'id':Garderie.id_garderie})  }}">Evaluation de Garderie</a>
+                    </li>
+                    <li>
+
+                        <a href="{{path ('AjouterEnfant',{'id':Garderie.id_garderie})  }}" >Inscription</a>
+                    </li>
+                    <li>
+                        <a href="{{path ('galerieaffiche',{'id':Garderie.id_garderie})  }}" >Galerie</a>
+
+                    </li>
+                    <li >
+                        <a href="{{path ('galerieAjout',{'id':Garderie.id_garderie})  }}" >Ajout photo </a>
+
+                    </li>
+                    <li >
+                        <a href="{{path ('ListeVoter',{'id':Garderie.id_garderie})  }}" >Avis Parent</a>
+                    </li>
+                    <li >
+                        <a href="{{path ('ContactG',{'id':Garderie.id_garderie})  }}" >Contacter Nous </a>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <div class="courses padding-v100">
+
+    <div class="container">
+      <div class=" row">
+    <div class="blog-post single-item video-post">
+        <div class="entry-thumbnail">
+            <div >
+                <img src="{{ asset('images/') }}{{ Garderie.nomImage }}" alt="" class="margin-b60" style="height: 460px;width: 1170px">
+            </div>
+        </div>
+        <div class="single-item-body icon-body">
+        <p class="top-post-item">
+            {{ Garderie.nom }}</p>
+
+            <p class="post-date">1 Septembre 2017</p>
+            <p class="post-descr">
+
+                En parcourant notre site web, vous allez  pouvoir prendre connaissance des
+                différents avantages à nous confier la garde de votre enfant.
+
+                Notre Garderie dispose d'un espace chaleureux et très agréable.
+                Tout est pensé et adapté aux goûts des enfants et des bébés, afin qu' ils puissent s'épanouir et être heureux.
+            </p>
+
+
+
+        </div>
+
+    </div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+
+
+        <div class="col-sm-6">
+            <div class="panel-group" id="accordion2">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse6" class="collapsed">
+                                <i class="rt-icon2-bubble highlight"></i>
+                                Conditions d'admission
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            La Garderie {{ Garderie.nom }} accepte un enfant âgé de moins de 5 ans le 30 septembre d'une année de référence.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse7" class="collapsed">
+                                <i class="rt-icon2-bubble highlight"></i>
+                               Gestion de la liste d'attente
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            L’ordre de priorité de la liste d’attente :
+                            <ul>
+                                <li> Un frère ou une sœur d’un enfant fréquentant déjà la garderie</li>
+                                <li>Principe du « premier arrivé, premier servi »</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse8" class="collapsed">
+                                <i class="rt-icon2-bubble highlight"></i>
+                                Principes
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <ul>
+                                <li> Une demande ne peut-être acceptée que pour l’enfant qui est déjà né </li>
+                                <li>Une fois les groupes formés, au semestre d’août, la liste d’attente est mise à jour </li>
+                                <li>Si une place se libère au milieu d’une session, les parents de la liste d’attente seront avertis par téléphone ou par courriel</li>
+                                <li>Le parent qui fait la demande doit remplir et signer l’application</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse9" class="collapsed">
+                                <i class="rt-icon2-bubble highlight"></i>
+                                Ouverture et analyse de dossier
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            L'enfant ne sera pas admis à la garderie sans avoir remis tous les documents demandés.
+                            <ul>
+                              <li>Formulaire d’inscription de la Garderie (signé, daté)</li>
+                                <li>Fiche d'inscription du dossier médical (signé, daté) et il est obligatoire de répondre à toutes les questions</li>
+                                <li>Copies conformes à l'original du Certificat de naissance (gouvernement de Tunis) de l'enfant si né à Tunisie. (Autre certificat si né à l'extérieur)</li>
+                                <li>Copies conformes à l'original du certificat de naissance Tunisien ou passeport Tunisien ou fiche relative au droit d'établissement d'un parent</li>
+                                <li>Une photo récente de l'enfant (obligatoire)</li>
+                                <li>Une photo récente de l'enfant avec la famille ou qui viendra le chercher à la garderie (optionnel)</li>
+                                <li>Formulaire du gouvernement fédéral et provincial de Crédit d'impôt pour frais de garde d'enfant </li>
+                                <li>Demande de versements anticipés (signé, daté)</li>
+
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse10" class="collapsed">
+                                <i class="rt-icon2-bubble highlight"></i>
+                                Dossier d'inscription
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Lors de l’inscription, nous conseillons fortement les parents à une visite des locaux avec leur enfant afin de se familiariser des lieux et du personnel.
+                            À l’inscription de l’enfant, les parents devront compléter le dossier d’inscription et signer les autorisations nécessaires.
+                            Les renseignements contenus dans le dossier de l’enfant sont confidentiels et nul ne peut en donner ou en recevoir communication écrite ou verbale si ce n’est qu’avec l’autorisation du titulaire ou de l’autorité parentale (article 22, loi sur les services de garde de l’enfance).
+                            Le parent a la responsabilité d’informer la directrice ou le responsable de la garderie tout changement dans le dossier d’inscription de son enfant. (Déménagement, changement de statut, téléphone etc…)
+                            Lors du départ définitif de l’enfant, ce dossier d’inscription sera remis aux parents comme le stipule le règlement sur les services de garde de l’enfance (article 98 des règlements des CPE)
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+
+{%  endblock main %}
+
+{% block footer %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="open-hours">
+                    <h3>Open <span>Hours</span></h3>
+                    <div>Monday - Friday <span>9:00 - 17:00</span></div>
+                    <div>Saturday <span>11:00 - 15:00</span></div>
+                    <div>Sunday <span>Closed</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_flickr">
+                    <h3 class="widget-title"></h3>
+                    <ul id="flickr"></ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_mailchimp">
+                    <h3 class="widget-title">Mailchimp</h3>
+                    <form class="signup form-inline" action="/" method="get">
+                        <div class="form-group">
+                            <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                        </div>
+                        <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                        <div class="response"></div>
+                    </form>
+                    <p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock footer %}

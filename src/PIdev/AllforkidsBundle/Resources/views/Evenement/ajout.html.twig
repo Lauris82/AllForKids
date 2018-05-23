@@ -1,0 +1,131 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block page %}
+    <nav class="mainmenu_wrapper">
+        <ul class="mainmenu sf-menu">
+            <li  class="active">
+                <a href="{{ path('Home_Page') }}">Home</a>
+            </li>
+            <li  class="active">
+                <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                <ul>
+                    <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                    <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                    <li><<a href="#" >Crèer Evenement</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- eof main nav -->
+    <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="425">
+        <span class="toggle_menu"><span></span></span>
+    </div>
+{% endblock page %}
+{% block title %}
+    ajouter une èvenement
+{% endblock title %}
+{% block topline %}
+
+{% endblock topline %}
+{% block js %}
+    {{ parent() }}
+{% endblock %}
+{% block css %}
+    {{ parent() }}
+{% endblock %}
+{% block main %}
+
+    <br>
+    <br>
+    <h1 class="text-center margin-b45"> <span class="blue">Crèer</span> <span class="pink">èvenement</span></h1>
+    <div class="modal-dialog">
+        <div class="single-item-body icon-body">
+                <div class="modal-body">
+                    {{ form_start(form) }}
+                        <table align="center">
+
+                            <tr>
+                                <td>Nom:</td>
+                                <td>{{ form_widget(form.nom) }}</td>
+                            </tr>
+
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+
+                            <tr>
+                                <td>Description:</td>
+                                <td>{{ form_widget(form.description) }}</td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td>Date debut</td>
+                                <td>{{ form_widget(form.dateDebut) }}</td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td>Date fin</td>
+                                <td>{{ form_widget(form.dateFin) }}</td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td>Emplacement:</td>
+                                <td>{{ form_widget(form.emplacement) }}</td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td>Image:</td>
+                                <td>{{ form_widget(form.image) }}</td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr >
+                                <td ><p align="center"> {{ form_widget(form.creer) }}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td><p></p></td>
+                            </tr>
+                        </table>
+                    {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
+
+{% block footer %}
+
+{% endblock footer %}

@@ -1,0 +1,911 @@
+
+
+
+
+<head>
+    <title>Modification post</title>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" id="color-switcher-link">
+    <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+
+    <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+
+
+    <!--Fonts for Babysitter-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:900,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader_image"></div>
+</div>
+<!--[if lt IE 9]>
+<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+<!-- search modal -->
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+    <div class="widget widget_search">
+        <form method="get" class="searchform form-inline" action="/">
+            <div class="form-group">
+                <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+            </div>
+            <button type="submit" class="theme_button">Search</button>
+        </form>
+    </div>
+</div>
+
+<!-- wrappers for visual page editor and boxed version of template -->
+<div id="canvas">
+    <div id="box_wrapper">
+
+        <header class="page_header header_white">
+            <div class="header-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4 text-center">
+                            <div class="social-icons">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-right ">
+                            <div class="contact-info">
+                                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                    <div class="contact-number">
+                                        <a href="{{ path('Profile_User') }}"><img src="{{ asset('image_user/' ~ app.user.image) }}" style="width:50px; height:50px;"></a>
+                                        <a href="{{ path('fos_message_inbox') }}" class="rt-icon2-mail2 turquoise large-icon" ></a>
+                                        {% if app.user.notification == null %}
+                                            <a href="{{ path('Liste_Notification') }}" class="fa fa-bell-o"></a>
+                                        {% endif %}
+                                        {% if app.user.notification != null %}
+                                            <a href="{{ path('Liste_Notification') }}" class="fa fa-bell-o" style="color: red;" ><span class="badge" >{{ app.user.notification }}</span></a>
+                                            <audio id="audio" autoplay src="{{ asset('Lauris/iphone.mp3') }}"></audio>
+                                        {% endif %}
+                                        <a href="{{ path('fos_user_security_logout') }}" class="rt-icon2-lock-open-outline"></a>
+                                    </div>
+                                    <div class="work-hours">
+                                        Connecté en tant que: {{ app.user.username }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <!-- main nav start -->
+                        <ul class="mainmenu sf-menu">
+                            <li  class="active">
+                                <a href="{{ path('Home_Page') }}">Accueil</a>
+                            </li>
+                            <li  class="active">
+                                <a href="{{ path('Home_Page') }}">Garderie</a>
+                                <ul >
+                                    {% if is_granted('ROLE_RESPONSABLE_GARDERIE') %}
+                                        <li ><a href="{{ path('AjouterGarderie') }}"> Ajouter Garderie</a> </li>
+                                    {% endif %}
+                                    <li ><a href="{{ path('ListeGarderie') }}"> Afficher Garderie</a> </li>
+                                    <li ><a href="{{ path('RechercheGarderieEmp') }}"> Chercher Garderie par emplacement</a> </li>
+                                    {#<li ><a href="{{ path('affiche_admin') }}"> Afficher coté admin Garderie</a> </li>#}
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a href="#">Offre de Transport</a>
+                                <ul>
+                                    <li><a href="{{ path('Ajouter_OffreTransport') }}">Créer une Offre de Transport</a></li>
+                                    <li><a href="{{ path('Rechercher_OffreTransport') }}">Liste des Offres de Transport</a></li>
+                                    <li><a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a></li>
+                                </ul>
+                            </li>
+
+                            <li  class="active">
+                                <a href="{{ path('calendrier_evenement') }}">Evenements</a>
+                                <ul>
+                                    <li><<a href="{{ path('calendrier_evenement') }}">Calendrier</a> </li>
+                                    <li><<a href="{{ path('list_evenement') }}">List Evenement</a> </li>
+
+                                    <li><<a href="{{ path('creer_evenement') }}">Crèer Evenement</a> </li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a>Association</a>
+                                <ul>
+                                    {% if is_granted('ROLE_RESPONSABLE_ASSOCIATION') %}
+                                        <li  >
+                                            <a href="{{ path('Ajouter_Association') }}"> Ajouter mon association</a>
+                                        </li>
+                                    {% endif %}
+                                    <li  >
+                                        <a href="{{ path('Lister_Associations') }}"> Listes des associations </a>
+                                    </li>
+                                    <li >
+                                        <a href="{{ path('Rechercher_Association') }}"> Chercher association </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+
+                                <a>Club</a>
+                                <ul>
+                                    {% if is_granted('ROLE_RESPONSABLE_CLUB') %}
+                                        <li  >
+                                            <a href="{{ path('Ajouter_Club') }}"> Ajouter mon club</a>
+                                        </li>
+                                    {% endif %}
+
+                                    <li  >
+                                        <a href="{{ path('Lister_Club') }}"> Listes des club </a>
+                                    </li>
+                                    <li >
+                                        <a href="{{ path('Rechercher_Club') }}"> Chercher club </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li class="active">
+                                <a >Blog & Forum</a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('Page_post_affiche') }}">Ajouter un post</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a >Reclamation</a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('Envoyer_Reclamations') }}">Envoyer reclamation</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- eof main nav -->
+                        <div class="toggle_menu-wrap" data-spy="affix" data-offset-top="246">
+                            <span class="toggle_menu"><span></span></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <section class="page_breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h3>Blog Post</h3>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="blog.html">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="blog_post.html">Blog Post</a>
+                            </li>
+                            <li>
+                                <a href="blog_video_post.html">Blog Video</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="slide-container test-container">
+                            <img src="{{ asset('images/team-slide-1.png') }}" alt="Ruthie Wolf">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Ruthie Wolf
+                                            </p>
+                                            <h3 class="poppins">
+                                                25 years old Nanny with experience
+                                            </h3>
+                                            <p class="nanny-descr">Out labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                At vero eos et accusam et justo duo dolores et ea rebum.
+                                                Stet clita kasd no sea takimata sanctus est Lorem ipsum dolor.</p>
+                                            <a href="#" class="btn-type1">Check Profile</a>
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+                    <li>
+                        <div class="slide-container test-container">
+                            <img src="{{ asset('images/team-slide-2.png') }}" alt="Ruthie Wolf">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Connie Gilliam
+                                            </p>
+                                            <h3 class="poppins">
+                                                Screened, Qualif ied & Responsible Nanny
+                                            </h3>
+                                            <p class="nanny-descr">At ea rebum stet clita kasd gubergren,
+                                                no sea takimata sanctus estorem ipsum dolor sit amet.
+                                                Lorem ipsum dolor sitmet consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+                                            <a href="#" class="btn-type1">Check Profile</a>
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+                    <li>
+                        <div class="slide-container test-container">
+                            <img src="{{ asset('images/team-slide-3.png') }}" alt="Ruthie Wolf">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slide_description_wrapper">
+                                        <div class="slide_description">
+                                            <p class="grand-hotel">
+                                                Amanda Durham
+                                            </p>
+                                            <h3 class="poppins">
+                                                She’ll Do best to take care of Your Kids
+                                            </h3>
+                                            <p class="nanny-descr">Ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                                At vero eos et accusam et justo duo dolores et ea rebum.
+                                                Stclita kasd gubergre sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                            <a href="#" class="btn-type1">Check Profile</a>
+                                        </div> <!-- eof .slide_description -->
+                                    </div> <!-- eof .slide_description_wrapper -->
+                                </div> <!-- eof .col-* -->
+                            </div><!-- eof .row -->
+                        </div><!-- eof .container -->
+                    </li>
+
+                </ul>
+            </div> <!-- eof flexslider -->
+        </section>
+
+
+
+        <div class="container padding-v100">
+            <div class="row">
+                {{ form_start(form) }}
+
+                <div class="col-sm-7 col-md-8 col-lg-8 zero-font">
+                    <div class="light-bg padding-60">
+                        <article class="blog-post single-item full-post">
+                            <div class="entry-content">
+                                <form>
+                                <label>Modifier le titre</label>
+                                    {{ form_widget(form.titre, { 'attr': {'class': 'form-control'} }) }}
+                                    <label>Modifier le contenu</label>
+
+                                    {{ form_widget(form.contenu , { 'attr': {'class': 'form-control'} }) }}
+<br>
+
+
+                                </form>
+                                <!-- eof blog-more -->
+                                {{ form_end(form) }}
+                                <p class="form-submit">
+                                </p></div></article>
+                            <button type="submit" id="submit" name="submit" class="btn-type1 colore-blue"> Modifier</button>
+                            </p>
+
+                                <div class="darklinks text-center">
+                                    <a class="blog-more-toggle collapsed" data-toggle="collapse" href="#blog-more" aria-expanded="false" aria-controls="blog-more">
+                                        <span class="blog-more-hidden">More</span>
+                                        <span class="blog-more-visible">Hide</span>
+                                    </a>
+                                </div>
+                            </div>
+                    
+                            <div id="blog-more" class="blog-more collapse">
+                                <div id="blog-more" class="views-count pull-left">
+
+                                </div>
+                                <div id="blog-more" style="margin-left: 20px" class="views-count pull-left">
+
+                            </div>
+                            <!-- .entry-content -->
+                            </div>
+                        </article>
+
+                        <div class="author-meta">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="item-media">
+                                        <img src="{{asset('images/blog-post-author.jpg')}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="item-content">
+                                        <h4 class="entry-title">Ruthie Wolf</h4>
+                                        <p>Nulla porttitor accumsan tincidunt msk aliquet elit, eget tincidunt nibh.</p>
+                                        <span class="author-social">
+                                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-facebook"></a>
+                                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-twitter"></a>
+                                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-google"></a>
+                                    </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="comment-respond" id="respond">
+                            <form class="comment-form" id="commentform" method="post" action="/">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="comment-form-author">
+                                            <label for="author">Name <span class="required">*</span></label>
+                                            <!-- <i class="rt-icon2-user-outline"></i> -->
+                                            <input type="text" aria-required="true" size="30" value="" name="author" id="author" class="form-control" placeholder="Full Name">
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="comment-form-email">
+                                            <label for="comment_email">Email <span class="required">*</span></label>
+                                            <!-- <i class="rt-icon2-mail2"></i> -->
+                                            <input type="email" aria-required="true" size="30" value="" name="comment_email" id="comment_email" class="form-control" placeholder="Emain Address">
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="comment-form-site">
+                                            <label for="website">Website</label>
+                                            <!-- <i class="rt-icon2-user-outline"></i> -->
+                                            <input type="text" size="30" value="" name="website" id="website" class="form-control" placeholder="Website">
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p class="comment-form-chat">
+                                            <label for="comment">Comment</label>
+                                            <!-- <i class="rt-icon2-pencil3"></i> -->
+                                            <textarea aria-required="true" rows="8" cols="45" name="comment" id="comment" class="form-control" placeholder="Message..."></textarea>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="form-submit">
+                                    <button type="submit" id="submit" name="submit" class="btn-type1 colore-blue">Send Comment</button>
+                                </p>
+                            </form>
+                        </div>
+
+                        <div class="comments-area" id="comments">
+                            <ol class="comment-list">
+                                <li class="comment even thread-even depth-1 parent">
+                                    <article class="comment-body media">
+                                        <div class="media-left">
+                                            <img class="media-object" alt="" src="{{asset('images/comment-photo-1.png')}}">
+                                        </div>
+                                        <div class="media-body with_border">
+                                    <span class="reply">
+                                        <a href="#respond">
+                                            <i class="rt-icon2-arrow-back-outline"></i>
+                                        </a>
+                                    </span>
+                                            <div class="comment-meta darklinks">
+                                                <a class="author_url" rel="external nofollow" href="#">Alan Smith</a>
+                                                <span class="comment-date">
+                                            <span class="entry-date">March 03, 2016 13:45</span>
+                                        </span>
+                                            </div>
+                                            <p>First Level Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                        </div>
+                                    </article>
+                                    <!-- .comment-body -->
+
+                                    <ol class="children">
+                                        <li class="comment byuser odd alt depth-2 parent">
+                                            <article class="comment-body media">
+                                                <div class="media-left">
+                                                    <img class="media-object" alt="" src="{{asset('images/comment-photo-2.png')}}">
+                                                </div>
+                                                <div class="media-body with_border">
+                                            <span class="reply">
+                                                <a href="#respond">
+                                                    <i class="rt-icon2-arrow-back-outline"></i>
+                                                </a>
+                                            </span>
+                                                    <div class="comment-meta darklinks">
+                                                        <a class="author_url" rel="external nofollow" href="#">Alan Smith</a>
+                                                        <span class="comment-date">
+                                                    <span class="entry-date">March 03, 2016 at 13:45</span>
+                                                </span>
+                                                    </div>
+                                                    <p>Second Level Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                </div>
+                                            </article>
+                                            <!-- .comment-body -->
+
+                                            <ol class="children">
+                                                <li class="comment byuser even depth-3">
+                                                    <article class="comment-body media">
+                                                        <div class="media-left">
+                                                            <img class="media-object" alt="" src="{{asset('images/comment-photo-3.png')}}">
+                                                        </div>
+                                                        <div class="media-body with_border">
+                                                    <span class="reply">
+                                                        <a href="#respond">
+                                                            <i class="rt-icon2-arrow-back-outline"></i>
+                                                        </a>
+                                                    </span>
+                                                            <div class="comment-meta darklinks">
+                                                                <a class="author_url" rel="external nofollow" href="#">Alan Smith</a>
+                                                                <span class="comment-date">
+                                                            <span class="entry-date">March 03, 2016 at 13:45</span>
+                                                        </span>
+                                                            </div>
+                                                            <p>Third Level Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                        </div>
+                                                    </article>
+                                                    <!-- .comment-body -->
+                                                </li>
+                                                <!-- #comment-## -->
+                                            </ol>
+                                            <!-- .children -->
+                                        </li>
+                                        <!-- #comment-## -->
+                                    </ol>
+                                    <!-- .children -->
+                                </li>
+                                <!-- #comment-## -->
+
+                                <li class="comment byuser odd alt thread-odd thread-alt depth-1">
+                                    <article class="comment-body media">
+                                        <div class="media-left">
+                                            <img class="media-object" alt="" src="{{asset('images/comment-photo-4.png')}}">
+                                        </div>
+                                        <div class="media-body with_border">
+                                    <span class="reply">
+                                        <a href="#respond">
+                                            <i class="rt-icon2-arrow-back-outline"></i>
+                                        </a>
+                                    </span>
+                                            <div class="comment-meta darklinks">
+                                                <a class="author_url" rel="external nofollow" href="#">Alan Smith</a>
+                                                <span class="comment-date">
+                                            <span class="entry-date">March 03, 2016 at 13:45</span>
+                                        </span>
+                                            </div>
+                                            <p>First Level Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                        </div>
+                                    </article>
+                                    <!-- .comment-body -->
+                                </li>
+                                <!-- #comment-## -->
+
+                                <li class="comment byuser even thread-even depth-1">
+                                    <article class="comment-body media">
+                                        <div class="media-left">
+                                            <img class="media-object" alt="" src="{{asset('images/comment-photo-5.png')}}">
+                                        </div>
+                                        <div class="media-body with_border">
+                                    <span class="reply">
+                                        <a href="#respond">
+                                            <i class="rt-icon2-arrow-back-outline"></i>
+                                        </a>
+                                    </span>
+                                            <div class="comment-meta darklinks">
+                                                <a class="author_url" rel="external nofollow" href="#">Alan Smith</a>
+                                                <span class="comment-date">
+                                            <span class="entry-date">March 03, 2016 at 13:45</span>
+                                        </span>
+                                            </div>
+                                            <p>First Level Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                        </div>
+                                    </article>
+                                    <!-- .comment-body -->
+                                </li>
+                                <!-- #comment-## -->
+                            </ol>
+                            <!-- .comment-list -->
+                        </div>
+                    </div>
+
+                <aside class="col-sm-5 col-md-4 col-lg-4">
+
+                    <div class="widget widget_text">
+                        <div class="text-center">
+                            <h3 class="widget-title">Get in Touch</h3>
+                            <a href="#" class="social-icon big-icon color-bg-icon soc-twitter">
+                                <span>34.5K</span>
+                                <span>Friends</span>
+                            </a>
+                            <a href="#" class="social-icon big-icon color-bg-icon soc-facebook">
+                                <span>3.2K</span>
+                                <span>Follows</span>
+                            </a>
+                            <a href="#" class="social-icon big-icon color-bg-icon soc-google">
+                                <span>15.7K</span>
+                                <span>Friends</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_mailchimp text-center">
+                        <h3 class="widget-title">Newsletter</h3>
+                        <p>Subscribe to Newsletter to be updated.</p>
+                        <form class="signup form-inline" action="/" method="get">
+                            <div class="form-group">
+                                <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                            </div>
+                            <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                            <div class="response"></div>
+                        </form>
+                    </div>
+
+                    <div class="widget widget_flickr">
+                        <h3 class="widget-title">Flickr</h3>
+                        <ul id="side-flickr"></ul>
+                    </div>
+
+                    <div class="widget widget_banner">
+                        <div class="vertical-item content-absolute text-center">
+                            <a href="#" class="item-media">
+                                <img src="images/aside-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_tag_cloud">
+                        <h3 class="widget-title">Featured Tags</h3>
+                        <div class="tagcloud text-center">
+                            <a href="#" title="" class="btn-type1">Children</a>
+                            <a href="#" title="" class="btn-type1">Games</a>
+                            <a href="#" title="" class="btn-type1">Education</a>
+                            <a href="#" title="" class="btn-type1">Babysitters</a>
+                            <a href="#" title="" class="btn-type1">Teachers</a>
+                            <a href="#" title="" class="btn-type1">Kids Center</a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_categories text-center">
+                        <h3 class="widget-title">Categories</h3>
+                        <div class="select-group">
+                            <select aria-required="true" id="time" name="time">
+                                <option value="" disabled selected>Choose Category</option>
+                                <option value="games">Games</option>
+                                <option value="babysitters">Babysitters</option>
+                                <option value="nanny">Nanny</option>
+                                <option value="education">Education</option>
+                                <option value="children">Children</option>
+                                <option value="kids-center">Kids Center</option>
+                            </select>
+                            <i class="rt-icon2-chevron-thin-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_recent_posts">
+                        <h3 class="widget-title">Popular</h3>
+                        <ul class="media-list darklinks">
+                            <li class="media">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" src="images/recent-post-1.jpg" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#">Quisque velit nisi, pretium lacinia in, elementum id enim</a>
+                                    </p>
+                                    <p class="post-date">March 03, 2016</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" src="images/recent-post-2.jpg" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#">Quisque velit nisi, pretium lacinia in, elementum id enim</a>
+                                    </p>
+                                    <p class="post-date">March 03, 2016</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" src="images/recent-post-3.jpg" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#">Quisque velit nisi, pretium lacinia in, elementum id enim</a>
+                                    </p>
+                                    <p class="post-date">March 03, 2016</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget_archive text-center">
+                        <h3 class="widget-title">Archives</h3>
+                        <div class="select-group">
+                            <select aria-required="true" id="month" name="time">
+                                <option value="" disabled selected>Choose Month</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                            </select>
+                            <i class="rt-icon2-chevron-thin-down"></i>
+                        </div>
+                    </div>
+
+                </aside>
+
+
+
+
+                    <div class="row nav-buttons">
+                        <div class="col-sm-6 text-center">
+                            <a href="#" class="blog-btn prev-btn">
+                                <div class="btn-image-bg">
+                                    <img src="{{asset('images/button-prev.jpg')}}" alt="">
+                                </div>
+                                <div class="item-media">
+                                    <p>Prev</p>
+                                    <p>Lorem ipsum dolor sit consetetur</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <a href="#" class="blog-btn next-btn">
+                                <div class="btn-image-bg">
+                                    <img src="{{asset('images/button-next.jpg')}}" alt="">
+                                </div>
+                                <div class="item-media">
+                                    <p>Next</p>
+                                    <p>Sadipscing elitsed diam nonumy</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="col-sm-5 col-md-4 col-lg-4">
+
+                    <div class="widget widget_text">
+                        <div class="text-center">
+                            <h3 class="widget-title">Get in Touch</h3>
+                            <a href="#" class="social-icon big-icon color-bg-icon soc-twitter">
+                                <span>34.5K</span>
+                                <span>Friends</span>
+                            </a>
+                            <a href="#" class="social-icon big-icon color-bg-icon soc-facebook">
+                                <span>3.2K</span>
+                                <span>Follows</span>
+                            </a>
+                            <a href="#" class="social-icon big-icon color-bg-icon soc-google">
+                                <span>15.7K</span>
+                                <span>Friends</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_mailchimp text-center">
+                        <h3 class="widget-title">Newsletter</h3>
+                        <p>Subscribe to Newsletter to be updated.</p>
+                        <form class="signup form-inline" action="/" method="get">
+                            <div class="form-group">
+                                <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                            </div>
+                            <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                            <div class="response"></div>
+                        </form>
+                    </div>
+
+                    <div class="widget widget_flickr">
+                        <h3 class="widget-title">Flickr</h3>
+                        <ul id="side-flickr"></ul>
+                    </div>
+
+                    <div class="widget widget_banner">
+                        <div class="vertical-item content-absolute text-center">
+                            <a href="#" class="item-media">
+                                <img src="{{asset('images/aside-banner.jpg')}}" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_tag_cloud">
+                        <h3 class="widget-title">Featured Tags</h3>
+                        <div class="tagcloud text-center">
+                            <a href="#" title="" class="btn-type1">Children</a>
+                            <a href="#" title="" class="btn-type1">Games</a>
+                            <a href="#" title="" class="btn-type1">Education</a>
+                            <a href="#" title="" class="btn-type1">Babysitters</a>
+                            <a href="#" title="" class="btn-type1">Teachers</a>
+                            <a href="#" title="" class="btn-type1">Kids Center</a>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_categories text-center">
+                        <h3 class="widget-title">Categories</h3>
+                        <div class="select-group">
+                            <select aria-required="true" id="time" name="time">
+                                <option value="" disabled selected>Choose Category</option>
+                                <option value="games">Games</option>
+                                <option value="babysitters">Babysitters</option>
+                                <option value="nanny">Nanny</option>
+                                <option value="education">Education</option>
+                                <option value="children">Children</option>
+                                <option value="kids-center">Kids Center</option>
+                            </select>
+                            <i class="rt-icon2-chevron-thin-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="widget widget_recent_posts">
+                        <h3 class="widget-title">Popular</h3>
+                        <ul class="media-list darklinks">
+                            <li class="media">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" src="{{asset('images/recent-post-1.jpg')}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#">Quisque velit nisi, pretium lacinia in, elementum id enim</a>
+                                    </p>
+                                    <p class="post-date">March 03, 2016</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" src="{{asset('images/recent-post-2.jpg')}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#">Quisque velit nisi, pretium lacinia in, elementum id enim</a>
+                                    </p>
+                                    <p class="post-date">March 03, 2016</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" src="{{asset('images/recent-post-3.jpg')}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <p>
+                                        <a href="#">Quisque velit nisi, pretium lacinia in, elementum id enim</a>
+                                    </p>
+                                    <p class="post-date">March 03, 2016</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget_archive text-center">
+                        <h3 class="widget-title">Archives</h3>
+                        <div class="select-group">
+                            <select aria-required="true" id="month" name="time">
+                                <option value="" disabled selected>Choose Month</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
+                                <option value="september">September</option>
+                                <option value="october">October</option>
+                                <option value="november">November</option>
+                                <option value="december">December</option>
+                            </select>
+                            <i class="rt-icon2-chevron-thin-down"></i>
+                        </div>
+                    </div>
+
+                </aside> <!-- eof aside sidebar -->
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="banner-wrap bottom-banner">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="{{asset('images/banner-slide.jpg')}}" alt="">
+                                </li>
+                                <li>
+                                    <img src="{{asset('images/banner-slide.jpg')}}" alt="">
+                                </li>
+                            </ul>
+                        </div> <!-- eof flexslider -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page_footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="open-hours">
+                            <h3>Open <span>Hours</span></h3>
+                            <div>Monday - Friday <span>9:00 - 17:00</span></div>
+                            <div>Saturday <span>11:00 - 15:00</span></div>
+                            <div>Sunday <span>Closed</span></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="widget widget_flickr">
+                            <h3 class="widget-title">Flickr</h3>
+                            <ul id="flickr"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="widget widget_mailchimp">
+                            <h3 class="widget-title">Mailchimp</h3>
+                            <form class="signup form-inline" action="/" method="get">
+                                <div class="form-group">
+                                    <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+                                </div>
+                                <button type="submit" class="theme_button rt-icon2-pen2"></button>
+                                <div class="response"></div>
+                            </form>
+                            <p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="{{asset('images/logo-footer.png')}}" alt="Babysitter logo" class="logo-footer">
+        </footer>
+
+        <section class="page_copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p>&copy; Copyright 2016 by <a href="#">MW Templates</a>. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- eof #box_wrapper -->
+</div><!-- eof #canvas -->
+
+
+<script src="{{ asset('js/compressed.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
+<script src="{{asset('js/jquery-ui.js')}}"></script>
+
+</body>

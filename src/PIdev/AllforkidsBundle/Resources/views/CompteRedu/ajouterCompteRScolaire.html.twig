@@ -1,0 +1,104 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+    {% block title %}CompteRendu Enfant Scolaire{% endblock title %}
+{% block topline %}{% endblock topline %}
+
+{%  block main %}
+    <div class="canvas">
+
+        <h1 class="poppins" style="text-align: center"><span class="pink">Ma  </span><span class="light-green">  Fiche</span><span class="turquoise">  de </span><span class="pink">  Suivie</span></h1>
+        {{ form_start(form,{'class': "contact-form"})}}
+
+        <section class="service-calc padding-v100">
+
+            <div class="container">
+                <div class="col-sm-12 padding-g0">
+                    <div class="col-xs-12">
+                        <div class="form-wrap">
+                            {#<h4 style="color: #00bcd5"> Le : {{ form_widget (form.dateCompteRendu) }}</h4>#}
+                            <div >
+                                <table>
+
+                                    <tr><div class="form-group margin-b8">
+                                            <td class="grand-hotel"style="color: #f5abcb">Mes Humeurs  :</td>
+                                            <td>{{ form_widget (form.humeur, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: #a94442"> Mon état de santé :</td>
+                                        <td>{{ form_widget (form.etatS, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="grand-hotel" style="color: palegreen"> Nombre de mes répas  :</td>
+                                        <td>{{ form_widget (form.nbrRepas, { 'attr': {'class': "form-control-group"} }) }}</td>
+                                        <td><img src="{{ asset('images/téléchargé.png') }}" style="width: 60px;height: 60px"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: orange"> Lors de mes répas  je mange :</td>
+                                        <td>{{ form_widget (form.etatMangee, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="grand-hotel" style="color: peachpuff"> Respect des consignes :</td>
+                                        <td>{{ form_widget (form.respectee, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: rebeccapurple"> Travaille des Devoires :</td>
+                                        <td>{{ form_widget (form.travailDevoir, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: palevioletred"> Remarques de l'école :</td>
+                                        <td>{{ form_widget (form.RemarqueEcole, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="grand-hotel" style="color: olivedrab"> Activitée d'aujourd'hui :</td>
+                                        <td> {{ form_widget (form.activite, { 'attr': {'class': "form-control-group"} }) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: gold"> je suis ici de :</td>
+                                        <td> {{ form_widget (form.HeureD, { 'attr': {'class': "form-control-group"} }) }}</td>
+
+                                        <td class="grand-hotel" style="color: gold"> à  </td>
+                                        <td> {{ form_widget (form.HeureF, { 'attr': {'class': "form-control-group"} }) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grand-hotel" style="color: darkturquoise"> Observation & Remarque de la journée </td>
+                                        <td>
+                                            {{ form_widget (form.description, { 'attr': {'class': "form-control-group"} }) }}
+                                        </td>
+                                        <td> <img src="{{ asset('images/176556-200.png') }}" style="width: 60px;height: 60px"></td>
+
+                                    </tr>
+
+
+
+
+                                </table>
+                                <div align="Right"> {{ form_widget(form.Envoyer,{'attr':{'class':"btn-type1"}}) }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </section>
+
+
+
+
+    </div>
+{%  endblock main %}
+{% block footer %}
+{% endblock footer %}

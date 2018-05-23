@@ -1,0 +1,78 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Liste des offres de Transport{% endblock title %}
+
+{% block section %}
+<h3>Transport</h3>
+<ol class="breadcrumb">
+    <li>
+        <a href="{{ path('Ajouter_OffreTransport') }}">Ajouter une Offre</a>
+    </li>
+    <li>
+        <a href="{{ path('Rechercher_OffreTransport') }}">Voir les Offres</a>
+    </li>
+    <li>
+        <a href="{{ path('Liste_Reservation_OffreTransport') }}">Voir mes réservations</a>
+    </li>
+</ol>
+{% endblock section %}
+
+{% block main %}
+
+<section class="small-post-section text-center">
+    {% for offre in offre %}
+        <div class="single-item blog-post-small">
+            <img src="{{ asset('image_user/' ~ offre.user.image) }}" alt="">
+            <div class="single-item-body">
+                <h4>
+                    <span class="default-text">Date debut: {{ offre.dateDebut | date('d-m-Y') }}</span><br><br>
+                    <span>Date de fin: {{ offre.dateFin | date('d-m-Y') }}</span>
+                </h4><br>
+                    Destination: <span class="pink">{{ offre.destination }}</span><br><br>
+                <p>
+                    Description: <span class="pink"> {{ offre.description }}</span>
+                </p>
+                <p>
+                    Nombre de place total: <span class="pink"> {{ offre.nombrePlace }}</span>
+                </p>
+                <p>
+                    Nombre de place restant: <span class="pink"> {{ offre.placeRestant }}</span>
+                </p>
+                <p>
+                    Prix d'une place: <span class="pink"> {{ offre.prix }}</span>
+                </p>
+                    <div class="single-item top-post-item">
+                        <div class="single-item-footer">
+                            {% if offre.user.id == app.user.id %}
+                                <span>
+                                    <a href="{{ path('Supprimer_OffreTransport', {'id':offre.id}) }}">
+                                        <i class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></i><br><span>Supprimer</span>
+                                    </a>
+                                </span>
+                            {% endif %}
+                            {% if offre.user.id == app.user.id %}
+                                <span>
+                                    <a href="{{ path('Mise_a_Jour_OffreTransport', {'id':offre.id}) }}">
+                                        <i class="glyphicon btn-glyphicon glyphicon-share img-circle text-info"></i><br><span>Modifier</span>
+                                    </a>
+                                </span>
+                            {% endif %}
+                            {% if offre.user.id != app.user.id and offre.placeRestant > 0 %}
+                                <span>
+                                    <a href="{{ path('Reserver_OffreTransport', {'id':offre.id}) }}">
+                                        <i class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></i><br><span>Réserver</span>
+                                    </a>
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock main %}
+
+{% block footer %}
+{% endblock footer %}

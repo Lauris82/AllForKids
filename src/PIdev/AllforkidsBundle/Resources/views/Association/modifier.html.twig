@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Home{% endblock title %}
+{% block topline %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </div>
+
+{% endblock topline %}
+
+{% block main %}
+<h3>Modifier association</h3>
+    {{ form_start(form) }} {# form methode= action =#}
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td>{{ form_widget (form.nom, { 'attr': {'class': "form-control",'placeholder': 'nom'|trans} }) }}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ form_widget(form.description, { 'attr': {'class': "form-control",'placeholder': 'description'|trans} }) }}</td>
+        </tr>
+
+        <tr>
+            <td>Num tel</td>
+            <td>{{ form_widget  (form.numTel, { 'attr': {'class': "form-control",'placeholder': 'numTel'|trans} })  }}</td>
+        </tr>
+
+        <tr>
+            <td>user</td>
+            <td>{{ form_widget  (form.user, { 'attr': {'class': "form-control"} }) }}</td>
+        </tr>
+
+
+        <tr>
+            <td>Gouvernerat</td>
+            <td>{{ form_widget(form.gouvernorat, { 'attr': {'class': "form-control"} }) }}</td>
+        </tr>
+
+
+        <tr>
+            <td>Municipalite</td>
+            <td>{{ form_widget (form.municipalite, { 'attr': {'class': "form-control",'placeholder': 'municipalite'|trans} })  }}</td>
+        </tr>
+
+
+
+        <tr>
+            <td>nom rue</td>
+            <td>{{ form_widget (form.nomrue, { 'attr': {'class': "form-control",'placeholder': 'nomrue'|trans} }) }}</td>
+        </tr>
+
+
+
+        <tr>
+            <td>code rue</td>
+            <td>{{ form_widget(form.coderue, { 'attr': {'class': "form-control",'placeholder': 'coderue'|trans} })  }}</td>
+        </tr>
+    </table>
+
+    {{ form_end(form) }}
+   {% endblock main %}
+{% block footer %}
+{% endblock footer %}
